@@ -3,8 +3,6 @@ title: "합성생물학의 재현성에 관한 연구"
 subtitle: "2021년 1학기 UST 현장연구 E"
 author: "합성생물학전문연구단 김하성"
 output:
-  pdf_document: 
-    latex_engine: xelatex
   html_document: 
     #theme: united
     #highlight: tango
@@ -13,6 +11,8 @@ output:
     toc_float: true
     number_sections: true
     df_print: paged
+  pdf_document: 
+    latex_engine: xelatex
 mainfont : NanumGothic
 bibliography: bibliography.bib
 csl: acs-synthetic-biology.csl
@@ -149,6 +149,28 @@ knitr::include_graphics("material/iGEM_허성보.pdf")
 * 본인이 정리한 iGEM team과 다른 사람이 정리한 iGEM team 비교 
 * 각자 정리한 iGEM 정리한 테이블이 모두 다른 포멧, 내용이나 이를 
 
+
+### Dataframe {-}
+
+데이터프레임 실습을 위해 다음과 같이 code chunk를 추가함 (Ctrl + Alt + i). 참고로 R 코드를 실행하는 것은 해당 코드에 커서를 위치시키고 창 오른쪽 상단 Run 아이콘을 클릭하거나 단축키 (Ctrl + Enter) 실행. 
+
+
+```{r}
+
+
+## generate data
+
+teamname <- rep(c("TeamA", "TeamB", "TeamA", "TeamB"), 10)
+teamtopic <-  rep(c("TopicA", "TopicB", "TopicA", "TopicB"), 10)
+teamprobms <-  rep(c("ProbA", "ProbA", "ProbA", "ProbA"), 10)
+
+## generate a data.frame variable
+
+teamdf <- data.frame(teamname, teamtopic, teamprobms)
+teamdf
+
+
+```
 
 
 

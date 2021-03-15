@@ -182,14 +182,18 @@ pre code {
 </ul>
 <pre class="bash"><code>#!/bin/bash
 sudo docker run -d --rm \
-        -p 8787:8787 \
-        -p 3838:3838 \
-        -e ADD=shiny \
-        -e PASSWORD=haseong \
-        -v /home/haseong/alpha/:/alpha/ \
-        --name rstudio-server \
-        haseong/rocker-rstudio:v0.2
-</code></pre>
+    -p 8787:8787 \
+    -e PASSWORD=haseong \
+    -v /home/haseong/alpha/:/alpha/ \
+    --name rstudio-server \
+    haseong/rocker-rstudio:v0.4
+    #haseong/rstudio-server-run:v02
+
+
+docker exec rstudio-server /bin/bash -c &quot;cp -p /alpha/class/2021-1-researchE/shadow /etc/&quot;
+docker exec rstudio-server /bin/bash -c &quot;cp -p /alpha/class/2021-1-researchE/gshadow /etc/&quot;
+docker exec rstudio-server /bin/bash -c &quot;cp -p /alpha/class/2021-1-researchE/passwd /etc/&quot;
+docker exec rstudio-server /bin/bash -c &quot;cp -p /alpha/class/2021-1-researchE/group /etc/&quot;</code></pre>
 </div>
 <div id="rstudio-user-설정" class="section level2">
 <h2>Rstudio user 설정</h2>
