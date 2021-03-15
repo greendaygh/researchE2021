@@ -173,6 +173,17 @@ teamdf
 ```
 
 
+# Rmarkdown practice cont.
+### 2021.3.18. 목 Remotemeeting {-}
+
+* 강좌용 github web page  https://greendaygh.github.io/researchE2021/
+
+
+
+### 목표 {-}
+* 각자 정리한 iGEM 정리한 테이블을 검토하고 공통적으로 선택한 team이 있을 경우 논의를 통해 조정
+
+
 
 <!-- * [Theme](https://bootswatch.com/3/) -->
 
