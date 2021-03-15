@@ -167,14 +167,28 @@ pre code {
 
 </div>
 
-
-<div id="github-사용" class="section level1">
-<h1>github 사용</h1>
+<div id="TOC">
 <ul>
-<li><p>github repository 생성 - <a href="https://github.com">github</a>에 로그인 후 Repository 생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료</p></li>
-<li><p>Github page 설정 - Settings &gt; Options &gt; GitHub Pages 에서 Source를 Main branch로, foldedr는 docs로 설정 후 Save.</p></li>
-<li><p>로컬 컴퓨터에 Clone - Github에서 Clone 주소 복사한 후 로컬에서 clone 수행</p></li>
+<li><a href="#create-github-repository"><span class="toc-section-number">1</span> Create Github repository</a></li>
+<li><a href="#github-page-setup"><span class="toc-section-number">2</span> Github page setup</a></li>
+<li><a href="#clone-to-local"><span class="toc-section-number">3</span> Clone to local</a></li>
+<li><a href="#copy-local-files"><span class="toc-section-number">4</span> Copy local files</a></li>
+<li><a href="#commit"><span class="toc-section-number">5</span> Commit</a></li>
+<li><a href="#access-the-page-via-browser"><span class="toc-section-number">6</span> Access the page via browser</a></li>
 </ul>
+</div>
+
+<div id="create-github-repository" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Create Github repository</h1>
+<p><a href="https://github.com">github</a>에 로그인 후 Repository 생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료</p>
+</div>
+<div id="github-page-setup" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Github page setup</h1>
+<p>Settings &gt; Options &gt; GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save.</p>
+</div>
+<div id="clone-to-local" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Clone to local</h1>
+<p>Github에서 Clone 주소 복사한 후 로컬에서 clone 수행 (git repository 이름이 researchE2021 이라면 해당 이름의 디렉토리가 생성되므로 상위 디렉토리에서 수행해야함)</p>
 <pre class="bash"><code>PS C:\mydocs\2021\lectures&gt; git clone https://github.com/greendaygh/researchE2021.git
 Cloning into &#39;researchE2021&#39;...
 remote: Enumerating objects: 3, done.
@@ -183,6 +197,70 @@ remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 PS C:\mydocs\2021\lectures&gt;
 </code></pre>
+</div>
+<div id="copy-local-files" class="section level1" number="4">
+<h1 number="4"><span class="header-section-number">4</span> Copy local files</h1>
+<p>필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사</p>
+</div>
+<div id="commit" class="section level1" number="5">
+<h1 number="5"><span class="header-section-number">5</span> Commit</h1>
+<p>git commit</p>
+<pre class="bash"><code>
+PS C:\mydocs\2021\lectures&gt; cd .\researchE2021\
+PS C:\mydocs\2021\lectures\researchE2021&gt; git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        .Rproj.user/
+        ResearchE-lecturenote.Rmd
+        ResearchE-lecturenote.html
+        ResearchE-lecturenote.log
+        ResearchE-lecturenote.pdf
+        ResearchE.Rproj
+        acs-synthetic-biology.csl
+        bibliography.bib
+        git
+        github-page-20210315.Rmd
+        github-page-20210315.html
+        google_scholar_bibtex.JPG
+        google_scholar_search.JPG
+        local-docker-rstudio-shiny-server-setup.Rmd
+        local-docker-rstudio-shiny-server-setup.html
+        material/
+        rmarkdown-reference.pdf
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+
+PS C:\mydocs\2021\lectures\researchE2021&gt; git add .
+PS C:\mydocs\2021\lectures\researchE2021&gt; git commit -m &quot;init repository&quot;
+[main 64d91aa] init repository
+ 50 files changed, 3405 insertions(+)
+ create mode 100644 .Rproj.user/56A26046/persistent-state
+ create mode 100644 .Rproj.user/56A26046/sources/prop/6ECB90B2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/ACF25EE2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/INDEX
+...
+
+PS C:\mydocs\2021\lectures\researchE2021&gt; git push
+fatal: unable to access &#39;https://github.com/greendaygh/researchE2021.git/&#39;: Could not resolve host: github.com
+
+PS C:\mydocs\2021\lectures\researchE2021&gt; git push
+Enumerating objects: 62, done.
+Counting objects: 100% (62/62), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (55/55), done.
+Writing objects: 100% (61/61), 9.30 MiB | 441.00 KiB/s, done.
+Total 61 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/greendaygh/researchE2021.git
+   dab69f9..64d91aa  main -&gt; main</code></pre>
+</div>
+<div id="access-the-page-via-browser" class="section level1" number="6">
+<h1 number="6"><span class="header-section-number">6</span> Access the page via browser</h1>
+<p><a href="https://greendaygh.github.io/researchE2021/github-page-20210315.html" class="uri">https://greendaygh.github.io/researchE2021/github-page-20210315.html</a></p>
 </div>
 
 
