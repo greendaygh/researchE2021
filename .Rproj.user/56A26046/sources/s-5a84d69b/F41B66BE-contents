@@ -1,18 +1,23 @@
 ---
 title: "github page 사용"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    number_sections: true
 ---
 
+# Create Github repository
 
-# github 사용
+[github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
 
 
-* Github repository 생성 - [github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
+# Github page setup
 
-* Github page 설정 - Settings > Options > GitHub Pages 에서 Source를 Main branch로, foldedr는 docs로 설정 후 Save. 
+Settings > Options > GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
 
-* 로컬 컴퓨터에 Clone - Github에서 Clone 주소 복사한 후 로컬에서 clone 수행
+# Clone to local
 
+Github에서 Clone 주소 복사한 후 로컬에서 clone 수행 (git repository 이름이 researchE2021 이라면 해당 이름의 디렉토리가 생성되므로 상위 디렉토리에서 수행해야함)
 
 
 ```{bash, eval=F}
@@ -27,7 +32,81 @@ PS C:\mydocs\2021\lectures>
 ```
 
 
-* 필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사 
+# Copy local files 
+
+필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사 
+
+
+# Commit 
+
+git commit  
+
+
+```{bash, eval=F}
+
+PS C:\mydocs\2021\lectures> cd .\researchE2021\
+PS C:\mydocs\2021\lectures\researchE2021> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .Rproj.user/
+        ResearchE-lecturenote.Rmd
+        ResearchE-lecturenote.html
+        ResearchE-lecturenote.log
+        ResearchE-lecturenote.pdf
+        ResearchE.Rproj
+        acs-synthetic-biology.csl
+        bibliography.bib
+        git
+        github-page-20210315.Rmd
+        github-page-20210315.html
+        google_scholar_bibtex.JPG
+        google_scholar_search.JPG
+        local-docker-rstudio-shiny-server-setup.Rmd
+        local-docker-rstudio-shiny-server-setup.html
+        material/
+        rmarkdown-reference.pdf
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS C:\mydocs\2021\lectures\researchE2021> git add .
+PS C:\mydocs\2021\lectures\researchE2021> git commit -m "init repository"
+[main 64d91aa] init repository
+ 50 files changed, 3405 insertions(+)
+ create mode 100644 .Rproj.user/56A26046/persistent-state
+ create mode 100644 .Rproj.user/56A26046/sources/prop/6ECB90B2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/ACF25EE2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/INDEX
+...
+
+PS C:\mydocs\2021\lectures\researchE2021> git push
+fatal: unable to access 'https://github.com/greendaygh/researchE2021.git/': Could not resolve host: github.com
+
+PS C:\mydocs\2021\lectures\researchE2021> git push
+Enumerating objects: 62, done.
+Counting objects: 100% (62/62), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (55/55), done.
+Writing objects: 100% (61/61), 9.30 MiB | 441.00 KiB/s, done.
+Total 61 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/greendaygh/researchE2021.git
+   dab69f9..64d91aa  main -> main
+```
+
+
+# Access the page via browser 
+
+
+https://greendaygh.github.io/researchE2021/github-page-20210315.html
+
+
+
+
+
 
 
 
