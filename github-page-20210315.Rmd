@@ -1,0 +1,34 @@
+---
+title: "github page 사용"
+output: html_document
+---
+
+
+# github 사용
+
+
+* Github repository 생성 - [github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
+
+* Github page 설정 - Settings > Options > GitHub Pages 에서 Source를 Main branch로, foldedr는 docs로 설정 후 Save. 
+
+* 로컬 컴퓨터에 Clone - Github에서 Clone 주소 복사한 후 로컬에서 clone 수행
+
+
+
+```{bash, eval=F}
+PS C:\mydocs\2021\lectures> git clone https://github.com/greendaygh/researchE2021.git
+Cloning into 'researchE2021'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+PS C:\mydocs\2021\lectures>
+
+```
+
+
+* 필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사 
+
+
+
+
