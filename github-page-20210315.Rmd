@@ -1,10 +1,14 @@
 ---
-title: "github page 사용"
+title: "Github page 사용법"
 output: 
   html_document:
     toc: true
     number_sections: true
 ---
+
+# Create Github account
+
+[github](https://github.com)에서 계정 생성
 
 # Create Github repository
 

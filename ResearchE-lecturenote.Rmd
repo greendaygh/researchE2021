@@ -18,7 +18,8 @@ bibliography: bibliography.bib
 csl: acs-synthetic-biology.csl
 ---
 
-# List of students {-}
+# List of students {.unnumbered}
+
 ```{r, echo=F}
 
 std_name <- c("김승화", "김태현", "박성군", "Aporva", "Georgii", "유병현", "오석진", "허성보", "이진주")
@@ -38,51 +39,53 @@ std <- data.frame(std_name, std_acc, std_email, std_aff)
 knitr::kable(std, format = "markdown")
 ```
 
+# Introduction
 
+### 2021.3.4. 목, 연구동 세미나실 {.unnumbered}
 
+생물학이 물리, 화학 분야와 다른 점 중 하나는 그 대상이 너무 복잡하다는 것임. 합성생물학은 생물학에 공학의 개념을 도입하여 복잡한 생명현상의 원리를 실제 만들어가며 이해하려는 시도임. 공학에서의 대부분의 결과물이 그렇듯 합성생물학 연구는 실제 문제에 대한 해결책을 제시하기 위한 목적을 가지고 있음. 발견과 관찰에 기반한 전통적인 생물학 연구의 패러다임이 합성생물학을 통해 발명으로 전환되었다고 볼 수 있음. 본 현장실습에서는 합성생물학 발전의 원동력이 되었던 iGEM 사례 분석을 통해 다음 세 가지 목표로 수업을 진행함.
 
-# Introduction 
-### 2021.3.4. 목, 연구동 세미나실 {-}
-
-생물학이 물리, 화학 분야와 다른 점 중 하나는 그 대상이 너무 복잡하다는 것임. 합성생물학은 생물학에 공학의 개념을 도입하여 복잡한 생명현상의 원리를 실제 만들어가며 이해하려는 시도임. 공학에서의 대부분의 결과물이 그렇듯 합성생물학 연구는 실제 문제에 대한 해결책을 제시하기 위한 목적을 가지고 있음. 발견과 관찰에 기반한 전통적인 생물학 연구의 패러다임이 합성생물학을 통해 발명으로 전환되었다고 볼 수 있음. 본 현장실습에서는 합성생물학 발전의 원동력이 되었던 iGEM  사례 분석을 통해 다음 세 가지 목표로 수업을 진행함. 
-
- * 합성생물학 개념 정립
- * 사용된 부품/회로들의 정량적 데이터 수집 및 재현성 분석
- * Rmarkdown/Rstudio 활용 능력 학습
+-   합성생물학 개념 정립
+-   사용된 부품/회로들의 정량적 데이터 수집 및 재현성 분석
+-   Rmarkdown/Rstudio 활용 능력 학습
 
 ```{r, fig.align="center", fig.cap=c("강의자료"), echo=FALSE}
 #knitr::include_graphics("material/ResearchE-0304.pdf")
 ```
 
-
 # Reproducability in Biology
-### 2021.3.8. 화, 연구동 소회의실 {-}
 
-생물학에서 실험결과의 낮은 재현성은 생물학 연구의 발전을 저해하는 고질적인 문제임 [@begley2012raise]. 이는 생명체의 복잡성에서 기인한다고 볼 수 있으며 Rmarkdown의 철학 또한 이러한 재현성의 관점에서 해석할 수 있음. 다음은 이러한 Rmarkdown 철학과 필요성에 대한 영상임. 
+### 2021.3.8. 화, 연구동 소회의실 {.unnumbered}
 
+생물학에서 실험결과의 낮은 재현성은 생물학 연구의 발전을 저해하는 고질적인 문제임 [@begley2012raise]. 이는 생명체의 복잡성에서 기인한다고 볼 수 있으며 Rmarkdown의 철학 또한 이러한 재현성의 관점에서 해석할 수 있음. 다음은 이러한 Rmarkdown 철학과 필요성에 대한 영상임.
 
-[Garrett Grolemund | R Markdown The bigger picture | RStudio (2019)](https://www.youtube.com/watch?v=s9aWmU0atlQ&ab_channel=RStudio){target="blank"}
+[Garrett Grolemund \| R Markdown The bigger picture \| RStudio (2019)](https://www.youtube.com/watch?v=s9aWmU0atlQ&ab_channel=RStudio){target="blank"}
 
-Rmakrdown은 Rstudio의 강의를 [링크](https://rmarkdown.rstudio.com/lesson-1.html){target="blank"} 참고하며 Markdown은 Pandoc의 문법을  [링크](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html){target="blank"} 참고. 
-
+Rmakrdown은 Rstudio의 강의를 [링크](https://rmarkdown.rstudio.com/lesson-1.html){target="blank"} 참고하며 Markdown은 Pandoc의 문법을 [링크](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html){target="blank"} 참고.
 
 # Data collection - iGEM teams
-### 2021.3.11. 목 Remotemeeting {-}
+
+### 2021.3.11. 목 Remotemeeting {.unnumbered}
+
 Naver cloud 사용하려 했으나 연구원 정책상 클라우드 사용은 금지되어 있어서 활용 못 함. 우선 각자 개인 PC에 R/Rstudio 설치 요청. 추후 효과적인 자료 공유 방안 고민 필요.
 
-[igem.org](igem.org) 에서 5~10개 팀을 선정하고 각 팀의 이름, 위키페이지, 요약 등을 각자 자유롭게 작성하여 카톡으로 제출. 아래 리스트의 pdf 외 파일 타입은 다른 이름으로 저장하여 확인. 
+[igem.org](igem.org) 에서 5\~10개 팀을 선정하고 각 팀의 이름, 위키페이지, 요약 등을 각자 자유롭게 작성하여 카톡으로 제출. 아래 리스트의 pdf 외 파일 타입은 다른 이름으로 저장하여 확인.
 
+### 정리 파일 {.tabset}
 
-* [2-2 iGEM Team 선정 박성군.pdf](material/2-2 iGEM Team 선정 박성군.pdf){target="blank"}
-* [210311 현장연구_김태현_210311_160543.pdf](material/210311 현장연구_김태현_210311_160543.pdf){target="blank"}
-* [210311 iGEM 팀 선정-이진주.hwp](material/210311 iGEM 팀 선정-이진주.hwp){target="blank"} 
-* [iGEM 유병현.docx](material/iGEM 유병현.docx){target="blank"} 
-* [iGEM_AporvaGupta.xlsx](material/iGEM_AporvaGupta.xlsx){target="blank"} 
-* [iGEM_Georgii.xlsx](material/iGEM_Georgii.xlsx){target="blank"} 
-* [igem_오석진.xlsx](material/igem_오석진.xlsx){target="blank"} 
-* [현장연구 E 210311 수업 김승화.hwp](material/현장연구 E 210311 수업 김승화.hwp){target="blank"} 
-* [iGEM_허성보.xlsx](material/iGEM_허성보.xlsx){target="blank"} 
+#### 원본 {.unnumbered}
 
+-   [2-2 iGEM Team 선정 박성군.pdf](material/2-2%20iGEM%20Team%20선정%20박성군.pdf){target="blank"}
+-   [210311 현장연구_김태현_210311_160543.pdf](material/210311%20현장연구_김태현_210311_160543.pdf){target="blank"}
+-   [210311 iGEM 팀 선정-이진주.hwp](material/210311%20iGEM%20팀%20선정-이진주.hwp){target="blank"}
+-   [iGEM 유병현.docx](material/iGEM%20유병현.docx){target="blank"}
+-   [iGEM_AporvaGupta.xlsx](material/iGEM_AporvaGupta.xlsx){target="blank"}
+-   [iGEM_Georgii.xlsx](material/iGEM_Georgii.xlsx){target="blank"}
+-   [igem_오석진.xlsx](material/igem_오석진.xlsx){target="blank"}
+-   [현장연구 E 210311 수업 김승화.hwp](material/현장연구%20E%20210311%20수업%20김승화.hwp){target="blank"}
+-   [iGEM_허성보.xlsx](material/iGEM_허성보.xlsx){target="blank"}
+
+#### pdf 변환본 {.unnumbered}
 
 ```{r, fig.align="center", fig.cap=c("박성군"), echo=FALSE}
 knitr::include_graphics("material/2-2 iGEM Team 선정 박성군.pdf")
@@ -129,31 +132,30 @@ knitr::include_graphics("material/iGEM_허성보.pdf")
 
 ```
 
-
 # Rmarkdown practice
-### 2021.3.15. 월 Remotemeeting {-}
 
-### 목표 {-}
-* 각자 정리한 iGEM 정리한 테이블을 검토하고 공통적으로 선택한 team이 있을 경우 논의를 통해 조정
-* 본인이 선택한 team에서 사용한 방법 이해
-* 본인이 선택한 team에서 사용한 DNA 부품, 회로 정리
-* Rmarkdown, R 사용법 실습 (아래 참고)
+### 2021.3.15. 월 Remotemeeting {.unnumbered}
 
+### 목표 {.unnumbered}
 
-### 할 일 {-}
-* Rstudio 접속: http://192.168.122.155:8787
-* 주어진 계정 (user02~user10) 으로 로그인 
-* 프로젝트 생성, 프로젝트이름은 ResearchE-userxx
-* Markdown 연습 [링크](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html){target="blank"}
-* Rmakrdown 연습 [링크](https://rmarkdown.rstudio.com/lesson-1.html){target="blank"}
-* 본인이 정리한 iGEM team과 다른 사람이 정리한 iGEM team 비교 
-* 각자 정리한 iGEM 정리한 테이블이 모두 다른 포멧, 내용이나 이를 
+-   각자 정리한 iGEM 정리한 테이블을 검토하고 공통적으로 선택한 team이 있을 경우 논의를 통해 조정
+-   본인이 선택한 team에서 사용한 방법 이해
+-   본인이 선택한 team에서 사용한 DNA 부품, 회로 정리
+-   Rmarkdown, R 사용법 실습 (아래 참고)
 
+### 할 일 {.unnumbered}
 
-### Dataframe {-}
+-   Rstudio 접속: <http://192.168.122.155:8787>
+-   주어진 계정 (user02\~user10) 으로 로그인
+-   프로젝트 생성, 프로젝트이름은 ResearchE-userxx
+-   Markdown 연습 [링크](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html){target="blank"}
+-   Rmakrdown 연습 [링크](https://rmarkdown.rstudio.com/lesson-1.html){target="blank"}
+-   본인이 정리한 iGEM team과 다른 사람이 정리한 iGEM team 비교
+-   각자 정리한 iGEM 정리한 테이블이 모두 다른 포멧, 내용이나 이를
 
-데이터프레임 실습을 위해 다음과 같이 code chunk를 추가함 (Ctrl + Alt + i). 참고로 R 코드를 실행하는 것은 해당 코드에 커서를 위치시키고 창 오른쪽 상단 Run 아이콘을 클릭하거나 단축키 (Ctrl + Enter) 실행. 
+### Dataframe {.unnumbered}
 
+데이터프레임 실습을 위해 다음과 같이 code chunk를 추가함 (Ctrl + Alt + i). 참고로 R 코드를 실행하는 것은 해당 코드에 커서를 위치시키고 창 오른쪽 상단 Run 아이콘을 클릭하거나 단축키 (Ctrl + Enter) 실행.
 
 ```{r}
 
@@ -172,20 +174,35 @@ teamdf
 
 ```
 
-
 # Rmarkdown practice cont.
-### 2021.3.18. 목 Remotemeeting {-}
 
-* 강좌용 github web page  https://greendaygh.github.io/researchE2021/
+### 2021.3.18. 목 Remotemeeting {.unnumbered}
 
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f)
 
+## Github page
 
-### 목표 {-}
-* 각자 정리한 iGEM 정리한 테이블을 검토하고 공통적으로 선택한 team이 있을 경우 논의를 통해 조정
+-   강좌용 github web page <https://greendaygh.github.io/researchE2021/>
 
+## Rstudio 사용법 for Rmarkdown
 
+-   파일 업로드, 다운로드 
+-   visual mode
+-   이미지 넣기
+-   참고문헌 넣기[@Singh2020]
+-   코드블럭
+
+    ``` {.python}
+    a = 2
+    b = 3
+    c = a*b
+    ```
 
 <!-- * [Theme](https://bootswatch.com/3/) -->
+
+## iGEM information on the web
+
+
 
 
 # References
