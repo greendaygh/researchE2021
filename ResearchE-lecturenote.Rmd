@@ -153,7 +153,7 @@ knitr::include_graphics("material/iGEM_허성보.pdf")
 -   본인이 정리한 iGEM team과 다른 사람이 정리한 iGEM team 비교
 -   각자 정리한 iGEM 정리한 테이블이 모두 다른 포멧, 내용이나 이를
 
-### Dataframe {.unnumbered}
+### Data frame {.unnumbered}
 
 데이터프레임 실습을 위해 다음과 같이 code chunk를 추가함 (Ctrl + Alt + i). 참고로 R 코드를 실행하는 것은 해당 코드에 커서를 위치시키고 창 오른쪽 상단 Run 아이콘을 클릭하거나 단축키 (Ctrl + Enter) 실행.
 
@@ -179,10 +179,8 @@ teamdf
 ### 2021.3.18. 목 Remotemeeting {.unnumbered}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f)
+-   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>
 
-## Github page
-
--   강좌용 github web page <https://greendaygh.github.io/researchE2021/>
 
 ## Rstudio 사용법 for Rmarkdown
 
@@ -197,6 +195,11 @@ teamdf
     b = 3
     c = a*b
     ```
+
+## Create GitHub pages 
+
+-   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>
+
 
 <!-- * [Theme](https://bootswatch.com/3/) -->
 
