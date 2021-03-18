@@ -440,6 +440,7 @@ Georgii
 허성보
 </p>
 </div>
+<hr />
 </div>
 </div>
 </div>
@@ -487,6 +488,7 @@ teamdf</code></pre>
 {"columns":[{"label":["teamname"],"name":[1],"type":["chr"],"align":["left"]},{"label":["teamtopic"],"name":[2],"type":["chr"],"align":["left"]},{"label":["teamprobms"],"name":[3],"type":["chr"],"align":["left"]}],"data":[{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"},{"1":"TeamA","2":"TopicA","3":"ProbA"},{"1":"TeamB","2":"TopicB","3":"ProbA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<hr />
 </div>
 </div>
 <div id="rmarkdown-practice-cont." class="section level1" number="5">
@@ -494,18 +496,25 @@ teamdf</code></pre>
 <div id="remotemeeting-2021.3.18.-목" class="section level3 unnumbered">
 <h3 class="unnumbered">Remotemeeting (2021.3.18. 목)</h3>
 <ul>
-<li><a href="https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f">Remotemeeting 링크</a></li>
-<li>강좌용 GitHub web page <a href="https://greendaygh.github.io/researchE2021/" class="uri">https://greendaygh.github.io/researchE2021/</a></li>
+<li><a href="https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f" target="_blank_">Remotemeeting 링크</a></li>
+<li>강좌용 GitHub web page <a href="https://greendaygh.github.io/researchE2021/" target="_blank_">https://greendaygh.github.io/researchE2021/</a></li>
+</ul>
+</div>
+<div id="수업목표" class="section level3 unnumbered">
+<h3 class="unnumbered">수업목표</h3>
+<ul>
+<li>Rstudio 사용법, Rmarkdown 만드는 방법 익히기</li>
+<li>iGEM 팀 정보 (part포함) 정리해서 html 리포트 만들기</li>
+<li>리포트를 pdf로 만들어서 email 제출</li>
 </ul>
 </div>
 <div id="rstudio-사용법-for-rmarkdown" class="section level2" number="5.1">
 <h2 number="5.1"><span class="header-section-number">5.1</span> Rstudio 사용법 for Rmarkdown</h2>
+<p>Rstudio를 사용한 Rmarkdown 만드는 법을 익힙니다. Rstudio는 R언어 외에도 다양한 언어를 이용한 프로그래밍을 지원하며 Rstudio의 철학 중 하나는 Rmarkdown, shiny 등을 활용한 사람들과의 소통입니다. 각자 사용에 익숙해지길 바라며 주요 항목은 다음과 같습니다.</p>
 <ul>
-<li>파일 업로드, 다운로드</li>
-<li>visual mode</li>
-<li>이미지 넣기</li>
-<li>참고문헌 넣기<span class="citation"><sup>2</sup></span></li>
-<li>코드블럭</li>
+<li>Rstudio를 활용한 파일 업로드 및 다운로드 방법</li>
+<li>Rmarkdown 작성을 위한 Visual mode 활용</li>
+<li>Visual model에서 이미지, 참고문헌<span class="citation"><sup>2</sup></span>, 코드블럭 넣기</li>
 </ul>
 <pre class="python"><code>a = 2
 b = 3
@@ -515,11 +524,17 @@ c = a*b</code></pre>
 <h2 number="5.2"><span class="header-section-number">5.2</span> Data frame 실습</h2>
 <div id="vector" class="section level3" number="5.2.1">
 <h3 number="5.2.1"><span class="header-section-number">5.2.1</span> Vector</h3>
+<p>vector는 R의 기본 데이터 구조입니다. numeric vector, logical vector, character vector 등 저장되는 값의 타입에 따라 크게 세가지로 나눌 수 있으며 <code>class()</code> 함수를 이용해서 값의 타입을 알아낼 수 있습니다. <code>Combine function</code>인 <code>c()</code>를 활용하여 만들며 값을 순차적으로 붙여갈 수 있습니다.</p>
 <pre class="r"><code>v1 &lt;- c(1, 2, 3, 4, 5)
-v2 &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)</code></pre>
+v2 &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;)
+class(v1)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>class(v2)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
 </div>
 <div id="data-frame-1" class="section level3" number="5.2.2">
 <h3 number="5.2.2"><span class="header-section-number">5.2.2</span> Data frame</h3>
+<p>데이터프레임은 매트릭스와 같은 형태로 컬럼 하나가 하나의 벡터 변수로서 각 변수들이 다른 모드의 값을 저장할 수 있습니다. $ 기호를 이용하여 각 구성 변수를 참조할 수 있습니다. 컬럼 한 줄이 하나의 변수 이므로 새로운 변수도 컬럼 형태로 붙여 넣을 수 있습니다. 즉, 각 row는 샘플을 나타내고 각 column은 변수를 나타내며 각 변수들이 갖는 샘플의 개수 (row의 길이, vector 의 길이)는 같아야 합니다. R 기반의 데이터 분석에서는 가장 선호되는 데이터 타입이라고 볼 수 있습니다.</p>
 <pre class="r"><code>v_df &lt;- data.frame(v1, v2)
 v_df</code></pre>
 <div data-pagedtable="false">
@@ -527,26 +542,55 @@ v_df</code></pre>
 {"columns":[{"label":["v1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["v2"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"a"},{"1":"2","2":"b"},{"1":"3","2":"c"},{"1":"4","2":"d"},{"1":"5","2":"e"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<pre class="r"><code>class(v_df)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
 <pre class="r"><code>v3 &lt;- c(121, 22, 31, 98, 45)
-v_df &lt;- data.frame(v1, v2, v3)
+v4 &lt;- c(&quot;teamA&quot;, &quot;teamB&quot;, &quot;teamC&quot;, &quot;teamD&quot;, &quot;teamE&quot;)
+v_df &lt;- data.frame(v1, v2, v3, v4)
 v_df</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["v1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["v2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["v3"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"a","3":"121"},{"1":"2","2":"b","3":"22"},{"1":"3","2":"c","3":"31"},{"1":"4","2":"d","3":"98"},{"1":"5","2":"e","3":"45"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["v1"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["v2"],"name":[2],"type":["chr"],"align":["left"]},{"label":["v3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["v4"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"1","2":"a","3":"121","4":"teamA"},{"1":"2","2":"b","3":"22","4":"teamB"},{"1":"3","2":"c","3":"31","4":"teamC"},{"1":"4","2":"d","3":"98","4":"teamD"},{"1":"5","2":"e","3":"45","4":"teamE"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
 </div>
 <div id="create-a-html-page" class="section level2" number="5.3">
 <h2 number="5.3"><span class="header-section-number">5.3</span> Create a html page</h2>
-<p>iGEM 팀 관련 내용</p>
+<p>iGEM 팀 관련 내용 정리해서 rmarkdown으로 html 리포트를 만듭니다. 주로 정리할 내용은 다음과 같습니다.</p>
+<ul>
+<li>팀이름</li>
+<li>소속 조직</li>
+<li>제목</li>
+<li>분류</li>
+<li>wiki page</li>
+<li>해결하고자 하는 문제 (가능한 간단히)</li>
+<li>주요 해결 방법 (가능한 간단히)</li>
+<li>사용한 부품</li>
+<li>vector map</li>
+</ul>
 </div>
-<div id="create-github-pages" class="section level2" number="5.4">
-<h2 number="5.4"><span class="header-section-number">5.4</span> Create GitHub pages</h2>
+<div id="create-a-pdf-file" class="section level2" number="5.4">
+<h2 number="5.4"><span class="header-section-number">5.4</span> Create a pdf file</h2>
+<p>위에서 만든 rmarkdown 리포트를 pdf로 만들어서 제출합니다.</p>
+<hr />
+</div>
+</div>
+<div id="rmarkdown-on-the-web" class="section level1" number="6">
+<h1 number="6"><span class="header-section-number">6</span> Rmarkdown on the web</h1>
+<div id="remotemeeting-2021.3.22.-월" class="section level3 unnumbered">
+<h3 class="unnumbered">Remotemeeting (2021.3.22. 월)</h3>
+<ul>
+<li><a href target="_blank_">Remotemeeting 링크</a></li>
+</ul>
+</div>
+<div id="create-github-pages" class="section level2" number="6.1">
+<h2 number="6.1"><span class="header-section-number">6.1</span> Create GitHub pages</h2>
+<p>GitHub에 webpage를 만드는 연습을 하겠습니다.</p>
 <!-- * [Theme](https://bootswatch.com/3/) -->
 </div>
-<div id="igem-information-on-the-web" class="section level2" number="5.5">
-<h2 number="5.5"><span class="header-section-number">5.5</span> iGEM information on the web</h2>
+<div id="igem-information-on-the-web" class="section level2" number="6.2">
+<h2 number="6.2"><span class="header-section-number">6.2</span> iGEM information on the web</h2>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">

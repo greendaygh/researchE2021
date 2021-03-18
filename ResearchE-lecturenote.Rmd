@@ -132,6 +132,8 @@ knitr::include_graphics("material/iGEM_허성보.pdf")
 
 ```
 
+----
+
 # Rmarkdown practice
 
 ### Remotemeeting (2021.3.15. 월) {.unnumbered}
@@ -174,20 +176,32 @@ teamdf
 
 ```
 
+
+----
+
+
 # Rmarkdown practice cont.
 
 ### Remotemeeting (2021.3.18. 목) {.unnumbered} 
 
--   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f)
--   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff80808178117eb70178405d4c4a283f){target="_blank_"}
+-   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>{target="_blank_"}
+
+
+### 수업목표 {.unnumbered}
+
+-   Rstudio 사용법, Rmarkdown 만드는 방법 익히기
+-   iGEM 팀 정보 (part포함) 정리해서 html 리포트 만들기
+-   리포트를 pdf로 만들어서 email 제출
+
 
 ## Rstudio 사용법 for Rmarkdown
 
--   파일 업로드, 다운로드
--   visual mode
--   이미지 넣기
--   참고문헌 넣기[@Singh2020]
--   코드블럭
+Rstudio를 사용한 Rmarkdown 만드는 법을 익힙니다. Rstudio는 R언어 외에도 다양한 언어를 이용한 프로그래밍을 지원하며 Rstudio의 철학 중 하나는 Rmarkdown, shiny 등을 활용한 사람들과의 소통입니다. 각자 사용에 익숙해지길 바라며 주요 항목은 다음과 같습니다.  
+
+-   Rstudio를 활용한 파일 업로드 및 다운로드 방법
+-   Rmarkdown 작성을 위한 Visual mode 활용
+-   Visual model에서 이미지, 참고문헌[@Singh2020], 코드블럭 넣기
 
 ``` {.python}
 a = 2
@@ -199,34 +213,68 @@ c = a*b
 
 ### Vector 
 
+vector는 R의 기본 데이터 구조입니다. numeric vector, logical vector, character vector 등 저장되는 값의 타입에 따라 크게 세가지로 나눌 수 있으며 `class()` 함수를 이용해서 값의 타입을 알아낼 수 있습니다. `Combine function`인 `c()`를 활용하여 만들며 값을 순차적으로 붙여갈 수 있습니다. 
+
 ```{r}
 v1 <- c(1, 2, 3, 4, 5)
 v2 <- c("a", "b", "c", "d", "e")
+class(v1)
+class(v2)
 ```
 
 
 ### Data frame
 
+데이터프레임은 매트릭스와 같은 형태로 컬럼 하나가 하나의 벡터 변수로서 각 변수들이 다른 모드의 값을 저장할 수 있습니다. $ 기호를 이용하여 각 구성 변수를 참조할 수 있습니다. 컬럼 한 줄이 하나의 변수 이므로 새로운 변수도 컬럼 형태로 붙여 넣을 수 있습니다. 즉, 각 row는 샘플을 나타내고 각 column은 변수를 나타내며 각 변수들이 갖는 샘플의 개수 (row의 길이, vector 의 길이)는 같아야 합니다. R 기반의 데이터 분석에서는 가장 선호되는 데이터 타입이라고 볼 수 있습니다.
+
 ```{r}
 v_df <- data.frame(v1, v2)
 v_df
+class(v_df)
 ```
 
 ```{r}
 v3 <- c(121, 22, 31, 98, 45)
-v_df <- data.frame(v1, v2, v3)
+v4 <- c("teamA", "teamB", "teamC", "teamD", "teamE")
+v_df <- data.frame(v1, v2, v3, v4)
 v_df
 ```
 
 ## Create a html page
 
-iGEM 팀 관련 내용
+iGEM 팀 관련 내용 정리해서 rmarkdown으로 html 리포트를 만듭니다. 주로 정리할 내용은 다음과 같습니다. 
 
+-   팀이름
+-   소속 조직
+-   제목
+-   분류
+-   wiki page
+-   해결하고자 하는 문제 (가능한 간단히)
+-   주요 해결 방법 (가능한 간단히)
+-   사용한 부품
+-   vector map 
+
+
+## Create a pdf file 
+
+위에서 만든 rmarkdown 리포트를 pdf로 만들어서 제출합니다. 
+
+----
+
+# Rmarkdown on the web
+
+### Remotemeeting (2021.3.22. 월) {.unnumbered} 
+
+-   [Remotemeeting 링크](){target="_blank_"}
 
 ## Create GitHub pages
+
+GitHub에 webpage를 만드는 연습을 하겠습니다. 
 
 <!-- * [Theme](https://bootswatch.com/3/) -->
 
 ## iGEM information on the web
+
+
 
 # References
