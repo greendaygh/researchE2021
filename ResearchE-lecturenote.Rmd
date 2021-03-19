@@ -75,60 +75,60 @@ Naver cloud 사용하려 했으나 연구원 정책상 클라우드 사용은 �
 
 #### 원본 {.unnumbered}
 
--   [2-2 iGEM Team 선정 박성군.pdf](material/2-2%20iGEM%20Team%20선정%20박성군.pdf){target="blank"}
--   [210311 현장연구_김태현_210311_160543.pdf](material/210311%20현장연구_김태현_210311_160543.pdf){target="blank"}
--   [210311 iGEM 팀 선정-이진주.hwp](material/210311%20iGEM%20팀%20선정-이진주.hwp){target="blank"}
--   [iGEM 유병현.docx](material/iGEM%20유병현.docx){target="blank"}
--   [iGEM_AporvaGupta.xlsx](material/iGEM_AporvaGupta.xlsx){target="blank"}
--   [iGEM_Georgii.xlsx](material/iGEM_Georgii.xlsx){target="blank"}
--   [igem_오석진.xlsx](material/igem_오석진.xlsx){target="blank"}
--   [현장연구 E 210311 수업 김승화.hwp](material/현장연구%20E%20210311%20수업%20김승화.hwp){target="blank"}
--   [iGEM_허성보.xlsx](material/iGEM_허성보.xlsx){target="blank"}
+-   [2-2 iGEM Team 선정 박성군.pdf](material/210311/2-2%20iGEM%20Team%20선정%20박성군.pdf){target="blank"}
+-   [210311 현장연구_김태현_210311_160543.pdf](material/210311/210311%20현장연구_김태현_210311_160543.pdf){target="blank"}
+-   [210311 iGEM 팀 선정-이진주.hwp](material/210311/210311%20iGEM%20팀%20선정-이진주.hwp){target="blank"}
+-   [iGEM 유병현.docx](material/210311/iGEM%20유병현.docx){target="blank"}
+-   [iGEM_AporvaGupta.xlsx](material/210311/iGEM_AporvaGupta.xlsx){target="blank"}
+-   [iGEM_Georgii.xlsx](material/210311/iGEM_Georgii.xlsx){target="blank"}
+-   [igem_오석진.xlsx](material/210311/igem_오석진.xlsx){target="blank"}
+-   [현장연구 E 210311 수업 김승화.hwp](material/210311/현장연구%20E%20210311%20수업%20김승화.hwp){target="blank"}
+-   [iGEM_허성보.xlsx](material/210311/iGEM_허성보.xlsx){target="blank"}
 
 #### pdf 변환본 {.unnumbered}
 
 ```{r, fig.align="center", fig.cap=c("박성군"), echo=FALSE}
-knitr::include_graphics("material/2-2 iGEM Team 선정 박성군.pdf")
+knitr::include_graphics("material/210311/2-2 iGEM Team 선정 박성군.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("김태현"), echo=FALSE}
-knitr::include_graphics("material/210311 현장연구_김태현_210311_160543.pdf")
+knitr::include_graphics("material/210311/210311 현장연구_김태현_210311_160543.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("이진주"), echo=FALSE}
-knitr::include_graphics("material/210311 iGEM 팀 선정-이진주.pdf")
+knitr::include_graphics("material/210311/210311 iGEM 팀 선정-이진주.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("유병현"), echo=FALSE}
-knitr::include_graphics("material/iGEM 유병현.pdf")
+knitr::include_graphics("material/210311/iGEM 유병현.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("Aporva"), echo=FALSE}
-knitr::include_graphics("material/iGEM_AporvaGupta.pdf")
+knitr::include_graphics("material/210311/iGEM_AporvaGupta.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("Georgii"), echo=FALSE}
-knitr::include_graphics("material/iGEM_Georgii.pdf")
+knitr::include_graphics("material/210311/iGEM_Georgii.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("오석진"), echo=FALSE}
-knitr::include_graphics("material/igem_오석진.pdf")
+knitr::include_graphics("material/210311/igem_오석진.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("김승화"), echo=FALSE}
-knitr::include_graphics("material/현장연구 E 210311 수업 김승화.pdf")
+knitr::include_graphics("material/210311/현장연구 E 210311 수업 김승화.pdf")
 
 ```
 
 ```{r, fig.align="center", fig.cap=c("허성보"), echo=FALSE}
-knitr::include_graphics("material/iGEM_허성보.pdf")
+knitr::include_graphics("material/210311/iGEM_허성보.pdf")
 
 ```
 
