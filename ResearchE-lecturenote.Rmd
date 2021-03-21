@@ -265,11 +265,13 @@ iGEM 팀 관련 내용 정리해서 rmarkdown으로 html 리포트를 만듭니�
 
 ### Remotemeeting (2021.3.22. 월) {.unnumbered} 
 
--   [Remotemeeting 링크](){target="_blank_"}
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad678114c4c01785595a4e231a8){target="_blank_"}
 
 ## Create GitHub pages
 
 GitHub에 webpage를 만드는 연습을 하겠습니다. 
+
+[github-page-20210315.html](github-page-20210315.html)
 
 <!-- * [Theme](https://bootswatch.com/3/) -->
 
