@@ -167,9 +167,7 @@ https://greendaygh.github.io/researchE2021/github-page-20210315.html
 greendaygh.github.io는 ID마다 주어지는 웹주소, researchE2021은 repository 이름, html 파일은 rmd 컴파일된 파일. 
 
 
-
-
-
+## Build your private repository
 
 
 
