@@ -6,20 +6,44 @@ output:
     number_sections: true
 ---
 
-# Create Github account
+# An overview of Version Control Systems (VCS) {#vcs}
+
+* Git 은 VCS의 한 종류로서 특정 파일의 버전을 저장하고 관리해주는 시스템
+* [github](https://github.com) 사용
+
+## Example
+
+* Writing a paper script
+* Initial write in a file "my_script_210322.doc"
+* Update the file with a name of "my_script_210322_update.doc"
+* Disadvantages 
+  * Changes in each version
+  * No good with multiple files
+  * Merging 
+  * etc..
+
+# Git overview
+
+* http://git-scm.com/book/en/v2
+* http://eriqande.github.io/rep-res-web/lectures/git-basics.html#git-basics
+
+
+# Github page 만들기
+
+## Create Github account
 
 [github](https://github.com)에서 계정 생성
 
-# Create Github repository
+## Create Github repository
 
 [github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
 
 
-# Github page setup
+## Github page setup
 
 Settings > Options > GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
 
-# Clone to local
+## Clone to local
 
 Github에서 Clone 주소 복사한 후 로컬에서 clone 수행 (git repository 이름이 researchE2021 이라면 해당 이름의 디렉토리가 생성되므로 상위 디렉토리에서 수행해야함)
 
@@ -36,12 +60,22 @@ PS C:\mydocs\2021\lectures>
 ```
 
 
-# Copy local files 
+## Copy local files to the cloned directory
 
 필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사 
 
 
-# Commit 
+## Configuration with user information
+
+`Terminal` 텝에서 다음 입력
+
+```
+git config --global user.name "username"
+git config --global user.email my@email.address
+```
+
+
+## Commit 
 
 git commit  
 
@@ -102,7 +136,18 @@ To https://github.com/greendaygh/researchE2021.git
 ```
 
 
-# Access the page via browser 
+## Git in Rstudio
+
+* Git tab
+* check-box 클릭으로 stage/unstage   
+    + __Blue-M__: a file that is already under version control that has been modified.
+    + __Orange-?__: a file that is not under version control
+    + __Green-A__: a file that was not under version control, but which has been staged to be committed.
+    + __Red-D__: a file under version control has been deleted.  To make it really disappear, you have to stage its disappearance and commit.
+    + __Purple-R__ a file that was renamed.  (Note that git in Rstudio seems to be figuring this out on its own.)
+
+
+## Access the page via browser 
 
 
 https://greendaygh.github.io/researchE2021/github-page-20210315.html

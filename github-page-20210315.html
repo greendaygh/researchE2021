@@ -169,30 +169,71 @@ pre code {
 
 <div id="TOC">
 <ul>
-<li><a href="#create-github-account"><span class="toc-section-number">1</span> Create Github account</a></li>
-<li><a href="#create-github-repository"><span class="toc-section-number">2</span> Create Github repository</a></li>
-<li><a href="#github-page-setup"><span class="toc-section-number">3</span> Github page setup</a></li>
-<li><a href="#clone-to-local"><span class="toc-section-number">4</span> Clone to local</a></li>
-<li><a href="#copy-local-files"><span class="toc-section-number">5</span> Copy local files</a></li>
-<li><a href="#commit"><span class="toc-section-number">6</span> Commit</a></li>
-<li><a href="#access-the-page-via-browser"><span class="toc-section-number">7</span> Access the page via browser</a></li>
+<li><a href="#vcs"><span class="toc-section-number">1</span> An overview of Version Control Systems (VCS)</a>
+<ul>
+<li><a href="#example"><span class="toc-section-number">1.1</span> Example</a></li>
+</ul></li>
+<li><a href="#git-overview"><span class="toc-section-number">2</span> Git overview</a></li>
+<li><a href="#github-page-만들기"><span class="toc-section-number">3</span> Github page 만들기</a>
+<ul>
+<li><a href="#create-github-account"><span class="toc-section-number">3.1</span> Create Github account</a></li>
+<li><a href="#create-github-repository"><span class="toc-section-number">3.2</span> Create Github repository</a></li>
+<li><a href="#github-page-setup"><span class="toc-section-number">3.3</span> Github page setup</a></li>
+<li><a href="#clone-to-local"><span class="toc-section-number">3.4</span> Clone to local</a></li>
+<li><a href="#copy-local-files-to-the-cloned-directory"><span class="toc-section-number">3.5</span> Copy local files to the cloned directory</a></li>
+<li><a href="#configuration-with-user-information"><span class="toc-section-number">3.6</span> Configuration with user information</a></li>
+<li><a href="#commit"><span class="toc-section-number">3.7</span> Commit</a></li>
+<li><a href="#git-in-rstudio"><span class="toc-section-number">3.8</span> Git in Rstudio</a></li>
+<li><a href="#access-the-page-via-browser"><span class="toc-section-number">3.9</span> Access the page via browser</a></li>
+</ul></li>
 </ul>
 </div>
 
-<div id="create-github-account" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Create Github account</h1>
+<div id="vcs" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> An overview of Version Control Systems (VCS)</h1>
+<ul>
+<li>Git 은 VCS의 한 종류로서 특정 파일의 버전을 저장하고 관리해주는 시스템</li>
+<li><a href="https://github.com">github</a> 사용</li>
+</ul>
+<div id="example" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Example</h2>
+<ul>
+<li>Writing a paper script</li>
+<li>Initial write in a file “my_script_210322.doc”</li>
+<li>Update the file with a name of “my_script_210322_update.doc”</li>
+<li>Disadvantages
+<ul>
+<li>Changes in each version</li>
+<li>No good with multiple files</li>
+<li>Merging</li>
+<li>etc..</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="git-overview" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Git overview</h1>
+<ul>
+<li><a href="http://git-scm.com/book/en/v2" class="uri">http://git-scm.com/book/en/v2</a></li>
+<li><a href="http://eriqande.github.io/rep-res-web/lectures/git-basics.html#git-basics" class="uri">http://eriqande.github.io/rep-res-web/lectures/git-basics.html#git-basics</a></li>
+</ul>
+</div>
+<div id="github-page-만들기" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Github page 만들기</h1>
+<div id="create-github-account" class="section level2" number="3.1">
+<h2 number="3.1"><span class="header-section-number">3.1</span> Create Github account</h2>
 <p><a href="https://github.com">github</a>에서 계정 생성</p>
 </div>
-<div id="create-github-repository" class="section level1" number="2">
-<h1 number="2"><span class="header-section-number">2</span> Create Github repository</h1>
+<div id="create-github-repository" class="section level2" number="3.2">
+<h2 number="3.2"><span class="header-section-number">3.2</span> Create Github repository</h2>
 <p><a href="https://github.com">github</a>에 로그인 후 Repository 생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료</p>
 </div>
-<div id="github-page-setup" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> Github page setup</h1>
+<div id="github-page-setup" class="section level2" number="3.3">
+<h2 number="3.3"><span class="header-section-number">3.3</span> Github page setup</h2>
 <p>Settings &gt; Options &gt; GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save.</p>
 </div>
-<div id="clone-to-local" class="section level1" number="4">
-<h1 number="4"><span class="header-section-number">4</span> Clone to local</h1>
+<div id="clone-to-local" class="section level2" number="3.4">
+<h2 number="3.4"><span class="header-section-number">3.4</span> Clone to local</h2>
 <p>Github에서 Clone 주소 복사한 후 로컬에서 clone 수행 (git repository 이름이 researchE2021 이라면 해당 이름의 디렉토리가 생성되므로 상위 디렉토리에서 수행해야함)</p>
 <pre class="bash"><code>PS C:\mydocs\2021\lectures&gt; git clone https://github.com/greendaygh/researchE2021.git
 Cloning into &#39;researchE2021&#39;...
@@ -203,12 +244,18 @@ Unpacking objects: 100% (3/3), done.
 PS C:\mydocs\2021\lectures&gt;
 </code></pre>
 </div>
-<div id="copy-local-files" class="section level1" number="5">
-<h1 number="5"><span class="header-section-number">5</span> Copy local files</h1>
+<div id="copy-local-files-to-the-cloned-directory" class="section level2" number="3.5">
+<h2 number="3.5"><span class="header-section-number">3.5</span> Copy local files to the cloned directory</h2>
 <p>필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사</p>
 </div>
-<div id="commit" class="section level1" number="6">
-<h1 number="6"><span class="header-section-number">6</span> Commit</h1>
+<div id="configuration-with-user-information" class="section level2" number="3.6">
+<h2 number="3.6"><span class="header-section-number">3.6</span> Configuration with user information</h2>
+<p><code>Terminal</code> 텝에서 다음 입력</p>
+<pre><code>git config --global user.name &quot;username&quot;
+git config --global user.email my@email.address</code></pre>
+</div>
+<div id="commit" class="section level2" number="3.7">
+<h2 number="3.7"><span class="header-section-number">3.7</span> Commit</h2>
 <p>git commit</p>
 <pre class="bash"><code>
 PS C:\mydocs\2021\lectures&gt; cd .\researchE2021\
@@ -263,10 +310,25 @@ remote: Resolving deltas: 100% (8/8), done.
 To https://github.com/greendaygh/researchE2021.git
    dab69f9..64d91aa  main -&gt; main</code></pre>
 </div>
-<div id="access-the-page-via-browser" class="section level1" number="7">
-<h1 number="7"><span class="header-section-number">7</span> Access the page via browser</h1>
+<div id="git-in-rstudio" class="section level2" number="3.8">
+<h2 number="3.8"><span class="header-section-number">3.8</span> Git in Rstudio</h2>
+<ul>
+<li>Git tab</li>
+<li>check-box 클릭으로 stage/unstage
+<ul>
+<li><strong>Blue-M</strong>: a file that is already under version control that has been modified.</li>
+<li><strong>Orange-?</strong>: a file that is not under version control</li>
+<li><strong>Green-A</strong>: a file that was not under version control, but which has been staged to be committed.</li>
+<li><strong>Red-D</strong>: a file under version control has been deleted. To make it really disappear, you have to stage its disappearance and commit.</li>
+<li><strong>Purple-R</strong> a file that was renamed. (Note that git in Rstudio seems to be figuring this out on its own.)</li>
+</ul></li>
+</ul>
+</div>
+<div id="access-the-page-via-browser" class="section level2" number="3.9">
+<h2 number="3.9"><span class="header-section-number">3.9</span> Access the page via browser</h2>
 <p><a href="https://greendaygh.github.io/researchE2021/github-page-20210315.html" class="uri">https://greendaygh.github.io/researchE2021/github-page-20210315.html</a></p>
 <p>greendaygh.github.io는 ID마다 주어지는 웹주소, researchE2021은 repository 이름, html 파일은 rmd 컴파일된 파일.</p>
+</div>
 </div>
 
 
