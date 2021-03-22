@@ -292,7 +292,7 @@ github.page <- c("https://hayleykim97.github.io/ResearchE/",
                  "https://yoo-bh.github.io/researchE/",
                  "https://seokjin-oh.github.io/researchE/",
                  "https://treebird19.github.io/researchE/",
-                 "https://github.com/JinjuLee119/JJ"
+                 "https://JinjuLee119.github.com/JJ/"
                  )
 std <- data.frame(std_name, std_email, github.page)
 knitr::kable(std, format = "markdown")
