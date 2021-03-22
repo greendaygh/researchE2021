@@ -2,8 +2,14 @@
 title: "Github page 사용법"
 output: 
   html_document:
+    theme: readable
+    highlight: tango
     toc: true
+    toc_depth: 1
+    toc_float: true
     number_sections: true
+    df_print: paged
+    
 ---
 
 # An overview of Version Control Systems (VCS) {#vcs}
@@ -74,10 +80,25 @@ git config --global user.name "username"
 git config --global user.email my@email.address
 ```
 
+## Git in Rstudio
 
-## Commit 
+* Git tab
+* check-box 클릭으로 stage/unstage   
+    + __Blue-M__: a file that is already under version control that has been modified.
+    + __Orange-?__: a file that is not under version control
+    + __Green-A__: a file that was not under version control, but which has been staged to be committed.
+    + __Red-D__: a file under version control has been deleted.  To make it really disappear, you have to stage its disappearance and commit.
+    + __Purple-R__ a file that was renamed.  (Note that git in Rstudio seems to be figuring this out on its own.)
 
-git commit  
+
+
+## Commit in Terminal 
+
+```
+git add .
+git commit -m "update"
+git push
+```
 
 
 ```{bash, eval=F}
@@ -136,15 +157,6 @@ To https://github.com/greendaygh/researchE2021.git
 ```
 
 
-## Git in Rstudio
-
-* Git tab
-* check-box 클릭으로 stage/unstage   
-    + __Blue-M__: a file that is already under version control that has been modified.
-    + __Orange-?__: a file that is not under version control
-    + __Green-A__: a file that was not under version control, but which has been staged to be committed.
-    + __Red-D__: a file under version control has been deleted.  To make it really disappear, you have to stage its disappearance and commit.
-    + __Purple-R__ a file that was renamed.  (Note that git in Rstudio seems to be figuring this out on its own.)
 
 
 ## Access the page via browser 

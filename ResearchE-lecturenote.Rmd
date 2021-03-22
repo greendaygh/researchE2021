@@ -5,7 +5,7 @@ author: "합성생물학전문연구단 김하성"
 output:
   html_document: 
     theme: readable
-    #highlight: tango
+    highlight: tango
     toc: true
     toc_depth: 1
     toc_float: true
@@ -274,9 +274,9 @@ iGEM 팀 관련 내용 정리해서 rmarkdown으로 html 리포트를 만듭니�
 
 ### 수업목표 {.unnumbered}
 
--   (계속) Rstudio 사용법, Rmarkdown 만드는 방법 익히기
+-   (계속) Rstudio 사용법, Rmarkdown 만드는 방법 익히기, Git 사용법 익히기
 -   Github page 만들기
--   Git 사용법 익히기
+-   Github page 주소 이메일로 전달
 
 ## Create GitHub pages
 
