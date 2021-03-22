@@ -299,7 +299,7 @@ knitr::kable(std, format = "markdown")
 
 ```
 
-
+ 
 <!-- * [Theme](https://bootswatch.com/3/) -->
 
 # References
