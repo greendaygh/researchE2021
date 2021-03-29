@@ -387,7 +387,7 @@ knitr::kable(std, format = "markdown")
 
 -   (계속) Rstudio 사용법, Rmarkdown 만드는 방법 익히기, Git 사용법 익히기
 -   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 계속 (완료하지 못 한 경우)
--   본인이 조사했던 igem team 및 part 정보 웹에 올리기
+-   본인이 조사했던 igem team 및 part 정보를 2개 테이블 (iGEM_team, iGEM_part)로 만들어서 웹에 올리기
 
 ## igemE 페이지 완성 
 
@@ -415,10 +415,10 @@ knitr::kable(std, format = "markdown")
 ## iGEM part Rmarkdown 페이지 만들기 
 
 - igem_part.Rmd 라는 새로운 파일 생성
-- 이 파일에 다음과 같은 형식으로 2개의 테이블 생성
+- 이 파일에 다음과 같은 형식으로 2개의 테이블 (iGEM_team, iGEM_part) 생성
 - 완성 후 Knit 이용 html 페이지 생성
 
-### igem_team 테이블
+### iGEM_team 테이블
 
 ```{r}
 no <- c(1, 2)
@@ -440,47 +440,37 @@ igem_team <- data.frame(no,
 knitr::kable(igem_team)
 ```
 
-
-### iGEM part 테이블
-
-```{r}
-no <- c(1, 2)
-team_name <- c("Queens-Canada", 
-               "Tainan")
-project_title <- c("Velcrion",
-                   "Oh_My_Gut")
-project_year <- c(2020, 
-                  2019)
-wiki_page <- c("https://2020.igem.org/Team:Queens_Canada",
-               "https://2019.igem.org/Team:NCKU_Tainan")
-
-igem_team <- data.frame(no, 
-                        team_name, 
-                        project_title, 
-                        project_year, 
-                        wiki_page)
-knitr::kable(igem_team)
-```
-
-
-### igem_part 테이블
+### iGEM_part 테이블
 
 ```{r}
+no <- c(1, 2, 3)
 
 part_id <- c("BBa_K2259000", 
              "BBa_K2259010",
              "BBa_K2259092")
+part_name <- c("SynORI framework RNA II - Replication Initiator (Group A)",
+               "Rop protein - global copy number inhibitor (SynORI framework)",
+               "Minimal base vector for SynORI system building")
 part_type <- c("Prject",
                "Coding",
                "Plasmid")
 team_id <- c(2, 2, 2)
 
-igem_part <- data.frame(part_id, 
+igem_part <- data.frame(no,
+                        part_id, 
+                        part_name,
                         part_type, 
                         team_id)
 
 knitr::kable(igem_part)
 ```
+
+
+part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이틀이며 team_id는 앞서 iGEM_team 테이블의 해당팀의 no를 넣음. 
+
+![Part Name](partname.JPG)
+
+
 
 
 
@@ -490,9 +480,9 @@ knitr::kable(igem_part)
 
         [iGEM part](igem_part.html)
 
-- Git add 및 commit 
-- Git push 
-- igemE 페이지 확인 
+- Git add 및 commit (Local repository)
+- Git push (Remote repository)
+- igemE 웹페이지 확인 
 
 
 
