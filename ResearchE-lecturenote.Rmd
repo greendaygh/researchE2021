@@ -486,7 +486,7 @@ part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이
 
 
 
-# iGEM 부품 분석
+# iGEM 부품 사용 사례 분석
 
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178892794ec044e){target="_blank_"}
@@ -496,10 +496,11 @@ part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이
 ## 수업목표 (2021.4.01. 목) 
 
 -   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 완료 (완료하지 못 한 경우)
--   igem에서 사용된 promoter 10종에 대해서  [Most_Used_Promoters](http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters) 각자 하루 2개씩 분석 
+-   igem에서 사용된 promoter 10종에 대해서  [Most_Used_Promoters](http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters) 각자 할당된 프로모터에 대해서 1개 experience (igem 팀사례) 분석 
+-   프로모터의 정량적 특성을 파악하기 위해 해당 프로모터에 의해서 형광 또는 발색 Reporter가 발현하는 사례를 위주로 탐색하고 정리 
 
 
-## igemE 페이지 
+## igemE 페이지 및 할당 프로모터 
 
 
 ```{r, eval=T}
@@ -513,14 +514,24 @@ igeme.page <- c("https://hayleykim97.github.io/igemE/",
                  "https://treebird19.github.io/igemE/",
                  "https://jinjulee119.github.io/igemE2/"
                  )
-std <- data.frame(std_name, igeme.page)
+promoters <- c("BBa_R0040", "BBa_R0010", "BBa_J23100",
+               "BBa_R0011", "BBa_I0500", "BBa_J23101",
+               "BBa_R0051", "BBa_J23119", "BBa_R0062")
+std <- data.frame(std_name, igeme.page, promoters)
 knitr::kable(std, format = "markdown")
 
 ```
 
 ## create Promoter.Rmd file
 
+새로운 Promoter.Rmd 파일을 만들고 할당된 프로모터의 사례를 한 가지 찾아 정리함. 이를 위해서 해당 프로모터를 사용한 팀들의 문서 (정보)를 공부하고 다음 정보를 뽑아낼 필요가 있음. 
 
+-  해당 팀 정보 (지난시간 만든 테이블)
+-  사용한 부품 및 회로 정보 (지난 시간 만든 테이블에 회로 포함)
+-  회로 만드는 프로토콜 정보 (추가 테이블)
+-  리포터 발현 배양/실험 조건 및 측정 방법 (추가 테이블)
+
+각 테이블에 어떤 정보가 들어가야 할지는 고민해 보기 바람. 예를 들어 리포터 발현 배양 조건에 온도, 배양 시간 등.
 
 
 # References

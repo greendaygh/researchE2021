@@ -975,8 +975,8 @@ div.tocify {
 </ul>
 </div>
 </div>
-<div id="igem-부품-분석" class="section level1" number="9">
-<h1 number="9"><span class="header-section-number">9</span> iGEM 부품 분석</h1>
+<div id="igem-부품-사용-사례-분석" class="section level1" number="9">
+<h1 number="9"><span class="header-section-number">9</span> iGEM 부품 사용 사례 분석</h1>
 <ul>
 <li><a href="https://www.remotemeeting.com/reservation/share/ff808081788431680178892794ec044e" target="_blank_">Remotemeeting 링크</a></li>
 <li>강좌용 GitHub web page <a href="https://greendaygh.github.io/researchE2021/" class="uri">https://greendaygh.github.io/researchE2021/</a></li>
@@ -985,11 +985,12 @@ div.tocify {
 <h2 number="9.1"><span class="header-section-number">9.1</span> 수업목표 (2021.4.01. 목)</h2>
 <ul>
 <li>지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 완료 (완료하지 못 한 경우)</li>
-<li>igem에서 사용된 promoter 10종에 대해서 <a href="http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters">Most_Used_Promoters</a> 각자 하루 2개씩 분석</li>
+<li>igem에서 사용된 promoter 10종에 대해서 <a href="http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters">Most_Used_Promoters</a> 각자 할당된 프로모터에 대해서 1개 experience (igem 팀사례) 분석</li>
+<li>프로모터의 정량적 특성을 파악하기 위해 해당 프로모터에 의해서 형광 또는 발색 Reporter가 발현하는 사례를 위주로 탐색하고 정리</li>
 </ul>
 </div>
-<div id="igeme-페이지" class="section level2" number="9.2">
-<h2 number="9.2"><span class="header-section-number">9.2</span> igemE 페이지</h2>
+<div id="igeme-페이지-및-할당-프로모터" class="section level2" number="9.2">
+<h2 number="9.2"><span class="header-section-number">9.2</span> igemE 페이지 및 할당 프로모터</h2>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>igeme.page <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://hayleykim97.github.io/igemE/&quot;</span>,</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://th-kim310.github.io/igemE/&quot;</span>,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://Lelp27.github.io/igemE/&quot;</span>,</span>
@@ -1000,57 +1001,78 @@ div.tocify {
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://treebird19.github.io/igemE/&quot;</span>,</span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://jinjulee119.github.io/igemE2/&quot;</span></span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                 )</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>std <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(std_name, igeme.page)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(std, <span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>promoters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BBa_R0040&quot;</span>, <span class="st">&quot;BBa_R0010&quot;</span>, <span class="st">&quot;BBa_J23100&quot;</span>,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0011&quot;</span>, <span class="st">&quot;BBa_I0500&quot;</span>, <span class="st">&quot;BBa_J23101&quot;</span>,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0051&quot;</span>, <span class="st">&quot;BBa_J23119&quot;</span>, <span class="st">&quot;BBa_R0062&quot;</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>std <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(std_name, igeme.page, promoters)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(std, <span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="left">std_name</th>
 <th align="left">igeme.page</th>
+<th align="left">promoters</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">김승화</td>
 <td align="left"><a href="https://hayleykim97.github.io/igemE/" class="uri">https://hayleykim97.github.io/igemE/</a></td>
+<td align="left">BBa_R0040</td>
 </tr>
 <tr class="even">
 <td align="left">김태현</td>
 <td align="left"><a href="https://th-kim310.github.io/igemE/" class="uri">https://th-kim310.github.io/igemE/</a></td>
+<td align="left">BBa_R0010</td>
 </tr>
 <tr class="odd">
 <td align="left">박성군</td>
 <td align="left"><a href="https://Lelp27.github.io/igemE/" class="uri">https://Lelp27.github.io/igemE/</a></td>
+<td align="left">BBa_J23100</td>
 </tr>
 <tr class="even">
 <td align="left">Aporva</td>
 <td align="left"><a href="https://aputron.github.io/igemE/" class="uri">https://aputron.github.io/igemE/</a></td>
+<td align="left">BBa_R0011</td>
 </tr>
 <tr class="odd">
 <td align="left">Georgii</td>
 <td align="left"><a href="https://gpemelianov.github.io/igemE/" class="uri">https://gpemelianov.github.io/igemE/</a></td>
+<td align="left">BBa_I0500</td>
 </tr>
 <tr class="even">
 <td align="left">유병현</td>
 <td align="left"><a href="https://yoo-bh.github.io/igemE/" class="uri">https://yoo-bh.github.io/igemE/</a></td>
+<td align="left">BBa_J23101</td>
 </tr>
 <tr class="odd">
 <td align="left">오석진</td>
 <td align="left"><a href="https://seokjin-oh.github.io/igemE/" class="uri">https://seokjin-oh.github.io/igemE/</a></td>
+<td align="left">BBa_R0051</td>
 </tr>
 <tr class="even">
 <td align="left">허성보</td>
 <td align="left"><a href="https://treebird19.github.io/igemE/" class="uri">https://treebird19.github.io/igemE/</a></td>
+<td align="left">BBa_J23119</td>
 </tr>
 <tr class="odd">
 <td align="left">이진주</td>
 <td align="left"><a href="https://jinjulee119.github.io/igemE2/" class="uri">https://jinjulee119.github.io/igemE2/</a></td>
+<td align="left">BBa_R0062</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="create-promoter.rmd-file" class="section level2" number="9.3">
 <h2 number="9.3"><span class="header-section-number">9.3</span> create Promoter.Rmd file</h2>
+<p>새로운 Promoter.Rmd 파일을 만들고 할당된 프로모터의 사례를 한 가지 찾아 정리함. 이를 위해서 해당 프로모터를 사용한 팀들의 문서 (정보)를 공부하고 다음 정보를 뽑아낼 필요가 있음.</p>
+<ul>
+<li>해당 팀 정보 (지난시간 만든 테이블)</li>
+<li>사용한 부품 및 회로 정보 (지난 시간 만든 테이블에 회로 포함)</li>
+<li>회로 만드는 프로토콜 정보 (추가 테이블)</li>
+<li>리포터 발현 배양/실험 조건 및 측정 방법 (추가 테이블)</li>
+</ul>
+<p>각 테이블에 어떤 정보가 들어가야 할지는 고민해 보기 바람. 예를 들어 리포터 발현 배양 조건에 온도, 배양 시간 등.</p>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
