@@ -420,7 +420,7 @@ knitr::kable(std, format = "markdown")
 
 ### iGEM_team 테이블
 
-```{r}
+```{r, eval=F}
 no <- c(1, 2)
 team_name <- c("Queens-Canada", 
                "Tainan")
@@ -486,17 +486,41 @@ part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이
 
 
 
-# igemE 페이지 업데이트
+# iGEM 부품 분석
 
-### 수업목표 (2021.4.01. 목) {.unnumbered}
 
--   (계속) Rstudio 사용법, Rmarkdown 만드는 방법 익히기, Git 사용법 익히기
--   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 계속 (완료하지 못 한 경우)
--   본인이 조사했던 igem team 및 part 정보를 2개 테이블 (iGEM_team, iGEM_part)로 만들어서 웹에 올리기
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178892794ec044e){target="_blank_"}
+-   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>
 
-## igemE 페이지 완성 
 
-완료하지 못 한 학생의 경우 지난 시간 자료 참고해서 완성. 강사가 직접 다니며 검토 가능. 
+## 수업목표 (2021.4.01. 목) 
+
+-   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 완료 (완료하지 못 한 경우)
+-   igem에서 사용된 promoter 10종에 대해서  [Most_Used_Promoters](http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters) 각자 하루 2개씩 분석 
+
+
+## igemE 페이지 
+
+
+```{r, eval=T}
+igeme.page <- c("https://hayleykim97.github.io/igemE/",
+                 "https://th-kim310.github.io/igemE/",
+                 "https://Lelp27.github.io/igemE/",
+                 "https://aputron.github.io/igemE/",
+                 "https://gpemelianov.github.io/igemE/",
+                 "https://yoo-bh.github.io/igemE/",
+                 "https://seokjin-oh.github.io/igemE/",
+                 "https://treebird19.github.io/igemE/",
+                 "https://jinjulee119.github.io/igemE2/"
+                 )
+std <- data.frame(std_name, igeme.page)
+knitr::kable(std, format = "markdown")
+
+```
+
+## create Promoter.Rmd file
+
+
 
 
 # References

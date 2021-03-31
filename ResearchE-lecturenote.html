@@ -893,33 +893,6 @@ div.tocify {
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                        wiki_page)</span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(std, format = &quot;markdown&quot;)</span></span>
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(igem_team)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="right">no</th>
-<th align="left">team_name</th>
-<th align="left">project_title</th>
-<th align="right">project_year</th>
-<th align="left">wiki_page</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">Queens-Canada</td>
-<td align="left">Velcrion</td>
-<td align="right">2020</td>
-<td align="left"><a href="https://2020.igem.org/Team:Queens_Canada" class="uri">https://2020.igem.org/Team:Queens_Canada</a></td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">Tainan</td>
-<td align="left">Oh_My_Gut</td>
-<td align="right">2019</td>
-<td align="left"><a href="https://2019.igem.org/Team:NCKU_Tainan" class="uri">https://2019.igem.org/Team:NCKU_Tainan</a></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="igem_part-테이블" class="section level3" number="8.2.2">
 <h3 number="8.2.2"><span class="header-section-number">8.2.2</span> iGEM_part 테이블</h3>
@@ -1002,19 +975,82 @@ div.tocify {
 </ul>
 </div>
 </div>
-<div id="igeme-페이지-업데이트" class="section level1" number="9">
-<h1 number="9"><span class="header-section-number">9</span> igemE 페이지 업데이트</h1>
-<div id="수업목표-2021.4.01.-목" class="section level3 unnumbered">
-<h3 class="unnumbered">수업목표 (2021.4.01. 목)</h3>
+<div id="igem-부품-분석" class="section level1" number="9">
+<h1 number="9"><span class="header-section-number">9</span> iGEM 부품 분석</h1>
 <ul>
-<li>(계속) Rstudio 사용법, Rmarkdown 만드는 방법 익히기, Git 사용법 익히기</li>
-<li>지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 계속 (완료하지 못 한 경우)</li>
-<li>본인이 조사했던 igem team 및 part 정보를 2개 테이블 (iGEM_team, iGEM_part)로 만들어서 웹에 올리기</li>
+<li><a href="https://www.remotemeeting.com/reservation/share/ff808081788431680178892794ec044e" target="_blank_">Remotemeeting 링크</a></li>
+<li>강좌용 GitHub web page <a href="https://greendaygh.github.io/researchE2021/" class="uri">https://greendaygh.github.io/researchE2021/</a></li>
+</ul>
+<div id="수업목표-2021.4.01.-목" class="section level2" number="9.1">
+<h2 number="9.1"><span class="header-section-number">9.1</span> 수업목표 (2021.4.01. 목)</h2>
+<ul>
+<li>지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 완료 (완료하지 못 한 경우)</li>
+<li>igem에서 사용된 promoter 10종에 대해서 <a href="http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters">Most_Used_Promoters</a> 각자 하루 2개씩 분석</li>
 </ul>
 </div>
-<div id="igeme-페이지-완성-1" class="section level2" number="9.1">
-<h2 number="9.1"><span class="header-section-number">9.1</span> igemE 페이지 완성</h2>
-<p>완료하지 못 한 학생의 경우 지난 시간 자료 참고해서 완성. 강사가 직접 다니며 검토 가능.</p>
+<div id="igeme-페이지" class="section level2" number="9.2">
+<h2 number="9.2"><span class="header-section-number">9.2</span> igemE 페이지</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>igeme.page <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://hayleykim97.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://th-kim310.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://Lelp27.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://aputron.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://gpemelianov.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://yoo-bh.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://seokjin-oh.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://treebird19.github.io/igemE/&quot;</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://jinjulee119.github.io/igemE2/&quot;</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>std <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(std_name, igeme.page)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(std, <span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">std_name</th>
+<th align="left">igeme.page</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">김승화</td>
+<td align="left"><a href="https://hayleykim97.github.io/igemE/" class="uri">https://hayleykim97.github.io/igemE/</a></td>
+</tr>
+<tr class="even">
+<td align="left">김태현</td>
+<td align="left"><a href="https://th-kim310.github.io/igemE/" class="uri">https://th-kim310.github.io/igemE/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">박성군</td>
+<td align="left"><a href="https://Lelp27.github.io/igemE/" class="uri">https://Lelp27.github.io/igemE/</a></td>
+</tr>
+<tr class="even">
+<td align="left">Aporva</td>
+<td align="left"><a href="https://aputron.github.io/igemE/" class="uri">https://aputron.github.io/igemE/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">Georgii</td>
+<td align="left"><a href="https://gpemelianov.github.io/igemE/" class="uri">https://gpemelianov.github.io/igemE/</a></td>
+</tr>
+<tr class="even">
+<td align="left">유병현</td>
+<td align="left"><a href="https://yoo-bh.github.io/igemE/" class="uri">https://yoo-bh.github.io/igemE/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">오석진</td>
+<td align="left"><a href="https://seokjin-oh.github.io/igemE/" class="uri">https://seokjin-oh.github.io/igemE/</a></td>
+</tr>
+<tr class="even">
+<td align="left">허성보</td>
+<td align="left"><a href="https://treebird19.github.io/igemE/" class="uri">https://treebird19.github.io/igemE/</a></td>
+</tr>
+<tr class="odd">
+<td align="left">이진주</td>
+<td align="left"><a href="https://jinjulee119.github.io/igemE2/" class="uri">https://jinjulee119.github.io/igemE2/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="create-promoter.rmd-file" class="section level2" number="9.3">
+<h2 number="9.3"><span class="header-section-number">9.3</span> create Promoter.Rmd file</h2>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
