@@ -92,7 +92,7 @@ pdf_file_names <- dir(path = "material/210311/", pattern = "*.pdf")
 print(pdf_file_names)
 ```
 
-```{r, fig.align="center", echo=FALSE, out.width="100%", out.height="400"}
+```{r, eval=F, fig.align="center", echo=FALSE, out.width="100%", out.height="400"}
 knitr::include_graphics(paste0("material/210311/", pdf_file_names[1]))  
 knitr::include_graphics(paste0("material/210311/", pdf_file_names[2]))  
 knitr::include_graphics(paste0("material/210311/", pdf_file_names[3]))  
@@ -245,7 +245,7 @@ print(pdf_file_names)
 
 #### 제출 pdf 20210318 {.unnumbered}
 
-```{r, fig.align="center", echo=FALSE, out.width="100%", out.height="400"}
+```{r, eval=F, fig.align="center", echo=FALSE, out.width="100%", out.height="400"}
 knitr::include_graphics(paste0("material/210318/", pdf_file_names[1]))  
 knitr::include_graphics(paste0("material/210318/", pdf_file_names[2]))  
 knitr::include_graphics(paste0("material/210318/", pdf_file_names[3]))  
