@@ -241,8 +241,6 @@ print(pdf_file_names)
 
 ------------------------------------------------------------------------
 
-
-
 #### 제출 pdf 20210318 {.unnumbered}
 
 ```{r, eval=F, fig.align="center", echo=FALSE, out.width="100%", out.height="400"}
@@ -279,8 +277,7 @@ GitHub에 webpage를 만드는 연습을 하겠습니다.
 
 [github-page-rstudio.html](github-page-rstudio.html)
 
-
-## GitHub page list 
+## GitHub page list
 
 ```{r, echo=F}
 
@@ -299,8 +296,6 @@ knitr::kable(std, format = "markdown")
 
 ```
 
-
-
 # Rmarkdown on the web II
 
 ### 수업목표 (2021.3.25. 목) {.unnumbered}
@@ -310,76 +305,71 @@ knitr::kable(std, format = "markdown")
 -   Project Name: igemE (대소문자 구분)
 -   새로 만든 Github page 주소 이메일로 전달
 
-
 ## Create a new GitHub repository with pages
 
-- GitHub 새로운 레포지토리 igemE 만들기 
-- [github](https://github.com)에 로그인 후 Repository  생성
-- Public (README.md 생성 안 함) 옵션을 주고 완료
-
+-   GitHub 새로운 레포지토리 igemE 만들기
+-   [github](https://github.com)에 로그인 후 Repository 생성
+-   Public (README.md 생성 안 함) 옵션을 주고 완료
 
 ## Create a new project in Rstudio
 
-- Rstudio > File > New Project > New Directory
-- New Project > igemE 라는 이름으로 Directory name 입력 > create project 클릭 (상위 디렉토리 위치 확인)
-
+-   Rstudio \> File \> New Project \> New Directory
+-   New Project \> igemE 라는 이름으로 Directory name 입력 \> create project 클릭 (상위 디렉토리 위치 확인)
 
 ## Connect local project to GitHub repository
 
-- Rstudio > Tools > Version Control > Project Setup > Git/SVN 클릭
-- Version control system에서 git 선택 (Rstudio 재시작 할 수 있음) 
-- Rstudio 화면에서 Terminal 텝 선택
-- terminal 1 역삼각형 클릭 `Go to current directory` 선택 
+-   Rstudio \> Tools \> Version Control \> Project Setup \> Git/SVN 클릭
+-   Version control system에서 git 선택 (Rstudio 재시작 할 수 있음)
+-   Rstudio 화면에서 Terminal 텝 선택
+-   terminal 1 역삼각형 클릭 `Go to current directory` 선택
 
-### Local 저장소에 commit 
+### Local 저장소에 commit
 
         git add .
         git commit -m "init" 
         
-### Remote 저장소와 연결 
-        
+
+### Remote 저장소와 연결
+
         git branch -M main
         git remote add origin https://github.com/greendaygh/igemE.git
         git push -u origin main
 
-- 위에서 `greendaygh` 대신 본인 GitHub ID 입력 
-
+-   위에서 `greendaygh` 대신 본인 GitHub ID 입력
 
 ## GitHub page 생성
 
-- 브라우저로 본인의 GitHub page 이동
-- Settings > Options > GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
-
+-   브라우저로 본인의 GitHub page 이동
+-   Settings \> Options \> GitHub Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save.
 
 ## 새로운 페이지 생성
 
-- Rstudio > New File > Markdown File 
-- 다음 입력 후 README.md로 저장 
+-   Rstudio \> New File \> Markdown File
 
-        This is readme markdown file
+-   다음 입력 후 README.md로 저장
 
+          This is readme markdown file
 
 ## 로컬, 리모트 저장소에 Commit 및 Push
 
-- Rstudio 상단 GIT 아이콘 > Commit 
-- 또는 Ctrl + ALT + M
-- README.md 파일 Staged에 체크 
-- 오른쪽 Commit message에 "Upload README file" 이라고 입력 후 Commit 버튼 클릭 
-- 팝업창 Close 후 오른쪽 상단 Push 클릭
-- 팝업창 Close 후 Git 창도 닫기
-
+-   Rstudio 상단 GIT 아이콘 \> Commit
+-   또는 Ctrl + ALT + M
+-   README.md 파일 Staged에 체크
+-   오른쪽 Commit message에 "Upload README file" 이라고 입력 후 Commit 버튼 클릭
+-   팝업창 Close 후 오른쪽 상단 Push 클릭
+-   팝업창 Close 후 Git 창도 닫기
 
 ## 웹 페이지 확인
 
-- 브라우저를 통해 리모트 레포지토리 확인 (greendaygh 대신 본인 아이디 입력) 
+-   브라우저를 통해 리모트 레포지토리 확인 (greendaygh 대신 본인 아이디 입력)
 
-       https://github.com/greendaygh/igemE/
-       
-- README.md 파일 확인
-- 브라우저 주소창에 다음 입력 (greendaygh 대신 본인 아이디 입력) 메세지 확인 
+         https://github.com/greendaygh/igemE/
 
-        https://greendaygh.github.io/igemE/
+-   README.md 파일 확인
 
+-   브라우저 주소창에 다음 입력 (greendaygh 대신 본인 아이디 입력) 메세지 확인
+
+          https://greendaygh.github.io/igemE/
 
 # Rmarkdown on the web III
 
@@ -389,11 +379,10 @@ knitr::kable(std, format = "markdown")
 -   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 계속 (완료하지 못 한 경우)
 -   본인이 조사했던 igem team 및 part 정보를 2개 테이블 (iGEM_team, iGEM_part)로 만들어서 웹에 올리기
 
-## igemE 페이지 완성 
+## igemE 페이지 완성
 
-완료하지 못 한 학생의 경우 지난 시간 자료 참고해서 완성. 강사가 직접 다니며 검토 가능. 
+완료하지 못 한 학생의 경우 지난 시간 자료 참고해서 완성. 강사가 직접 다니며 검토 가능.
 
- 
 ```{r, echo=F}
 
 igeme.page <- c("https://hayleykim97.github.io/igemE/",
@@ -411,12 +400,11 @@ knitr::kable(std, format = "markdown")
 
 ```
 
+## iGEM part Rmarkdown 페이지 만들기
 
-## iGEM part Rmarkdown 페이지 만들기 
-
-- igem_part.Rmd 라는 새로운 파일 생성
-- 이 파일에 다음과 같은 형식으로 2개의 테이블 (iGEM_team, iGEM_part) 생성
-- 완성 후 Knit 이용 html 페이지 생성
+-   igem_part.Rmd 라는 새로운 파일 생성
+-   이 파일에 다음과 같은 형식으로 2개의 테이블 (iGEM_team, iGEM_part) 생성
+-   완성 후 Knit 이용 html 페이지 생성
 
 ### iGEM_team 테이블
 
@@ -465,43 +453,34 @@ igem_part <- data.frame(no,
 knitr::kable(igem_part)
 ```
 
-
-part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이틀이며 team_id는 앞서 iGEM_team 테이블의 해당팀의 no를 넣음. 
+part_name은 아래와 같이 part registry 페이지의 큰 글씨로된 타이틀이며 team_id는 앞서 iGEM_team 테이블의 해당팀의 no를 넣음.
 
 ![Part Name](partname.JPG)
 
-
-
-
-
 ## README.md 에 igem_part 파일 링크 생성 후 git에 업로드
 
-- README.md 파일에 다음 링크 생성
+-   README.md 파일에 다음 링크 생성
 
-        [iGEM part](igem_part.html)
+          [iGEM part](igem_part.html)
 
-- Git add 및 commit (Local repository)
-- Git push (Remote repository)
-- igemE 웹페이지 확인 
+-   Git add 및 commit (Local repository)
 
+-   Git push (Remote repository)
 
+-   igemE 웹페이지 확인
 
 # iGEM 부품 사용 사례 분석
-
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178892794ec044e){target="_blank_"}
 -   강좌용 GitHub web page <https://greendaygh.github.io/researchE2021/>
 
-
-## 수업목표 (2021.4.01. 목) 
+## 수업목표 (2021.4.01. 목)
 
 -   지난 시간 만든 igemE (대소문자 구분) 페이지 만들기 완료 (완료하지 못 한 경우)
--   igem에서 사용된 promoter 10종에 대해서  [Most_Used_Promoters](http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters) 각자 할당된 프로모터에 대해서 1개 experience (igem 팀사례) 분석 
--   프로모터의 정량적 특성을 파악하기 위해 해당 프로모터에 의해서 형광 또는 발색 Reporter가 발현하는 사례를 위주로 탐색하고 정리 
+-   igem에서 사용된 promoter 10종에 대해서 [Most_Used_Promoters](http://parts.igem.org/cgi/partsdb/pgroup.cgi?pgroup=most_used_promoters) 각자 할당된 프로모터에 대해서 1개 experience (igem 팀사례) 분석
+-   프로모터의 정량적 특성을 파악하기 위해 해당 프로모터에 의해서 형광 또는 발색 Reporter가 발현하는 사례를 위주로 탐색하고 정리
 
-
-## igemE 페이지 및 할당 프로모터 
-
+## igemE 페이지 및 할당 프로모터
 
 ```{r, eval=T}
 igeme.page <- c("https://hayleykim97.github.io/igemE/",
@@ -524,14 +503,15 @@ knitr::kable(std, format = "markdown")
 
 ## create Promoter.Rmd file
 
-새로운 Promoter.Rmd 파일을 만들고 할당된 프로모터의 사례를 한 가지 찾아 정리함. 이를 위해서 해당 프로모터를 사용한 팀들의 문서 (정보)를 공부하고 다음 정보를 뽑아낼 필요가 있음. 
+새로운 Promoter.Rmd 파일을 만들고 할당된 프로모터의 사례를 한 가지 찾아 정리함. 이를 위해서 해당 프로모터를 사용한 팀들의 문서 (정보)를 공부하고 다음 정보를 뽑아낼 필요가 있음.
 
--  해당 팀 정보 (지난시간 만든 테이블)
--  사용한 부품 및 회로 정보 (지난 시간 만든 테이블에 회로 포함)
--  회로 만드는 프로토콜 정보 (추가 테이블)
--  리포터 발현 배양/실험 조건 및 측정 방법 (추가 테이블)
+-   해당 팀 정보 (지난시간 만든 테이블)
+-   사용한 부품 및 회로 정보 (지난 시간 만든 테이블에 회로 포함)
+-   회로 만드는 프로토콜 정보 (추가 테이블)
+-   리포터 발현 배양/실험 조건 및 측정 방법 (추가 테이블)
 
 각 테이블에 어떤 정보가 들어가야 할지는 고민해 보기 바람. 예를 들어 리포터 발현 배양 조건에 온도, 배양 시간 등.
 
+![](partexp.JPG)
 
 # References
