@@ -1,6 +1,6 @@
 ---
 title: "합성생물학의 재현성에 관한 연구"
-subtitle: "2021년 1학기 UST 현장연구 E"
+subtitle: "2021년 1학기 UST 현장연구 E (월,목 10시~12시)"
 author: "합성생물학전문연구단 김하성"
 output:
   html_document: 
@@ -513,5 +513,149 @@ knitr::kable(std, format = "markdown")
 각 테이블에 어떤 정보가 들어가야 할지는 고민해 보기 바람. 예를 들어 리포터 발현 배양 조건에 온도, 배양 시간 등.
 
 ![](partexp.JPG)
+
+
+---------------------------
+
+
+# Rmarkdown on the web III
+
+#### 수업목표 (2021.4. 4. 월) {.unnumbered}
+
+-   휴강
+-   지난 시간 완료하지 못 한 페이지 완성, 
+-   본인이 조사했던 igem team 및 part 정보를 2개 테이블 (iGEM_team, iGEM_part)로 만들어서 웹에 올리기
+
+## igemE 페이지 완성
+
+완료하지 못 한 학생의 경우 지난 시간 자료 참고해서 완성. 강사가 직접 다니며 검토 가능.
+
+
+---------------------------
+
+
+# Analysis of the promoter data
+
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad67883bb590178ac67587b2525){target="_blank_"}
+
+### 수업목표 (2021.4. 7. 목) {.unnumbered}
+
+- 프로모터 데이터 분석을 통한 데이터 이해 및 재정리
+- 새로운 Promoter_2nd.Rmd 파일 만들고 웹에 올리기 
+
+### 분석 예시{.unnumbered}
+
+분석 데이터를 4개 (또는 3개) 테이블로 정리 (4/1)
+
+### 예시1{.unnumbered}
+
+  - https://th-kim310.github.io/igemE/Promoter.html
+  - [HKU Wiki](https://2019.igem.org/Team:Hong_Kong_HKU)
+  - [Poster](https://2019.igem.org/Team:Hong_Kong_HKU/Poster)
+
+#### igem_team 테이블{.unnumbered}
+
+```{r, eval=T}
+
+id <- c(1)
+team_name <- c("Hong_Kong_HKU")
+project <- c("Engineered Salmonella Typhimurium for enhanced drug delivery and cancer stem cell targeting")
+year <- c(2019)
+wiki <- c("https://2019.igem.org/Team:Hong_Kong_HKU")
+
+igem_team <- data.frame(id, 
+                        team_name, 
+                        project, 
+                        year, 
+                        wiki)
+#knitr::kable(igem_team)
+igem_team
+```
+
+#### igem_part 테이블{.unnumbered}
+
+```{r, eval=T}
+
+id <- 1:4
+BBid <- c("BBa_R0010", "BBa_B0034", "BBa_E1010", "BBa_B0054")
+type <- c("Promoter", "RBS", "RFP", "Terminator")
+link <- c("http://parts.igem.org/Part:BBa_R0010",
+           "http://parts.igem.org/Part:BBa_B0034",
+           "http://parts.igem.org/Part:BBa_E1010",
+           "http://parts.igem.org/Part:BBa_B0054")
+backbone <- rep("-", length(id))
+device_id <- paste0("D", sprintf("%04d", rep(1, length(id))) )
+team_name <- rep("Hong_Kong_HKU", length(id))
+user <- rep("th-kim310", length(id))
+
+igem_part <- data.frame(id, BBid, type, link, backbone, device_id, team_name, user)
+#knitr::kable(igem_part)
+igem_part
+```
+
+#### igem_obs 테이블 (observation){.unnumbered}
+
+
+```{r, eval=T}
+
+id <- c(1:4)
+strain <- c("E.coli", "E.coli", "S.Typhi", "S.Typhi")
+indc <- rep("IPTG", length(id))
+conc <- c(0, 10, 0, 10)
+value <- c(5000, 15000, 15000, 15000)
+valunit <- rep("Fluorescence", length(id))
+incubhr <- rep("-", length(id))
+incubtemp <- rep("-", length(id))
+device_id <- rep("D0001", length(id))
+link <- c("https://2019.igem.org/Team:Hong_Kong_HKU/Characterization",
+           "https://2019.igem.org/Team:Hong_Kong_HKU/Characterization",
+           "https://2019.igem.org/Team:Hong_Kong_HKU/Characterization",
+           "https://2019.igem.org/Team:Hong_Kong_HKU/Characterization")
+
+
+igem_obs <- data.frame(id, strain, indc, conc, value,
+                        valunit, incubhr, incubtemp,
+                       device_id, link)
+#knitr::kable(igem_obs)
+igem_obs
+```
+
+#### 테이블 통합 {.unnumbered}
+
+```{r}
+library(tidyverse)
+igem_promoter <- igem_part %>% 
+  left_join(igem_team, by="team_name") %>% 
+  left_join(igem_obs, by="device_id")
+  
+igem_promoter
+```
+
+
+
+#### 데이터 정리 {.unnumbered}
+
+```{r}
+colnames(igem_promoter)
+```
+
+```{r}
+
+plot_data <- igem_promoter %>% 
+  filter(BBid=="BBa_R0010") %>% 
+  select(strain, conc, value) %>% 
+  mutate(strain=factor(strain), conc=factor(conc))
+
+```
+
+
+```{r}
+
+ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
+  geom_bar(stat="identity", position=position_dodge(width=0.5), width=0.4) +
+  scale_fill_manual(values=c("#ce1212", "#4a47a3")) +
+  theme_bw()
+  
+```
 
 # References
