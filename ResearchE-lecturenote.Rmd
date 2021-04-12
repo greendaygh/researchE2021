@@ -534,7 +534,7 @@ knitr::kable(std, format = "markdown")
 ---------------------------
 
 
-# Analysis of the promoter data
+# Analysis of the promoter data {#promoteranalysis1}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad67883bb590178ac67587b2525){target="_blank_"}
 
@@ -660,7 +660,7 @@ ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
 
 
 
-# Analysis of the promoter data
+# Analysis of the promoter data {#promoteranalysis2}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178c19876533048){target="_blank_"}
 
@@ -761,7 +761,7 @@ igem_team2 <- data.frame(id = "1",
              year = "2018",
              wiki = "http://2018.igem.org/Team:Nottingham")
 
-bind_rows(igem_team1, igem_team2)
+#bind_rows(igem_team1, igem_team2)
 
 
 id <- c("1")
