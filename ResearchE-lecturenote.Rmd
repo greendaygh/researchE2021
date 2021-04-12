@@ -874,7 +874,7 @@ igem_obs1 <- data.frame(id, strain, indc, conc, concunit, value,
 
 igem_obs2 <- data.frame(id = 1,
              strain = c("E. coli"),
-             indc = c("-"),
+             indc = c("Const"),
              conc = c(NA),
              concunit = c(NA),
              value = c(0.06),
