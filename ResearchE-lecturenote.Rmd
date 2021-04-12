@@ -593,6 +593,16 @@ igem_part <- data.frame(id, BBid, type, link, backbone, device_id, team_name, us
 igem_part
 ```
 
+
+```{r, eval=F}
+paste0("ATG", "TGA")
+rep(1, length(id))
+sprintf("%04d", rep(1, length(id)))
+paste0("D", sprintf("%04d", rep(1, length(id))) )
+```
+
+
+
 #### igem_obs 테이블 (observation){.unnumbered}
 
 
@@ -624,10 +634,14 @@ igem_obs
 
 ```{r}
 library(tidyverse)
+
+# left_join(igem_part, igem_team, by="team_name")
+# igem_part %>% left_join(igem_team, by="team_name")
+
 igem_promoter <- igem_part %>% 
   left_join(igem_team, by="team_name") %>% 
   left_join(igem_obs, by="device_id")
-  
+
 igem_promoter
 ```
 
@@ -657,5 +671,11 @@ ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
   theme_bw()
   
 ```
+
+```{r}
+ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
+  geom_bar(stat="identity", position="dodge")
+```
+
 
 # References
