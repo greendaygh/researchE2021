@@ -658,4 +658,130 @@ ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
   
 ```
 
+
+
+# Analysis of the promoter data
+
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178c19876533048){target="_blank_"}
+
+
+
+### 수업목표 (2021.4. 12. 월) {.unnumbered}
+
+- 프로모터 데이터 분석을 통한 데이터 이해 및 재정리 2nd
+- 새로운 Promoter_3rd.Rmd 파일 만들고 웹에 올리기 
+
+
+### 분석 예시{.unnumbered}
+
+분석 데이터를 3개 테이블로 정리 (igem_part, igem_team, igem_obs) 
+
+
+### 예시2{.unnumbered}
+
+  - https://th-kim310.github.io/igemE/Promoter.html
+  - [Nottingham Wiki](http://2018.igem.org/Team:Nottingham)
+
+#### igem_team table{.unnumbered}
+
+```{r}
+
+igem_team <- data.frame(id = "1",
+             team_name = "Nottingham",
+             project = "Engineer a phage which will infect C. difficile and express genetic constructs designed to suppress toxin production.",
+             year = "2018",
+             wiki = "http://2018.igem.org/Team:Nottingham")
+```
+
+### Vector map {.unnumbered}
+
+http://parts.igem.org/Part:BBa_K2715119  
+![](images/968px-84151_119_GFP.png){width=600}
+
+### Result {.unnumbered}
+
+[결과](http://parts.igem.org/File:BBa_K2715114_family_GFP_assay_2.png){width=600}
+
+
+### igem_part table{.unnumbered}
+
+```{r}
+igem_part <- data.frame(id = 1:3,
+             BBid = c("BBa_J23119",
+                      "BBa_K2715009",
+                      "BBa_E0040"),
+             type = c("Promoter",
+                      "RBS",
+                      "GFP"),
+             link = c("http://parts.igem.org/Part:BBa_J23119",
+                      "http://parts.igem.org/Part:BBa_K2715010",
+                      "http://parts.igem.org/Part:BBa_E0040"),
+             backbone = rep("pMTL84151", 3),
+             device_id = paste0("D", sprintf("%04d", rep(1, 3))),
+             team_name = rep("Nottingham", 3),
+             user = rep("sb.h", 3))
+igem_part
+```
+### igem_obs table{.unnumbered}
+
+```{r}
+igem_obs <- data.frame(id = 1,
+             strain = c("E. coli"),
+             indc = c("-"),
+             conc = c("-"),
+             value = c("0.06"),
+             valunit = c("uM Fluorescein/OD"),
+             incubhr = 6,
+             incubtemp = "37",
+             device_id = paste0("D", sprintf("%04d", 1)),
+             link = c("http://parts.igem.org/Part:BBa_K2715119"))
+igem_obs
+```
+
+### Binding tables
+
+```{r}
+library(dplyr)
+
+id <- c(1)
+team_name <- c("Hong_Kong_HKU")
+project <- c("Engineered Salmonella Typhimurium for enhanced drug delivery and cancer stem cell targeting")
+year <- c(2019)
+wiki <- c("https://2019.igem.org/Team:Hong_Kong_HKU")
+
+igem_team1 <- data.frame(id, 
+                        team_name, 
+                        project, 
+                        year, 
+                        wiki)
+
+igem_team2 <- data.frame(id = "1",
+             team_name = "Nottingham",
+             project = "Engineer a phage which will infect C. difficile and express genetic constructs designed to suppress toxin production.",
+             year = "2018",
+             wiki = "http://2018.igem.org/Team:Nottingham")
+
+bind_rows(igem_team1, igem_team2)
+
+
+id <- c("1")
+team_name <- c("Hong_Kong_HKU")
+project <- c("Engineered Salmonella Typhimurium for enhanced drug delivery and cancer stem cell targeting")
+year <- c("2019")
+wiki <- c("https://2019.igem.org/Team:Hong_Kong_HKU")
+
+igem_team1 <- data.frame(id, 
+                        team_name, 
+                        project, 
+                        year, 
+                        wiki)
+
+bind_rows(igem_team1, igem_team2)
+igem_team <- bind_rows(igem_team1, igem_team2, .id="id")
+
+```
+
+
+
+
 # References
