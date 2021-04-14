@@ -534,7 +534,7 @@ knitr::kable(std, format = "markdown")
 ---------------------------
 
 
-# Analysis of the promoter data {#promoteranalysis1}
+# Analysis of the promoter data I {#promoteranalysis1}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad67883bb590178ac67587b2525){target="_blank_"}
 
@@ -660,7 +660,7 @@ ggplot(plot_data, aes(x=strain, y=value, fill=conc)) +
 
 
 
-# Analysis of the promoter data {#promoteranalysis2}
+# Analysis of the promoter data II {#promoteranalysis2}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178c19876533048){target="_blank_"}
 
@@ -780,6 +780,42 @@ bind_rows(igem_team1, igem_team2)
 igem_team <- bind_rows(igem_team1, igem_team2, .id="id")
 
 ```
+
+
+
+# Analysis of the promoter data III {#promoteranalysis3}
+
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178c19876533048){target="_blank_"}
+
+
+
+### 수업목표 (2021.4. 15. 목) {.unnumbered}
+
+- 프로모터 데이터 분석을 통한 데이터 이해 및 재정리 3rd
+- 파일 입출력 함수 사용법 익히기
+- 재할당된 프로모터 정량분석 1건 추가 수행  
+
+
+
+```{r, eval=T}
+igeme.page <- c("https://hayleykim97.github.io/igemE/",
+                 "https://th-kim310.github.io/igemE/",
+                 "https://Lelp27.github.io/igemE/",
+                 "https://aputron.github.io/igemE/",
+                 "https://gpemelianov.github.io/igemE/",
+                 "https://yoo-bh.github.io/igemE/",
+                 "https://seokjin-oh.github.io/igemE/",
+                 "https://treebird19.github.io/igemE/",
+                 "https://jinjulee119.github.io/igemE2/"
+                 )
+promoters <- c("BBa_R0010", "BBa_J23100",
+               "BBa_R0011", "BBa_I0500", "BBa_J23101",
+               "BBa_R0051", "BBa_J23119", "BBa_R0062", "BBa_R0040")
+std <- data.frame(std_name, igeme.page, promoters)
+knitr::kable(std, format = "markdown")
+
+```
+
 
 
 
