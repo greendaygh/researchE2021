@@ -891,18 +891,19 @@ igem_obs
 
 # Analysis of the promoter data III {#promoteranalysis3}
 
--   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff808081788431680178c19876533048){target="_blank_"}
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c90e4f77883a3110178d2cb8c514aa0){target="_blank_"}
 
 
 
 ### 수업목표 (2021.4. 15. 목) {.unnumbered}
 
 - 프로모터 데이터 분석을 통한 데이터 이해 및 재정리 3rd
-- 파일 입출력 함수 사용법 익히기
-- 재할당된 프로모터 정량분석 1건 추가 수행  
+- 엑셀 파일 읽어오는 함수 사용법 익히고 `igem_promoters.xlsx` 파일을 만들기
+- 재할당된 프로모터 정량분석 1건 이상 추가 수행  
+- 코드를 `Promoter_4th.Rmd`에 작성하고 웹에 올리기 
 
 
-
+## 프로모터 재할당
 ```{r, eval=T}
 igeme.page <- c("https://hayleykim97.github.io/igemE/",
                  "https://th-kim310.github.io/igemE/",
@@ -923,7 +924,20 @@ knitr::kable(std, format = "markdown")
 ```
 
 
+## Loading excel data into R
 
+엑셀 데이터 만들고 `readxl` 패키지의 `read_excel` 함수 사용해서 읽기
+
+![](images/excel_promoter.JPG)
+
+
+```{r}
+#install.packages("readxl")
+library(readxl)
+
+igem_team <- read_excel("igem_promoters.xlsx", sheet=1, skip = 0, col_names=T)
+igem_team
+```
 
 
 # References
