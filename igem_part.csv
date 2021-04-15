@@ -1,0 +1,9 @@
+id,BBid,type,link,backbone,device_id,team_name,user
+1,BBa_R0010,Promoter,http://parts.igem.org/Part:BBa_R0010,-,D0001,Hong_Kong_HKU,th-kim310
+1,BBa_B0034,RBS,http://parts.igem.org/Part:BBa_B0034,-,D0001,Hong_Kong_HKU,th-kim310
+1,BBa_E1010,RFP,http://parts.igem.org/Part:BBa_E1010,-,D0001,Hong_Kong_HKU,th-kim310
+1,BBa_B0054,Terminator,http://parts.igem.org/Part:BBa_B0054,-,D0001,Hong_Kong_HKU,th-kim310
+2,BBa_J23119,Promoter,http://parts.igem.org/Part:BBa_J23119,pMTL84151,D0001,Nottingham,sb.h
+2,BBa_K2715009,RBS,http://parts.igem.org/Part:BBa_K2715010,pMTL84151,D0001,Nottingham,sb.h
+2,BBa_E0040,GFP,http://parts.igem.org/Part:BBa_E0040,pMTL84151,D0001,Nottingham,sb.h
+2,-,Terminator,-,pMTL84151,D0001,Nottingham,sb.h
