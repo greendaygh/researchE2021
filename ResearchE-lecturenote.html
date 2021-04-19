@@ -1648,43 +1648,66 @@ div.tocify {
 </div>
 <div id="원격-데이터-다운로드-및-읽기" class="section level2" number="14.1">
 <h2 number="14.1"><span class="header-section-number">14.1</span> 원격 데이터 다운로드 및 읽기</h2>
+<p>각 개인이 만들어 놓은 엑셀 데이터를 읽어오기 위해서 원격으로 해당 파일을 다운로드한 후 읽어오는 작업을 수행함.</p>
+<ul>
+<li>먼저 해당 사용자의 ID를 이용해서 git repository로 이동 (<a href="https://github.com/" class="uri">https://github.com/</a>)(아이디/)(igemE) ex) <a href="https://github.com/TH-Kim310/igemE" class="uri">https://github.com/TH-Kim310/igemE</a>.</li>
+<li>해당 엑셀 파일 클릭 후 <code>Download</code> 버튼의 링크 주소 복사 url 이라는 변수에 저장.</li>
+<li><code>download.file()</code> 함수 사용해서 다운로드</li>
+</ul>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>?download.file</span>
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/TH-Kim310/igemE/raw/main/%EC%97%91%EC%85%80.xlsx&quot;</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;download&quot;</span>)</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;download/promoters&quot;</span>)</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="st">&quot;download/promoters/th-kim310.xlsx&quot;</span>)</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span>  <span class="st">&quot;https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx&quot;</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="st">&quot;download/promoters/jinjulee119.xlsx&quot;</span>)</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>excel_files <span class="ot">&lt;-</span> <span class="fu">dir</span>(<span class="st">&quot;download/promoters&quot;</span>)</span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>excel_file_names <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;download/promoters/&quot;</span>, excel_files, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>igem_team1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">1</span>], <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>igem_team2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">2</span>], <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>igem_team <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(igem_team1, igem_team2)</span></code></pre></div>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="st">&quot;th-kim310.xlsx&quot;</span>)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span>  <span class="st">&quot;https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx&quot;</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="st">&quot;jinjulee119.xlsx&quot;</span>)</span></code></pre></div>
+<p>그런데 다운로드한 모든 파일이 root 디렉토리에 저장될 경우 관리가 어렵다는 문제가 있으므로 디렉토리 만들어서 저장함.</p>
+<ul>
+<li>create.dir 함수로 <code>download/promoter</code> 디렉토리 만들기</li>
+<li><code>download/promoter</code> 위치를 destdir 변수에 저장하고 사용하기</li>
+<li><code>paste0()</code>함수 사용해 보기 (ex. <code>paste0(&quot;abc&quot;, &quot;def&quot;)</code>)</li>
+</ul>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;download&quot;</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;download/promoter&quot;</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>destdir <span class="ot">&lt;-</span> <span class="st">&quot;download/promoter/&quot;</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://github.com/TH-Kim310/igemE/raw/main/%EC%97%91%EC%85%80.xlsx&quot;</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="fu">paste0</span>(destdir, <span class="st">&quot;th-kim310.xlsx&quot;</span>))</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span>  <span class="st">&quot;https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx&quot;</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="fu">paste0</span>(destdir, <span class="st">&quot;jinjulee119.xlsx&quot;</span>))</span></code></pre></div>
 </div>
 <div id="데이터-병합" class="section level2" number="14.2">
 <h2 number="14.2"><span class="header-section-number">14.2</span> 데이터 병합</h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>igem_part1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">1</span>], <span class="at">sheet=</span><span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>igem_part2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">2</span>], <span class="at">sheet=</span><span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>igem_part <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(igem_part1, igem_part2)</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>igem_obs1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">1</span>], <span class="at">sheet=</span><span class="dv">3</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>igem_obs2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(excel_file_names[<span class="dv">2</span>], <span class="at">sheet=</span><span class="dv">3</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>igem_obs <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(igem_obs1, igem_obs2)</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co">#igem_obs &lt;- read_excel(excel_file_names[1], sheet=3, skip = 0, col_names=T)</span></span></code></pre></div>
+<p>모든 파일의 정보를 읽어오기 위해서 <code>dir()</code> 함수를 이용해서 모든 엑셀 파일이름을 <code>exfilenames</code> 변수에 저장하고 이를 이용해서 team 정보를 읽어옴. 최종적으로 <code>bind_rows</code> 함수를 사용해서 병합.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>exfilenames <span class="ot">&lt;-</span> <span class="fu">dir</span>(destdir, <span class="at">pattern=</span><span class="st">&quot;*.xlsx&quot;</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>tmp1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">paste0</span>(destdir, exfilenames[<span class="dv">1</span>]), <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">skip=</span><span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>tmp2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">paste0</span>(destdir, exfilenames[<span class="dv">2</span>]), <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">skip=</span><span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>igem_team <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(tmp1, tmp2)</span></code></pre></div>
+<p>그런데 앞 코드를 자세히 살펴보면 exfilenames의 인덱스만 바뀌고 모든 코드가 같습니다. 이를 for 문으로 활용하면 파일이 많을 경우 더 효율적으로 코딩을 할 수 있습니다. 대신 읽어오는 data을 저장할 적절한 저장공간이 필요한데 이 때 쓰일 수 있는 것이 <code>list</code> 형태의 변수 입니다. <code>list</code>는 모든 타입의 데이터를 순차적으로 저장할 수 있습니다. 또한 bind_rows를 모든 리스트의 원소에 적용하는 방법은 <code>do.call</code>이라는 함수를 사용해서 수행할 수 있습니다.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>exfilenames <span class="ot">&lt;-</span> <span class="fu">dir</span>(destdir, <span class="at">pattern=</span><span class="st">&quot;*.xlsx&quot;</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(exfilenames)){</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  tmp[[i]] <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">paste0</span>(destdir, exfilenames[i]), <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">skip=</span><span class="dv">0</span>, <span class="at">col_names=</span>T)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co">#igem_team &lt;- bind_rows(tmp1, tmp2)</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>igem_team <span class="ot">&lt;-</span> <span class="fu">do.call</span>(bind_rows, tmp)</span></code></pre></div>
+<p>위 코드를 이용하면 igem_part와 igem_obs도 쉽게 모든 정보를 통합할 수 있습니다.</p>
 </div>
 <div id="데이터-일관성-유지" class="section level2" number="14.3">
 <h2 number="14.3"><span class="header-section-number">14.3</span> 데이터 일관성 유지</h2>
-<ul>
+<p>그러나 여러 사람이 각각 다른 형태로 파일을 저장할 경우 위와 같은 통합은 어려울 수 있습니다. 따라서 아래와 같은 규칙을 통해 모든 사람들이 동일한 방식으로 정보를 저장하고 서로 교환할 수 있습니다.</p>
+<ol style="list-style-type: decimal">
 <li>엑셀 파일 <code>igem_promoters.xlsx</code>로 저장 확인</li>
 <li><code>igem_promoters.xlsx</code>에 sheet별로 <code>igem_team</code>, <code>igem_part</code>, <code>igem_obs</code> 이름으로 각 데이터 저장 확인</li>
 <li>각 테이블 이름 및 데이터 타입 확인</li>
+</ol>
+<ul>
 <li>igem_team
 <ul>
 <li>id (character)</li>
@@ -1707,6 +1730,7 @@ div.tocify {
 <li>igem_obs
 <ul>
 <li>id (character)</li>
+<li>strain (character)</li>
 <li>indc (character)</li>
 <li>conc (numeric)</li>
 <li>concunit (character)</li>
@@ -1718,9 +1742,6 @@ div.tocify {
 <li>link (character)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(igem_team1)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(igem_part1)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(igem_obs1)</span></code></pre></div>
 </div>
 <div id="모든-프로모터-정보-모으기" class="section level2" number="14.4">
 <h2 number="14.4"><span class="header-section-number">14.4</span> 모든 프로모터 정보 모으기</h2>
