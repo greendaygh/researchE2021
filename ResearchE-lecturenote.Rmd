@@ -1158,7 +1158,7 @@ igem_team <- do.call(bind_rows, tmp)
 
 # Analysis of the promoter data V {#promoteranalysis5}
 
--   [Remotemeeting 링크](){target="_blank_"}
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad67883bb590178f6cfdf8f7085){target="_blank_"}
 
 
 
