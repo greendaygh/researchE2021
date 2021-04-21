@@ -1154,4 +1154,146 @@ igem_team <- do.call(bind_rows, tmp)
 
 
 
+
+
+# Analysis of the promoter data V {#promoteranalysis5}
+
+-   [Remotemeeting 링크](){target="_blank_"}
+
+
+
+## 수업목표 (2021.4. 22. 목) {.unnumbered}
+
+- for 문을 이용한 다른 사람 excel 파일 다운로드 
+- for 문을 이용한 모든 데이터 병합하기 
+- 데이터베이스 테이블 문제 인식
+
+
+## 원격 데이터 다운로드 II
+
+각 개인이 만들어 놓은 엑셀 데이터를 읽어오기 위해서 원격으로 해당 파일을 다운로드한 후 읽어오는 작업을 수행함. 각 개인의 ID와 디렉토리 이름을 알면 `for`문으로 반복 없이 쉽게 수행할 수 있음. 예를 들어 아래 코드는 for문을 이용해서 반복을 줄이고 재사용이 가능한 코드로 만들 수 있음. 
+
+
+```{r, eval=F}
+library(tidyverse)
+library(readxl)
+
+
+destdir <- "download/promoters/"
+
+url <-  "https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx"
+download.file(url, paste0(destdir, "jinjulee119.xlsx"))
+
+url <-  "https://github.com/Lelp27/igemE/raw/main/promoter_3nd.xlsx"
+download.file(url, paste0(destdir, "Lelp27.xlsx"))
+
+url <-  "https://github.com/aputron/igemE/raw/main/iGEM_team.xlsx"
+download.file(url, paste0(destdir, "aputron.xlsx"))
+
+url <-  "https://github.com/gpemelianov/igemE/raw/main/igem_promoter.xlsx"
+download.file(url, paste0(destdir, "gpemelianov.xlsx"))
+
+url <-  "https://github.com/Yoo-BH/igemE/raw/main/igem_promoter.xlsx"
+download.file(url, paste0(destdir, "yoo-bh.xlsx"))
+
+url <-  "https://github.com/treebird19/igemE/raw/main/igem_promoters.xlsx"
+download.file(url, paste0(destdir, "treebird19.xlsx"))
+```
+
+
+ID와 디렉토리만 지정해 주면 나머지는 반복되는 코드이므로 아래와 같이 바꿀 수 있음. 아래 코드는 사람이 변경되거나 늘어나도 아이디, 홈디렉토리만 추가해주거나 변경하면 바로 사용할 수 있음. 
+
+```{r, eval=F}
+ids <- c("hayleykim97", 
+         "th-kim310",
+         "Lelp27",
+         "aputron",
+         "gpemelianov",
+         "yoo-bh",
+         "seokjin-oh",
+         "treebird19",
+         "jinjulee119"
+         )
+homedirs <- c(rep("igemE", 9), "igemE2") 
+
+destdir <- "download/promoters/"
+
+i <- 1
+url <-  paste0("https://github.com/", ids[i], "/", homedirs[i], "/raw/main/igem_promoters.xlsx")
+destfile <- paste0(destdir, ids[i], ".xlsx")
+download.file(url, destfile)
+
+
+for(i in 1:length(ids)){
+  url <-  paste0("https://github.com/", ids[i], "/", homedirs[i], "/raw/main/igem_promoters.xlsx")
+  destfile <- paste0(destdir, ids[i], ".xlsx")
+  download.file(url, destfile)
+}
+
+```
+
+
+
+```{r, eval=F}
+# extract ids from homepage urls
+# igeme.page <- c("https://hayleykim97.github.io/igemE/",
+#                  "https://th-kim310.github.io/igemE/",
+#                  "https://Lelp27.github.io/igemE/",
+#                  "https://aputron.github.io/igemE/",
+#                  "https://gpemelianov.github.io/igemE/",
+#                  "https://yoo-bh.github.io/igemE/",
+#                  "https://seokjin-oh.github.io/igemE/",
+#                  "https://treebird19.github.io/igemE/",
+#                  "https://jinjulee119.github.io/igemE2/"
+#                  )
+# 
+# ids <- strsplit(igeme.page, split="\\.") %>% 
+#   lapply(function(x){
+#     gsub("https:\\/\\/", "", x[1])
+#     }) %>% 
+#   unlist()
+#   
+
+```
+
+## 다운로드된 엑셀 파일 읽기 II
+
+`for`문을 이용한 코드 줄이기 및 재사용성 높이기 
+
+```{r, eval=F}
+
+tmp1 <- list()
+tmp2 <- list()
+tmp3 <- list()
+
+for(i in 1:length(ids)) {
+  destfile <- paste0(destdir, ids[i], ".xlsx")
+  tmp1[[i]] <- read_excel(destfile, sheet = 1, skip = 0, col_names = T)
+  tmp2[[i]] <- read_excel(destfile, sheet = 2, skip = 0, col_names = T)
+  tmp3[[i]] <- read_excel(destfile, sheet = 3, skip = 0, col_names = T)
+}
+igem_team <- do.call(bind_rows, tmp1)
+igem_part <- do.call(bind_rows, tmp2)
+igem_obs <- do.call(bind_rows, tmp3)
+
+
+```
+
+## 데이터베이스 테이블 개선 
+
+지금까지 우리가 만든 3개의 테이블은 일반적으로 데이터베이스라고 하는 툴을 이용한 데이터 저장 방법과 동일함. 반복되는 저장을 피하기 위해서 테이블을 나누었고 각 테이블을 foreign key 값으로 이어줌. 기본적으로 각 테이블에 저장되는 데이터는 중복 없는 유일한 데이터들만 저장. 그러나 아래와 같은 (현재) 데이터베이스 구조는 문제가 있음. 
+
+
+![](images/database1.png)
+
+
+아래와 같이 바꿔주면 바람직함. 
+
+
+![](images/database2.png)
+
+
+
+
+
 # References
