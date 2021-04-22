@@ -1176,7 +1176,6 @@ igem_team <- do.call(bind_rows, tmp)
 
 ```{r, eval=F}
 library(tidyverse)
-library(readxl)
 
 
 destdir <- "download/promoters/"
@@ -1216,7 +1215,7 @@ ids <- c("hayleykim97",
          )
 homedirs <- c(rep("igemE", 9), "igemE2") 
 
-destdir <- "download/promoters/"
+destdir <- "download/promoter/"
 
 i <- 1
 url <-  paste0("https://github.com/", ids[i], "/", homedirs[i], "/raw/main/igem_promoters.xlsx")
@@ -1227,8 +1226,10 @@ download.file(url, destfile)
 for(i in 1:length(ids)){
   url <-  paste0("https://github.com/", ids[i], "/", homedirs[i], "/raw/main/igem_promoters.xlsx")
   destfile <- paste0(destdir, ids[i], ".xlsx")
-  download.file(url, destfile)
+  try(download.file(url, destfile))
+  cat(i, "\n");flush.console()
 }
+
 
 ```
 
@@ -1258,20 +1259,26 @@ for(i in 1:length(ids)){
 
 ## 다운로드된 엑셀 파일 읽기 II
 
-`for`문을 이용한 코드 줄이기 및 재사용성 높이기 
+`for`문을 이용한 코드 줄이기 및 재사용성 높이기. 
 
 ```{r, eval=F}
+library(readxl)
+
+filenames <- dir(path = destdir, pattern = "*.xlsx")
+
 
 tmp1 <- list()
 tmp2 <- list()
 tmp3 <- list()
 
-for(i in 1:length(ids)) {
-  destfile <- paste0(destdir, ids[i], ".xlsx")
+
+for(i in 1:length(filenames)) {
+  destfile <- paste0(destdir, filenames[i])
   tmp1[[i]] <- read_excel(destfile, sheet = 1, skip = 0, col_names = T)
   tmp2[[i]] <- read_excel(destfile, sheet = 2, skip = 0, col_names = T)
   tmp3[[i]] <- read_excel(destfile, sheet = 3, skip = 0, col_names = T)
 }
+
 igem_team <- do.call(bind_rows, tmp1)
 igem_part <- do.call(bind_rows, tmp2)
 igem_obs <- do.call(bind_rows, tmp3)
@@ -1279,21 +1286,36 @@ igem_obs <- do.call(bind_rows, tmp3)
 
 ```
 
+마지막 igem_obs는 다음의 에러를 내며 병합되지 않음. 이는 tmp3[[1]]의 incubtemp와 tmp3[[2]]의 incubtemp 데이터 타입이 달라서 발생하는 문제임. 모든 사람이 앞서 정한 데이터 포멧의 규칙을 따르면 되며 만약 그렇지 않을 경우 다음과 같이 데이터 타입을 바꿔주면 됨. 
+
+![](images/Screenshot from 2021-04-22 12-43-04.png)
+
+```{r, eval=F}
+
+
+tmp3[[1]]$incubtemp <- as.numeric(tmp3[[1]]$incubtemp)
+
+## when it comes to incubhr 
+tmp3[[1]]$incubhr <- rep(6, 12)
+tmp3[[1]]$incubhr <- as.numeric(substr(tmp3[[1]]$incubtemp, start = 1, stop = 1))
+tmp3[[1]]$incubhr <- as.numeric(gsub(pattern = " hrs", replacement = "", x = tmp3[[1]]$incubhr))
+
+```
+
 ## 데이터베이스 테이블 개선 
 
-지금까지 우리가 만든 3개의 테이블은 일반적으로 데이터베이스라고 하는 툴을 이용한 데이터 저장 방법과 동일함. 반복되는 저장을 피하기 위해서 테이블을 나누었고 각 테이블을 foreign key 값으로 이어줌. 기본적으로 각 테이블에 저장되는 데이터는 중복 없는 유일한 데이터들만 저장. 그러나 아래와 같은 (현재) 데이터베이스 구조는 문제가 있음. 
-
+지금까지 우리가 만든 3개의 테이블은 일반적으로 데이터베이스라고 하는 툴을 이용한 데이터 저장 방법과 동일함. 반복되는 저장을 피하기 위해서 테이블을 나누었고 각 테이블을 foreign key 값으로 이어줌. 기본적으로 각 테이블에 저장되는 데이터는 중복 없는 유일한 데이터들만 저장. 그러나 아래와 같은 (현재) 데이터베이스 구조는 문제가 있음. 즉, igem_obs에서 관측된 값은 device_id라는 회로의 활성으로 볼 수 있으나 igem_part에 여러개의 같은 device_id가 있을 수 있으므로 어떤 디바이스의 어떤 part에 대한 활성 값인지 구분할 수 없다는 문제가 발생함. 
 
 ![](images/database1.png)
 
 
-아래와 같이 바꿔주면 바람직함. 
+위 데이터베이스 구조를 아래와 igem_device라는 테이블을 추가하고 이 테이블에 device_id를 중복 없이 저장할 수 있다면 igem_part에서 또는 igem_obs에서 참조하는 값들이 어떤 device인지 쉽게 알 수 있음. 
 
 
 ![](images/database2.png)
 
 
-
+이번 시간에 기억할 부분은 지금까지 만든 igem_promoters.xlsx 파일의 정보들을 위 규칙에 맞게 저장하고 for 문을 이용한 데이터 다운로드와 병합하는 방법임. 
 
 
 # References
