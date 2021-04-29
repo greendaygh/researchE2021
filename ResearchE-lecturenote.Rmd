@@ -1292,7 +1292,29 @@ igem_obs <- do.call(bind_rows, tmp3)
 
 ![](images/database2.png)
 
+# Github pages and markdown  {#githubpageandmarkdown}
 
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff8080817884319d0179193066dd0f8d){target="_blank_"}
+
+
+
+## 수업목표 (2021.4. 29. 목) {.unnumbered}
+
+- Github Pages / Rstudio 리뷰
+- Rmarkdown 활용 웹페이지 만들기
+
+
+## Github Pages 
+
+![](images/gitpage.JPG)
+
+## Rstudio git
+
+https://greendaygh.github.io/researchE2021/ResearchE-lecturenote.html#7_Rmarkdown_on_the_web_II
+
+## Create website 
+
+https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
 
 
 
