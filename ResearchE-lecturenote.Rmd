@@ -1345,4 +1345,34 @@ https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
 
 
 
+
+# Github pages and markdown II {#githubpageandmarkdown2}
+
+
+-   [Remotemeeting 링크](){target="_blank_"}
+
+
+
+## 수업목표 (2021.4. 29. 목) {.unnumbered}
+
+- Github Pages 활용한 웹페이지 만들기 
+
+## 새로운 repository 만들기
+
+
+## Github Pages 
+
+![](images/gitpage.JPG)
+
+## Rstudio git
+
+https://greendaygh.github.io/researchE2021/ResearchE-lecturenote.html#7_Rmarkdown_on_the_web_II
+
+## Create website 
+
+https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
+
+
+
+
 # References

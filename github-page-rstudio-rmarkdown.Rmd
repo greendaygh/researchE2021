@@ -1,0 +1,183 @@
+---
+title: "Github page, rmarkdown 기반 웹사이트 만들기"
+output: 
+  html_document:
+    theme: readable
+    highlight: tango
+    toc: true
+    toc_depth: 1
+    toc_float: true
+    number_sections: true
+    df_print: paged
+    
+---
+
+# Introduction of GIT
+
+Git 은 VCS의 한 종류로서 특정 파일의 버전을 저장하고 관리해주는 시스템 입니다. 저장소는 아래 그림과 같이 Local과 Remote로 나눌 수 있으며 Git을 설치하는 것만으로 Local 컴퓨터에서 버전관리 기능은 모두 사용할 수 있습니다. 단지 Local 컴퓨터에 이상이 발생할 경우 정보 손실의 위험이 있으므로 원격 (Remote) 저장소에 복사본을 만들어 두고 
+
+
+
+
+
+* [github](https://github.com) 사용
+
+## Example
+
+* Writing a paper script
+* Initial write in a file "my_script_210322.doc"
+* Update the file with a name of "my_script_210322_update.doc"
+* Disadvantages 
+  * Changes in each version
+  * No good with multiple files
+  * Merging 
+  * etc..
+
+# Git overview
+
+* http://git-scm.com/book/en/v2
+* http://eriqande.github.io/rep-res-web/lectures/git-basics.html#git-basics
+
+
+# Github page 만들기
+
+## Create Github account
+
+[github](https://github.com)에서 계정 생성
+
+## Create Github repository
+
+[github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
+
+![](images/repo-create01.JPG)
+
+## Github page setup
+
+Settings > Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
+
+![](images/repo-create02.JPG)
+
+## Clone to local
+
+Github에서 Clone 주소 복사한 후 로컬에서 clone 수행 (git repository 이름이 researchE2021 이라면 해당 이름의 디렉토리가 생성되므로 상위 디렉토리에서 수행해야함)
+
+
+```{bash, eval=F}
+PS C:\mydocs\2021\lectures> git clone https://github.com/greendaygh/researchE2021.git
+Cloning into 'researchE2021'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+PS C:\mydocs\2021\lectures>
+
+```
+
+
+## Copy local files to the cloned directory
+
+필요한 파일들을 (기존 다른 디렉토리에서 작업하던 파일들) 해당 디렉토리로 복사 
+
+
+## Configuration with user information
+
+`Terminal` 텝에서 다음 입력
+
+```
+git config --global user.name "username"
+git config --global user.email my@email.address
+```
+
+## Git in Rstudio
+
+* Git tab
+* check-box 클릭으로 stage/unstage   
+    + __Blue-M__: a file that is already under version control that has been modified.
+    + __Orange-?__: a file that is not under version control
+    + __Green-A__: a file that was not under version control, but which has been staged to be committed.
+    + __Red-D__: a file under version control has been deleted.  To make it really disappear, you have to stage its disappearance and commit.
+    + __Purple-R__ a file that was renamed.  (Note that git in Rstudio seems to be figuring this out on its own.)
+
+
+
+## Commit in Terminal 
+
+```
+git add .
+git commit -m "update"
+git push
+```
+
+
+```{bash, eval=F}
+
+PS C:\mydocs\2021\lectures> cd .\researchE2021\
+PS C:\mydocs\2021\lectures\researchE2021> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .Rproj.user/
+        ResearchE-lecturenote.Rmd
+        ResearchE-lecturenote.html
+        ResearchE-lecturenote.log
+        ResearchE-lecturenote.pdf
+        ResearchE.Rproj
+        acs-synthetic-biology.csl
+        bibliography.bib
+        git
+        github-page-20210315.Rmd
+        github-page-20210315.html
+        google_scholar_bibtex.JPG
+        google_scholar_search.JPG
+        local-docker-rstudio-shiny-server-setup.Rmd
+        local-docker-rstudio-shiny-server-setup.html
+        material/
+        rmarkdown-reference.pdf
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS C:\mydocs\2021\lectures\researchE2021> git add .
+PS C:\mydocs\2021\lectures\researchE2021> git commit -m "init repository"
+[main 64d91aa] init repository
+ 50 files changed, 3405 insertions(+)
+ create mode 100644 .Rproj.user/56A26046/persistent-state
+ create mode 100644 .Rproj.user/56A26046/sources/prop/6ECB90B2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/ACF25EE2
+ create mode 100644 .Rproj.user/56A26046/sources/prop/INDEX
+...
+
+PS C:\mydocs\2021\lectures\researchE2021> git push
+fatal: unable to access 'https://github.com/greendaygh/researchE2021.git/': Could not resolve host: github.com
+
+PS C:\mydocs\2021\lectures\researchE2021> git push
+Enumerating objects: 62, done.
+Counting objects: 100% (62/62), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (55/55), done.
+Writing objects: 100% (61/61), 9.30 MiB | 441.00 KiB/s, done.
+Total 61 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/greendaygh/researchE2021.git
+   dab69f9..64d91aa  main -> main
+```
+
+
+
+
+## Access the page via browser 
+
+
+https://greendaygh.github.io/researchE2021/github-page-20210315.html
+
+greendaygh.github.io는 ID마다 주어지는 웹주소, researchE2021은 repository 이름, html 파일은 rmd 컴파일된 파일. 
+
+
+## Build your private repository
+
+
+
+
+
