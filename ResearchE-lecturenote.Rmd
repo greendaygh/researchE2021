@@ -1353,16 +1353,230 @@ https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
 
 
 
-## 수업목표 (2021.4. 29. 목) {.unnumbered}
+## 수업목표 (2021. 5. 3. 목) {.unnumbered}
 
 - Github Pages 활용한 웹페이지 만들기 
 
-## 새로운 repository 만들기
+
+## 원격 저장소 만들기
+
+### Create Github account
+
+[github](https://github.com)에서 계정 생성
+
+### Create Github repository
+
+[github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
+
+![](images/repo-create01.JPG)
+
+### Github page setup
+
+Settings > Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
+
+![](images/repo-create02.JPG)
 
 
-## Github Pages 
+## 로컬 저장소 만들기 
 
-![](images/gitpage.JPG)
+### Create a new project in Rstudio
+
+Rstudio > File > New Project > New Directory  
+
+New Project > researcheweb 이라는 이름으로 Directory name 입력 > create project 클릭. 해당 디렉토리는 원격 저장소와 직접 연결되는 로컬 저장소가 되며 상위 디렉토리 (아래에서는 lectures) 하위에 디렉토리가 생성되며 그 안에 파일들을 저장하게 될 것입니다. 
+
+![](images/project-create04.JPG)
+
+
+## 로컬-원격 저장소 연결하기
+
+### Connect local project to GitHub repository
+
+Rstudio의 Tools > Version Control > Project Setup > Git/SVN 클릭, Version control system에서 git 선택 (Rstudio 재시작)
+
+![](images/project-create03.JPG)
+
+Rstudio 화면에서 Terminal 텝 선택, terminal 1 역삼각형 클릭 Go to current directory 선택
+
+```
+git add .
+git commit -m "init"
+```
+
+위 두 명령어는 로컬 저장소에 파일을 업데이트하는 과정이며 다음과 같은 출력이 보여집니다. 
+
+```{bash, eval=F}
+cd ~/alpha/lectures/researcheweb
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git add .
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git commit -m "init"
+[master (root-commit) e45b818] init
+ 3 files changed, 214 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 createweb.Rmd
+ create mode 100644 researcheweb.Rproj
+```
+
+
+그 후 다음과 같이 원격 저장소 정보를 입력하고 branch를 main으로 바꿔준 후 push로 업로드 합니다. 
+
+```
+git remote add origin https://github.com/greendaygh/researcheweb.git
+git branch -M main 
+git push
+```
+
+
+그러나 push를 할 경우 다음과 같은 에러가 뜨며 처음 push할 경우는 아래 에러 메세지에 나온 것 처럼 입력을 해야 합니다. 
+
+
+```{bash, eval=F}
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git remote add origin https://github.com/greendaygh/researcheweb.git
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git branch -M main 
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+```  
+
+
+만약 push 할 때 사용자 정보를 입력하라는 메세지가 뜰 경우 다음과 같이 본인의 해당 계정에 대한 정보를 입력하면 됩니다. 
+
+```{bash, eval=F}
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git config --global user.name "greendaygh"
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git config --global user.email "kimhaseong@gmail.com"
+```
+
+다시 push 명령어를 아래와 같이 입력하면 원격저장소에 업데이트가 되며 원격저장소에 (github 저장소) 정상적으로 파일이 올라간 것을 확인할 수 있습니다. 
+
+
+```{bash, eval=F}
+rstudio@898b894376b2:~/alpha/lectures/researcheweb$ git push --set-upstream origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 3.21 KiB | 328.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/greendaygh/researcheweb.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+```
+
+
+## 웹 파일 만들고 원격저장소에 올리기
+
+### index 만들기 
+
+webpage를 만들기 위해서 Rproject에서 index.Rmd 파일을 만들고 다음과 같이 입력합니다. 
+
+
+```
+---
+title: "My ResearchE Class Website"
+---
+
+Hello, Website!
+```
+
+about.Rmd 파일을 생성하고 다음과 같이 입력합니다. 
+
+```
+
+---
+title: "About This Website"
+---
+
+More about this website.
+
+
+```
+
+`_site.yml` 파일을 만들과 다음과 같이 입력합니다. 참고로 Rstudio > File > New File > Text File 로 만들고 저장을 `_site.yml`이름으로 하면 되겠습니다. 
+
+
+```
+
+name: "My ResearchE Class Website"
+navbar:
+  title: "My ResearchE Class Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+
+```
+
+### Git in Rstudio
+
+앞에서 terminal에서 수행한 git push를 Rstudio의 Git tool을 이용해서 수행해 보겠습니다. git의 업데이트는 다음 세가지 단계로 진행됩니다. 
+
+* add: staging
+* commit: 로컬저장소 업데이트
+* push: 원격저장소 업데이트
+
+Rproject의 오른쪽 상단에 Git이라는 텝을 들어가 보면 다음과 같이 변경된 파일들이 표시됩니다. 
+
+![](images/git-rproject.JPG){width=400}
+
+commit 버튼을 누릅니다. 
+
+![](images/commit.JPG)
+
+해당 파일을 선택한 상태에서 stage라는 버튼을 누르면 ? 표시가 A 라는 표시로 바뀌면서 add 됩니다.
+
+
+* check-box 클릭으로 stage/unstage 가능
+    + __Blue-M__: a file that is already under version control that has been modified.
+    + __Orange-?__: a file that is not under version control
+    + __Green-A__: a file that was not under version control, but which has been staged to be committed.
+    + __Red-D__: a file under version control has been deleted.  To make it really disappear, you have to stage its disappearance and commit.
+    + __Purple-R__ a file that was renamed.  (Note that git in Rstudio seems to be figuring this out on its own.)
+
+
+
+모든 필요한 파일들을 add 후 오른쪽 commit message에 필요한 메세지를 적습니다. 만약 index.Rmd 파일을 수정했으면 "index.Rmd file update" 와 같은 식입니다. 이 후 commit 을 누르면 로컬저장소에 업데이트가 됐다는 box가 생성됩니다. Close로 박스를 닫고 Push 버튼을 누르면 원격저장소가 업데이트 됩니다. 성공적으로 모든 과정이 진행 되었으면 팝업창을 닫습니다. 
+
+
+### Commit in Terminal 
+
+아래와 같이 모든 과정을 terminal에서 간단히 수행할 수도 있습니다. 
+
+```
+git add .
+git commit -m "update"
+git push
+```
+
+## 웹페이지 컴파일 
+
+이제 index.Rmd 파일을 열고 Knit 버튼으로 컴파일을 하면 `_site` 디렉토리에 index.html 등 웹사이트에 필요한 파일들이 들어갑니다. about.Rmd 파일도 같은 방법으로 Knit 버튼으로 컴파일을 해주고 앞에서 배운 Git 툴이나 터미널로 원격저장소에 업데이트를 수행합니다. 
+
+
+## 브라우저로 웹페이지 확인
+
+다음과 같이 웹을 통해 방금 만든 페이지를 확인할 수 있습니다. 
+
+https://greendaygh.github.io/researcheweb/
+
+greendaygh.github.io는 ID마다 주어지는 웹주소, researchE2021은 repository 이름, html 파일은 rmd 컴파일된 파일. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Rstudio git
 
