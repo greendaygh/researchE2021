@@ -1364,11 +1364,11 @@ https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
 
 [github](https://github.com)에 로그인 후 Repository  생성. Private/Public 등의 적절한 옵션을 주고 완료. 주의사항은 README.md 파일 생성하지 않음
 
-![](images/repo-create01.JPG)
+
 
 ### Github page setup
 
-Settings > Pages 에서 Source를 Main branch로, foldedr는 /(root)로 설정 후 Save. 
+Settings > Pages 에서 Source를 Main branch로, foldedr는 /docs 로 설정 후 Save. 
 
 ![](images/repo-create02.JPG)
 
@@ -1547,7 +1547,10 @@ git push
 
 ## 웹페이지 컴파일 
 
-이제 index.Rmd 파일을 열고 Knit 버튼으로 컴파일을 하면 `_site` 디렉토리에 index.html 등 웹사이트에 필요한 파일들이 들어갑니다. about.Rmd 파일도 같은 방법으로 Knit 버튼으로 컴파일을 해주고 앞에서 배운 Git 툴이나 터미널로 원격저장소에 업데이트를 수행합니다. 
+이제 index.Rmd 파일을 열고 Knit 버튼으로 컴파일을 하면 `_site` 디렉토리에 index.html 등 웹사이트에 필요한 파일들이 들어갑니다. about.Rmd 파일도 같은 방법으로 Knit 버튼으로 컴파일을 해줍니다. 
+
+
+마지막으로 _site 디렉토리 이름을 docs로 바꿔준 후 앞에서 배운 Git 툴이나 터미널로 원격저장소에 업데이트를 수행합니다. 이 후 부터는 _site 디렉토리 내용을 복사해서 docs로 옮겨준 후 업데이트를 수행합니다. 
 
 
 ## 브라우저로 웹페이지 확인
