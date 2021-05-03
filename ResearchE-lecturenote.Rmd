@@ -1360,13 +1360,9 @@ https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example
 
 ## 원격 저장소 만들기
 
-### Create Github account
-
-[github](https://github.com)에서 계정 생성
-
 ### Create Github repository
 
-[github](https://github.com)에 로그인 후 Repository  생성. Private/Public, README.md 파일 생성 등의 적절한 옵션을 주고 완료
+[github](https://github.com)에 로그인 후 Repository  생성. Private/Public 등의 적절한 옵션을 주고 완료. 주의사항은 README.md 파일 생성하지 않음
 
 ![](images/repo-create01.JPG)
 
