@@ -1499,8 +1499,21 @@ greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격�
 ## 수업목표 (2021. 5. 10. 월) {.unnumbered}
 
 - 지난 시간 만들었던 researcheweb 사이트 완성
-- researcheweb 페이지 업데이트 
-  1. 앞서 만들었던 part 정보  
+- 메뉴 구성: `_site.yml` 파일에 다음과 같은 구성으로 메뉴 구성
+  - Introduction
+  - Methods
+  - Results 
+  - Discussion
+  - 예를 들어 Introduction의 경우 
+
+```
+ - text: "Introduction"
+   href: introduction.html
+   
+```
+
+Introduction Rmd 파일 만들고 연결
+  - 
 
 
 
