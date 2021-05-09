@@ -2054,6 +2054,93 @@ git push</code></pre>
 <p>greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격저장소 이름, html 파일은 rmd 파일을 컴파일해서 생성된 웹문서 파일 입니다.</p>
 </div>
 </div>
+<div id="researchewebupdate" class="section level1" number="18">
+<h1 number="18"><span class="header-section-number">18</span> researcheweb 페이지 업데이트</h1>
+<ul>
+<li><a href target="_blank_">Remotemeeting 링크</a></li>
+</ul>
+<div id="수업목표-2021.-5.-10.-월" class="section level2 unnumbered">
+<h2 class="unnumbered">수업목표 (2021. 5. 10. 월)</h2>
+<ul>
+<li>지난 시간 만들었던 researcheweb 사이트 완성</li>
+<li>researcheweb 페이지 업데이트
+<ol style="list-style-type: decimal">
+<li>앞서 만들었던 part 정보</li>
+</ol></li>
+</ul>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>igeme.page <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://hayleykim97.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://th-kim310.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://Lelp27.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://aputron.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://gpemelianov.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://yoo-bh.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://seokjin-oh.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://treebird19.github.io/igemE/&quot;</span>,</span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://jinjulee119.github.io/igemE2/&quot;</span></span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>promoters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BBa_R0010&quot;</span>, <span class="st">&quot;BBa_J23100&quot;</span>,</span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0011&quot;</span>, <span class="st">&quot;BBa_I0500&quot;</span>, <span class="st">&quot;BBa_J23101&quot;</span>,</span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0051&quot;</span>, <span class="st">&quot;BBa_J23119&quot;</span>, <span class="st">&quot;BBa_R0062&quot;</span>, <span class="st">&quot;BBa_R0040&quot;</span>)</span>
+<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a>std <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(std_name, igeme.page, promoters)</span>
+<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(std, <span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">std_name</th>
+<th align="left">igeme.page</th>
+<th align="left">promoters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">김승화</td>
+<td align="left"><a href="https://hayleykim97.github.io/igemE/" class="uri">https://hayleykim97.github.io/igemE/</a></td>
+<td align="left">BBa_R0010</td>
+</tr>
+<tr class="even">
+<td align="left">김태현</td>
+<td align="left"><a href="https://th-kim310.github.io/igemE/" class="uri">https://th-kim310.github.io/igemE/</a></td>
+<td align="left">BBa_J23100</td>
+</tr>
+<tr class="odd">
+<td align="left">박성군</td>
+<td align="left"><a href="https://Lelp27.github.io/igemE/" class="uri">https://Lelp27.github.io/igemE/</a></td>
+<td align="left">BBa_R0011</td>
+</tr>
+<tr class="even">
+<td align="left">Aporva</td>
+<td align="left"><a href="https://aputron.github.io/igemE/" class="uri">https://aputron.github.io/igemE/</a></td>
+<td align="left">BBa_I0500</td>
+</tr>
+<tr class="odd">
+<td align="left">Georgii</td>
+<td align="left"><a href="https://gpemelianov.github.io/igemE/" class="uri">https://gpemelianov.github.io/igemE/</a></td>
+<td align="left">BBa_J23101</td>
+</tr>
+<tr class="even">
+<td align="left">유병현</td>
+<td align="left"><a href="https://yoo-bh.github.io/igemE/" class="uri">https://yoo-bh.github.io/igemE/</a></td>
+<td align="left">BBa_R0051</td>
+</tr>
+<tr class="odd">
+<td align="left">오석진</td>
+<td align="left"><a href="https://seokjin-oh.github.io/igemE/" class="uri">https://seokjin-oh.github.io/igemE/</a></td>
+<td align="left">BBa_J23119</td>
+</tr>
+<tr class="even">
+<td align="left">허성보</td>
+<td align="left"><a href="https://treebird19.github.io/igemE/" class="uri">https://treebird19.github.io/igemE/</a></td>
+<td align="left">BBa_R0062</td>
+</tr>
+<tr class="odd">
+<td align="left">이진주</td>
+<td align="left"><a href="https://jinjulee119.github.io/igemE2/" class="uri">https://jinjulee119.github.io/igemE2/</a></td>
+<td align="left">BBa_R0040</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
 <div id="refs" class="references csl-bib-body">

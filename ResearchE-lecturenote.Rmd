@@ -1492,4 +1492,36 @@ greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격�
 
 
 
+# researcheweb 페이지 업데이트 {#researchewebupdate}
+
+-   [Remotemeeting 링크](){target="_blank_"}
+
+## 수업목표 (2021. 5. 10. 월) {.unnumbered}
+
+- 지난 시간 만들었던 researcheweb 사이트 완성
+- researcheweb 페이지 업데이트 
+  1. 앞서 만들었던 part 정보  
+
+
+
+
+```{r}
+igeme.page <- c("https://hayleykim97.github.io/igemE/",
+                 "https://th-kim310.github.io/igemE/",
+                 "https://Lelp27.github.io/igemE/",
+                 "https://aputron.github.io/igemE/",
+                 "https://gpemelianov.github.io/igemE/",
+                 "https://yoo-bh.github.io/igemE/",
+                 "https://seokjin-oh.github.io/igemE/",
+                 "https://treebird19.github.io/igemE/",
+                 "https://jinjulee119.github.io/igemE2/"
+                 )
+promoters <- c("BBa_R0010", "BBa_J23100",
+               "BBa_R0011", "BBa_I0500", "BBa_J23101",
+               "BBa_R0051", "BBa_J23119", "BBa_R0062", "BBa_R0040")
+std <- data.frame(std_name, igeme.page, promoters)
+knitr::kable(std, format = "markdown")
+```
+
+
 # References
