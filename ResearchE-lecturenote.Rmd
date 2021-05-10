@@ -1494,17 +1494,46 @@ greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격�
 
 # researcheweb 페이지 업데이트 {#researchewebupdate}
 
--   [Remotemeeting 링크](){target="_blank_"}
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff8080817884319d0179538a275b3902){target="_blank_"}
 
 ## 수업목표 (2021. 5. 10. 월) {.unnumbered}
 
-- 지난 시간 만들었던 researcheweb 사이트 완성
-- 메뉴 구성: `_site.yml` 파일에 다음과 같은 구성으로 메뉴 구성
-  - Introduction
-  - Methods
-  - Results 
-  - Discussion
-  - 예를 들어 Introduction의 경우 
+- 리포트 작성 (지난 시간 만들었던 researcheweb 사이트 업데이트)
+- 모든 작업은 지난시간 만들었던 `researcheweb` 프로젝트에서 수행
+
+
+## 웹페이지 주소
+
+
+```{r, echo=F}
+
+ids <- c("hayleykim97", 
+         "th-kim310",
+         "Lelp27",
+         "aputron",
+         "gpemelianov",
+         "yoo-bh",
+         "seokjin-oh",
+         "treebird19",
+         "jinjulee119"
+         )
+
+webpage <- paste0("https://", ids, ".github.io/researchweb/")
+
+researchetab <- data.frame(ids, webpage)
+knitr::kable(researchetab, format = "markdown")
+```
+
+
+## 메뉴 구성
+`_site.yml` 파일에 다음과 같은 구성으로 메뉴 구성
+
+- Introduction
+- Method & Results 
+- Discussion
+
+
+예를 들어 Introduction의 경우 다음과 같이 html 파일을 지정하고 introduction.Rmd 파일을 만든 후 컴파일로 html 파일을 만들어 진행. 
 
 ```
  - text: "Introduction"
@@ -1512,29 +1541,17 @@ greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격�
    
 ```
 
-Introduction Rmd 파일 만들고 연결
-  - 
+다른 관련 메뉴들에 대한 Rmd 파일도 모두 작성
 
+## 각 항목의 내용
 
+다음은 하나의 예제일 뿐이며 Rstudio, git, rmarkdown 을 활용한 배웠던 (또는 새로운) 다른 주제에 대한 내용도 가능함. 학기 끝날때까지 계속 업데이트해서 리포트 완성할 예정
 
+- Introduction: 생물학의 반복성과 재현성 극복을 위한 소프트웨어 (R, Rstudio, Rmarkdown, git) 활용, 협업 (data sharing), 합성생물학 데이터 수집 등
 
-```{r}
-igeme.page <- c("https://hayleykim97.github.io/igemE/",
-                 "https://th-kim310.github.io/igemE/",
-                 "https://Lelp27.github.io/igemE/",
-                 "https://aputron.github.io/igemE/",
-                 "https://gpemelianov.github.io/igemE/",
-                 "https://yoo-bh.github.io/igemE/",
-                 "https://seokjin-oh.github.io/igemE/",
-                 "https://treebird19.github.io/igemE/",
-                 "https://jinjulee119.github.io/igemE2/"
-                 )
-promoters <- c("BBa_R0010", "BBa_J23100",
-               "BBa_R0011", "BBa_I0500", "BBa_J23101",
-               "BBa_R0051", "BBa_J23119", "BBa_R0062", "BBa_R0040")
-std <- data.frame(std_name, igeme.page, promoters)
-knitr::kable(std, format = "markdown")
-```
+- Method & Results: 지금까지 배운 내용들 정리 (ex. Rstudio, git, rmarkdown 사용법, 합성생물학 데이터 수집 방법 등), submenu를 만들어서 각 주제별로 Rmd 파일 만드는 것도 좋음
+
+- Discussions
 
 
 # References

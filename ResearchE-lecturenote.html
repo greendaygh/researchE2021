@@ -2057,96 +2057,86 @@ git push</code></pre>
 <div id="researchewebupdate" class="section level1" number="18">
 <h1 number="18"><span class="header-section-number">18</span> researcheweb 페이지 업데이트</h1>
 <ul>
-<li><a href target="_blank_">Remotemeeting 링크</a></li>
+<li><a href="https://www.remotemeeting.com/reservation/share/ff8080817884319d0179538a275b3902" target="_blank_">Remotemeeting 링크</a></li>
 </ul>
 <div id="수업목표-2021.-5.-10.-월" class="section level2 unnumbered">
 <h2 class="unnumbered">수업목표 (2021. 5. 10. 월)</h2>
 <ul>
-<li>지난 시간 만들었던 researcheweb 사이트 완성</li>
-<li>메뉴 구성: <code>_site.yml</code> 파일에 다음과 같은 구성으로 메뉴 구성
-<ul>
-<li>Introduction</li>
-<li>Methods</li>
-<li>Results</li>
-<li>Discussion</li>
-<li>예를 들어 Introduction의 경우</li>
-</ul></li>
+<li>리포트 작성 (지난 시간 만들었던 researcheweb 사이트 업데이트)</li>
+<li>모든 작업은 지난시간 만들었던 <code>researcheweb</code> 프로젝트에서 수행</li>
 </ul>
-<pre><code> - text: &quot;Introduction&quot;
-   href: introduction.html
-   </code></pre>
-<p>Introduction Rmd 파일 만들고 연결 -</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>igeme.page <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://hayleykim97.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://th-kim310.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://Lelp27.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://aputron.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://gpemelianov.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://yoo-bh.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://seokjin-oh.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://treebird19.github.io/igemE/&quot;</span>,</span>
-<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;https://jinjulee119.github.io/igemE2/&quot;</span></span>
-<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>                 )</span>
-<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>promoters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BBa_R0010&quot;</span>, <span class="st">&quot;BBa_J23100&quot;</span>,</span>
-<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0011&quot;</span>, <span class="st">&quot;BBa_I0500&quot;</span>, <span class="st">&quot;BBa_J23101&quot;</span>,</span>
-<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;BBa_R0051&quot;</span>, <span class="st">&quot;BBa_J23119&quot;</span>, <span class="st">&quot;BBa_R0062&quot;</span>, <span class="st">&quot;BBa_R0040&quot;</span>)</span>
-<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>std <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(std_name, igeme.page, promoters)</span>
-<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(std, <span class="at">format =</span> <span class="st">&quot;markdown&quot;</span>)</span></code></pre></div>
+</div>
+<div id="웹페이지-주소" class="section level2" number="18.1">
+<h2 number="18.1"><span class="header-section-number">18.1</span> 웹페이지 주소</h2>
 <table>
 <thead>
 <tr class="header">
-<th align="left">std_name</th>
-<th align="left">igeme.page</th>
-<th align="left">promoters</th>
+<th align="left">ids</th>
+<th align="left">webpage</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">김승화</td>
-<td align="left"><a href="https://hayleykim97.github.io/igemE/" class="uri">https://hayleykim97.github.io/igemE/</a></td>
-<td align="left">BBa_R0010</td>
+<td align="left">hayleykim97</td>
+<td align="left"><a href="https://hayleykim97.github.io/researchweb/" class="uri">https://hayleykim97.github.io/researchweb/</a></td>
 </tr>
 <tr class="even">
-<td align="left">김태현</td>
-<td align="left"><a href="https://th-kim310.github.io/igemE/" class="uri">https://th-kim310.github.io/igemE/</a></td>
-<td align="left">BBa_J23100</td>
+<td align="left">th-kim310</td>
+<td align="left"><a href="https://th-kim310.github.io/researchweb/" class="uri">https://th-kim310.github.io/researchweb/</a></td>
 </tr>
 <tr class="odd">
-<td align="left">박성군</td>
-<td align="left"><a href="https://Lelp27.github.io/igemE/" class="uri">https://Lelp27.github.io/igemE/</a></td>
-<td align="left">BBa_R0011</td>
+<td align="left">Lelp27</td>
+<td align="left"><a href="https://Lelp27.github.io/researchweb/" class="uri">https://Lelp27.github.io/researchweb/</a></td>
 </tr>
 <tr class="even">
-<td align="left">Aporva</td>
-<td align="left"><a href="https://aputron.github.io/igemE/" class="uri">https://aputron.github.io/igemE/</a></td>
-<td align="left">BBa_I0500</td>
+<td align="left">aputron</td>
+<td align="left"><a href="https://aputron.github.io/researchweb/" class="uri">https://aputron.github.io/researchweb/</a></td>
 </tr>
 <tr class="odd">
-<td align="left">Georgii</td>
-<td align="left"><a href="https://gpemelianov.github.io/igemE/" class="uri">https://gpemelianov.github.io/igemE/</a></td>
-<td align="left">BBa_J23101</td>
+<td align="left">gpemelianov</td>
+<td align="left"><a href="https://gpemelianov.github.io/researchweb/" class="uri">https://gpemelianov.github.io/researchweb/</a></td>
 </tr>
 <tr class="even">
-<td align="left">유병현</td>
-<td align="left"><a href="https://yoo-bh.github.io/igemE/" class="uri">https://yoo-bh.github.io/igemE/</a></td>
-<td align="left">BBa_R0051</td>
+<td align="left">yoo-bh</td>
+<td align="left"><a href="https://yoo-bh.github.io/researchweb/" class="uri">https://yoo-bh.github.io/researchweb/</a></td>
 </tr>
 <tr class="odd">
-<td align="left">오석진</td>
-<td align="left"><a href="https://seokjin-oh.github.io/igemE/" class="uri">https://seokjin-oh.github.io/igemE/</a></td>
-<td align="left">BBa_J23119</td>
+<td align="left">seokjin-oh</td>
+<td align="left"><a href="https://seokjin-oh.github.io/researchweb/" class="uri">https://seokjin-oh.github.io/researchweb/</a></td>
 </tr>
 <tr class="even">
-<td align="left">허성보</td>
-<td align="left"><a href="https://treebird19.github.io/igemE/" class="uri">https://treebird19.github.io/igemE/</a></td>
-<td align="left">BBa_R0062</td>
+<td align="left">treebird19</td>
+<td align="left"><a href="https://treebird19.github.io/researchweb/" class="uri">https://treebird19.github.io/researchweb/</a></td>
 </tr>
 <tr class="odd">
-<td align="left">이진주</td>
-<td align="left"><a href="https://jinjulee119.github.io/igemE2/" class="uri">https://jinjulee119.github.io/igemE2/</a></td>
-<td align="left">BBa_R0040</td>
+<td align="left">jinjulee119</td>
+<td align="left"><a href="https://jinjulee119.github.io/researchweb/" class="uri">https://jinjulee119.github.io/researchweb/</a></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="메뉴-구성" class="section level2" number="18.2">
+<h2 number="18.2"><span class="header-section-number">18.2</span> 메뉴 구성</h2>
+<p><code>_site.yml</code> 파일에 다음과 같은 구성으로 메뉴 구성</p>
+<ul>
+<li>Introduction</li>
+<li>Method &amp; Results</li>
+<li>Discussion</li>
+</ul>
+<p>예를 들어 Introduction의 경우 다음과 같이 html 파일을 지정하고 introduction.Rmd 파일을 만든 후 컴파일로 html 파일을 만들어 진행.</p>
+<pre><code> - text: &quot;Introduction&quot;
+   href: introduction.html
+   </code></pre>
+<p>다른 관련 메뉴들에 대한 Rmd 파일도 모두 작성</p>
+</div>
+<div id="각-항목의-내용" class="section level2" number="18.3">
+<h2 number="18.3"><span class="header-section-number">18.3</span> 각 항목의 내용</h2>
+<p>다음은 하나의 예제일 뿐이며 Rstudio, git, rmarkdown 을 활용한 배웠던 (또는 새로운) 다른 주제에 대한 내용도 가능함. 학기 끝날때까지 계속 업데이트해서 리포트 완성할 예정</p>
+<ul>
+<li><p>Introduction: 생물학의 반복성과 재현성 극복을 위한 소프트웨어 (R, Rstudio, Rmarkdown, git) 활용, 협업 (data sharing), 합성생물학 데이터 수집 등</p></li>
+<li><p>Method &amp; Results: 지금까지 배운 내용들 정리 (ex. Rstudio, git, rmarkdown 사용법, 합성생물학 데이터 수집 방법 등), submenu를 만들어서 각 주제별로 Rmd 파일 만드는 것도 좋음</p></li>
+<li><p>Discussions</p></li>
+</ul>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
