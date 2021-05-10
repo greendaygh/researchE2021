@@ -1518,7 +1518,7 @@ ids <- c("hayleykim97",
          "jinjulee119"
          )
 
-webpage <- paste0("https://", ids, ".github.io/researchweb/")
+webpage <- paste0("https://", ids, ".github.io/researcheweb/")
 
 researchetab <- data.frame(ids, webpage)
 knitr::kable(researchetab, format = "markdown")
