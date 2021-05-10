@@ -1492,7 +1492,7 @@ greendaygh.github.io는 ID마다 주어지는 웹주소, researcheweb은 원격�
 
 
 
-# researcheweb 페이지 업데이트 {#researchewebupdate}
+# Researcheweb update {#researchewebupdate}
 
 -   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/ff8080817884319d0179538a275b3902){target="_blank_"}
 
