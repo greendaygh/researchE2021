@@ -1554,4 +1554,87 @@ knitr::kable(researchetab, format = "markdown")
 - Discussions
 
 
+
+# Data processing for Researcheweb {#dataforresearcheweb}
+
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad6795bded0017960ff9c9a06e8){target="_blank_"}
+
+## 수업목표 (2021. 5. 13. 목) {.unnumbered}
+
+- igem_device 테이블이 추가된 부품 정보 엑셀 파일을 작성하고 github (researcheweb 프로젝트)에 업로드/다운로드 가능한 코드를 작성함
+
+
+## 부품 정보 엑셀 파일 작성
+
+
+관계형 데이터베이스( MySQL, Oracle, SQLite 등 )는 객체끼리 관계를 맺을 수 있으며 두 객체의 관계에는 일대일 ( 1:1 ), 일대다 ( 1:N ), 다대다 ( N:M ) 관계가 있음. 
+
+![](images/dbtable2.JPG)
+
+## 부품 정보 엑셀 파일 github 업로드 
+
+```
+## R 코드
+```
+
+## 모든 팀원의 부품 정보 엑셀 파일 다운로드  
+
+```
+## R 코드
+```
+
+## Data preprocessing 
+
+```{r, eval=F}
+library(readxl)
+library(tidyverse)
+
+destdir <- "download/promoter/"
+filenames <- dir(path = destdir, pattern = "*.xlsx")
+
+
+tmp1 <- list()
+tmp2 <- list()
+tmp3 <- list()
+
+
+for(i in 1:length(filenames)) {
+  destfile <- paste0(destdir, filenames[i])
+  tmp1[[i]] <- read_excel(destfile, sheet = 1, skip = 0, col_names = T)
+  tmp2[[i]] <- read_excel(destfile, sheet = 2, skip = 0, col_names = T)
+  tmp3[[i]] <- read_excel(destfile, sheet = 3, skip = 0, col_names = T)
+}
+
+
+igem_team <- do.call(bind_rows, tmp1)
+
+
+```
+
+엑셀에서 저장한 파일을 읽어온 후 각 변수들의 (컬럼) class 타입을 맞춰주고 `bind_row` 함수를 이용해서 data.frame/tibble 형태로 저장
+
+```{r, eval=F}
+## to make type be the same
+dat <- lapply(tmp1, function(x) mutate_at(x, .vars = c("year"), as.character))
+igem_team <- do.call(bind_rows, dat)
+
+## nothing to make a correction
+igem_part <- do.call(bind_rows, tmp2)
+
+## remote typo of the column name, cons
+tmp3[[3]] <- tmp3[[3]] %>% 
+  mutate(conc = cons) %>% 
+  select(-cons)
+
+## to make type be the same
+dat <- lapply(tmp3, function(x) mutate_at(x, .vars = "conc", as.numeric))
+dat <- lapply(dat, function(x) mutate_at(x, .vars = "incubtemp", as.character))
+dat <- lapply(dat, function(x) mutate_at(x, .vars = "id", as.character))
+dat <- lapply(dat, function(x) mutate_at(x, .vars = "incubhr", as.character))
+igem_obs <- do.call(bind_rows, dat)
+
+```
+
+
+
 # References
