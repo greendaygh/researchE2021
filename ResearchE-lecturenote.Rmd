@@ -1563,6 +1563,8 @@ knitr::kable(researchetab, format = "markdown")
 
 - igem_device 테이블이 추가된 부품 정보 엑셀 파일을 작성하고 github (researcheweb 프로젝트)에 업로드/다운로드 가능한 코드를 작성함
 
+참고로 다운로드 업로드는 Rstudio의 file 탐색창의 Upload, More>export 이용
+![](images/Screenshot from 2021-05-13 10-52-42.png)
 
 ## 부품 정보 엑셀 파일 작성
 
@@ -1577,11 +1579,21 @@ knitr::kable(researchetab, format = "markdown")
 ## R 코드
 ```
 
+프로젝트의 Root 디렉토리에 `partdb.xlsx` 라는 이름으로 저장하고 git에 add/commit/push
+
+
+
 ## 모든 팀원의 부품 정보 엑셀 파일 다운로드  
+
+`download/` 디렉토리에 모든 팀원의 `partdb.xlsx`을 다운로드 받아서 저장. 
+
+[지난 수업 다운로드 코드](https://greendaygh.github.io/researchE2021/ResearchE-lecturenote.html#15_Analysis_of_the_promoter_data_V) 참조. 
 
 ```
 ## R 코드
 ```
+
+
 
 ## Data preprocessing 
 
