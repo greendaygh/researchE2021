@@ -1649,13 +1649,29 @@ igem_obs <- do.call(bind_rows, dat)
 
 
 
-# Researcheweb build {#researcheweb build}
+# Researcheweb build {#researchewebbuild}
 
 
-## 수업목표 (2021. 5. 17. 목) {.unnumbered}
+## 수업목표 (2021. 5. 17. 월) {.unnumbered}
 
 - 각 학생들 개인 지도 (10시 ~ 11시)
 - Researcheweb 및 excelfile 준비 완료 목표 
+
+
+
+# Excel file for Researcheweb {#researchewebbuild}
+
+## 수업목표 (2021. 5. 20. 목) {.unnumbered}
+
+- Researcheweb 및 excelfile 준비
+
+
+## igem_device 테이블 구성
+
+![](images/igem_device.png)
+
+
+
 
 
 # References
