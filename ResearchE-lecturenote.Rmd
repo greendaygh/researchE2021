@@ -1659,7 +1659,7 @@ igem_obs <- do.call(bind_rows, dat)
 
 
 
-# Excel file for Researcheweb {#researchewebbuild}
+# Excel file for Researcheweb {#researchewebbuild2}
 
 ## 수업목표 (2021. 5. 20. 목) {.unnumbered}
 
@@ -1671,6 +1671,63 @@ igem_obs <- do.call(bind_rows, dat)
 ![](images/igem_device.png)
 
 
+# Building Researcheweb {#buildingresearchweb}
+
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c908ad6795bded001799bc03a2c3679){target="_blank_"}
+
+## 수업목표 (2021. 5. 24. 월) {.unnumbered}
+
+- 각자 조사한 Excelfile 완성 (igem_device)
+
+## 웹사이트 만들기 정리
+
+- 각각의 Rmd 파일 수정 
+- 수정한 Rmd 파일 Knit 수행
+- _site 디렉토리에 생성된 html 파일 docs 디렉토리로 복사를 위해 Terminal에서 다음 스크립트 실행 
+
+```
+cp -R ./_site/* ./docs/
+```
+- local 저장소에 저장을 위해 Terminal에서 다음 스크립트 실행
+
+```
+git add .
+git commit -m "update"
+```
+
+- 원격 저장소에 저장을 위해 Terminal에서 다음 스크립트 실행
+```
+git push
+```
+
+## Database 구축 (엑셀 파일 만들기)
+
+- 본인이 탐색한 part 정보들만 입력
+
+- igem_team
+
+![](images/igem_team.PNG)
+
+- igem_part
+
+![](images/igem_part.PNG)
+
+- igem_device
+
+![](images/igem_device2.PNG){width=400}
+
+- igem_obs
+
+![](images/igem_obs.PNG)
+
+
+- `partdb.xlsx` 파일이름으로 `download` 디렉토리에 저장
+
+```
+./download/partdb.xlsx
+```
+
+## 보고서 내용 정리
 
 
 
