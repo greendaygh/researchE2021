@@ -1771,16 +1771,14 @@ ids <- c("hayleykim97",
          "treebird19",
          "jinjulee119"
          )
-homedirs <- rep("researcheweb ", 9) 
-
 destdir <- "download/"
 
-#i <- 2
+i <- 2
 
-# https://github.com/TH-Kim310/researcheweb/raw/main/download/partdb.xlsx
+# https://github.com/TH-Kim310/researcheweb/blob/main/download/partdb.xlsx
 
 for(i in 1:length(ids)){
-  url <-  paste0("https://github.com/", ids[i], "/", "researcheweb", "/raw/main/", destdir, "/partdb.xlsx")
+  url <-  paste0("https://github.com/", ids[i], "/", "researcheweb", "/raw/main/", destdir, "partdb.xlsx")
   destfile <- paste0(destdir, ids[i], "_partdb.xlsx")
   tempfile <- paste0(destdir, "temp_", ids[i], "_partdb.xlsx")
   
@@ -1836,7 +1834,7 @@ for(i in 1:length(ids)){
     }
     
     tmp <- read_excel(tempfile, sheet = 4, skip = 0, col_names = T)
-    igem_cols <- c("id", "strain", "indc", "concunit", "value", "valunit", "incubhr", "incubtemp", "device_id", "link")
+    igem_cols <- c("id", "strain", "indc", "conc", "concunit", "value", "valunit", "incubhr", "incubtemp", "device_id", "link")
     if(length(names(tmp))==length(igem_cols)){
       if(!isTRUE(all.equal(names(tmp), igem_cols))){
         cat(i, ids[i], " check column names in the igem_obs sheet\n")
@@ -1864,7 +1862,7 @@ for(i in 1:length(ids)){
 
 ```
 
-
+테이블 통합 
 
 ```{r, eval=F}
 filenames <- dir(path = destdir, pattern = "*.xlsx")
