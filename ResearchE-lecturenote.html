@@ -2340,96 +2340,95 @@ git commit -m &quot;update&quot;</code></pre>
 <span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;treebird19&quot;</span>,</span>
 <span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">&quot;jinjulee119&quot;</span></span>
 <span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>         )</span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>homedirs <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;researcheweb &quot;</span>, <span class="dv">9</span>) </span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>destdir <span class="ot">&lt;-</span> <span class="st">&quot;download/&quot;</span></span>
 <span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>destdir <span class="ot">&lt;-</span> <span class="st">&quot;download/&quot;</span></span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a><span class="co">#i &lt;- 2</span></span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/TH-Kim310/researcheweb/blob/main/download/partdb.xlsx</span></span>
 <span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/TH-Kim310/researcheweb/raw/main/download/partdb.xlsx</span></span>
-<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(ids)){</span>
-<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span>  <span class="fu">paste0</span>(<span class="st">&quot;https://github.com/&quot;</span>, ids[i], <span class="st">&quot;/&quot;</span>, <span class="st">&quot;researcheweb&quot;</span>, <span class="st">&quot;/raw/main/&quot;</span>, destdir, <span class="st">&quot;/partdb.xlsx&quot;</span>)</span>
-<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a>  destfile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(destdir, ids[i], <span class="st">&quot;_partdb.xlsx&quot;</span>)</span>
-<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a>  tempfile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(destdir, <span class="st">&quot;temp_&quot;</span>, ids[i], <span class="st">&quot;_partdb.xlsx&quot;</span>)</span>
-<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a>  <span class="do">## check the rules </span></span>
-<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ===============================================</span></span>
-<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>  flag <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">try</span>(<span class="fu">download.file</span>(url, tempfile, <span class="at">quiet =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">file.exists</span>(tempfile)){</span>
-<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; No excel file</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">flush.console</span>()</span>
-<span id="cb78-35"><a href="#cb78-35" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb78-36"><a href="#cb78-36" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
-<span id="cb78-37"><a href="#cb78-37" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;team_name&quot;</span>, <span class="st">&quot;project&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;wiki&quot;</span>)</span>
-<span id="cb78-38"><a href="#cb78-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
-<span id="cb78-39"><a href="#cb78-39" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
-<span id="cb78-40"><a href="#cb78-40" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_team sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-41"><a href="#cb78-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
-<span id="cb78-42"><a href="#cb78-42" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-43"><a href="#cb78-43" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb78-44"><a href="#cb78-44" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
-<span id="cb78-45"><a href="#cb78-45" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_team sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-46"><a href="#cb78-46" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
-<span id="cb78-47"><a href="#cb78-47" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-48"><a href="#cb78-48" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb78-49"><a href="#cb78-49" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-50"><a href="#cb78-50" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
-<span id="cb78-51"><a href="#cb78-51" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;BBid&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="st">&quot;link&quot;</span>, <span class="st">&quot;backbone&quot;</span>, <span class="st">&quot;device_id&quot;</span>, <span class="st">&quot;team_id&quot;</span>, <span class="st">&quot;user&quot;</span>)</span>
-<span id="cb78-52"><a href="#cb78-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
-<span id="cb78-53"><a href="#cb78-53" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
-<span id="cb78-54"><a href="#cb78-54" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_part sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-55"><a href="#cb78-55" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
-<span id="cb78-56"><a href="#cb78-56" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-57"><a href="#cb78-57" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb78-58"><a href="#cb78-58" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
-<span id="cb78-59"><a href="#cb78-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_part sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-60"><a href="#cb78-60" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
-<span id="cb78-61"><a href="#cb78-61" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-62"><a href="#cb78-62" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb78-63"><a href="#cb78-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-64"><a href="#cb78-64" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">3</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
-<span id="cb78-65"><a href="#cb78-65" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;device_name&quot;</span>, <span class="st">&quot;part_combination&quot;</span>)</span>
-<span id="cb78-66"><a href="#cb78-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
-<span id="cb78-67"><a href="#cb78-67" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
-<span id="cb78-68"><a href="#cb78-68" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_device sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-69"><a href="#cb78-69" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
-<span id="cb78-70"><a href="#cb78-70" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-71"><a href="#cb78-71" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb78-72"><a href="#cb78-72" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
-<span id="cb78-73"><a href="#cb78-73" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_device sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-74"><a href="#cb78-74" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
-<span id="cb78-75"><a href="#cb78-75" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-76"><a href="#cb78-76" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb78-77"><a href="#cb78-77" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-78"><a href="#cb78-78" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">4</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
-<span id="cb78-79"><a href="#cb78-79" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;strain&quot;</span>, <span class="st">&quot;indc&quot;</span>, <span class="st">&quot;concunit&quot;</span>, <span class="st">&quot;value&quot;</span>, <span class="st">&quot;valunit&quot;</span>, <span class="st">&quot;incubhr&quot;</span>, <span class="st">&quot;incubtemp&quot;</span>, <span class="st">&quot;device_id&quot;</span>, <span class="st">&quot;link&quot;</span>)</span>
-<span id="cb78-80"><a href="#cb78-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
-<span id="cb78-81"><a href="#cb78-81" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
-<span id="cb78-82"><a href="#cb78-82" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_obs sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-83"><a href="#cb78-83" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
-<span id="cb78-84"><a href="#cb78-84" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-85"><a href="#cb78-85" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb78-86"><a href="#cb78-86" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
-<span id="cb78-87"><a href="#cb78-87" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_obs sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb78-88"><a href="#cb78-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
-<span id="cb78-89"><a href="#cb78-89" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
-<span id="cb78-90"><a href="#cb78-90" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb78-91"><a href="#cb78-91" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb78-92"><a href="#cb78-92" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(flag){</span>
-<span id="cb78-93"><a href="#cb78-93" aria-hidden="true" tabindex="-1"></a>      <span class="fu">try</span>(<span class="fu">download.file</span>(url, destfile, <span class="at">quiet =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb78-94"><a href="#cb78-94" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb78-95"><a href="#cb78-95" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.remove</span>(tempfile)</span>
-<span id="cb78-96"><a href="#cb78-96" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb78-97"><a href="#cb78-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(ids)){</span>
+<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">&lt;-</span>  <span class="fu">paste0</span>(<span class="st">&quot;https://github.com/&quot;</span>, ids[i], <span class="st">&quot;/&quot;</span>, <span class="st">&quot;researcheweb&quot;</span>, <span class="st">&quot;/raw/main/&quot;</span>, destdir, <span class="st">&quot;partdb.xlsx&quot;</span>)</span>
+<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a>  destfile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(destdir, ids[i], <span class="st">&quot;_partdb.xlsx&quot;</span>)</span>
+<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a>  tempfile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(destdir, <span class="st">&quot;temp_&quot;</span>, ids[i], <span class="st">&quot;_partdb.xlsx&quot;</span>)</span>
+<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>  <span class="do">## check the rules </span></span>
+<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ===============================================</span></span>
+<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a>  flag <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">try</span>(<span class="fu">download.file</span>(url, tempfile, <span class="at">quiet =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">file.exists</span>(tempfile)){</span>
+<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; No excel file</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">flush.console</span>()</span>
+<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">1</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb78-35"><a href="#cb78-35" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;team_name&quot;</span>, <span class="st">&quot;project&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;wiki&quot;</span>)</span>
+<span id="cb78-36"><a href="#cb78-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
+<span id="cb78-37"><a href="#cb78-37" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
+<span id="cb78-38"><a href="#cb78-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_team sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-39"><a href="#cb78-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
+<span id="cb78-40"><a href="#cb78-40" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-41"><a href="#cb78-41" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb78-42"><a href="#cb78-42" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb78-43"><a href="#cb78-43" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_team sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-44"><a href="#cb78-44" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
+<span id="cb78-45"><a href="#cb78-45" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-46"><a href="#cb78-46" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-47"><a href="#cb78-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb78-48"><a href="#cb78-48" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">2</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb78-49"><a href="#cb78-49" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;BBid&quot;</span>, <span class="st">&quot;type&quot;</span>, <span class="st">&quot;link&quot;</span>, <span class="st">&quot;backbone&quot;</span>, <span class="st">&quot;device_id&quot;</span>, <span class="st">&quot;team_id&quot;</span>, <span class="st">&quot;user&quot;</span>)</span>
+<span id="cb78-50"><a href="#cb78-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
+<span id="cb78-51"><a href="#cb78-51" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
+<span id="cb78-52"><a href="#cb78-52" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_part sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-53"><a href="#cb78-53" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
+<span id="cb78-54"><a href="#cb78-54" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-55"><a href="#cb78-55" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb78-56"><a href="#cb78-56" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb78-57"><a href="#cb78-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_part sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-58"><a href="#cb78-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
+<span id="cb78-59"><a href="#cb78-59" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-60"><a href="#cb78-60" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-61"><a href="#cb78-61" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb78-62"><a href="#cb78-62" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">3</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb78-63"><a href="#cb78-63" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;device_name&quot;</span>, <span class="st">&quot;part_combination&quot;</span>)</span>
+<span id="cb78-64"><a href="#cb78-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
+<span id="cb78-65"><a href="#cb78-65" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
+<span id="cb78-66"><a href="#cb78-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_device sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-67"><a href="#cb78-67" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
+<span id="cb78-68"><a href="#cb78-68" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-69"><a href="#cb78-69" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb78-70"><a href="#cb78-70" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb78-71"><a href="#cb78-71" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_device sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-72"><a href="#cb78-72" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
+<span id="cb78-73"><a href="#cb78-73" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-74"><a href="#cb78-74" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-75"><a href="#cb78-75" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb78-76"><a href="#cb78-76" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(tempfile, <span class="at">sheet =</span> <span class="dv">4</span>, <span class="at">skip =</span> <span class="dv">0</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb78-77"><a href="#cb78-77" aria-hidden="true" tabindex="-1"></a>    igem_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;strain&quot;</span>, <span class="st">&quot;indc&quot;</span>, <span class="st">&quot;conc&quot;</span>, <span class="st">&quot;concunit&quot;</span>, <span class="st">&quot;value&quot;</span>, <span class="st">&quot;valunit&quot;</span>, <span class="st">&quot;incubhr&quot;</span>, <span class="st">&quot;incubtemp&quot;</span>, <span class="st">&quot;device_id&quot;</span>, <span class="st">&quot;link&quot;</span>)</span>
+<span id="cb78-78"><a href="#cb78-78" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">names</span>(tmp))<span class="sc">==</span><span class="fu">length</span>(igem_cols)){</span>
+<span id="cb78-79"><a href="#cb78-79" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span>(<span class="sc">!</span><span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">names</span>(tmp), igem_cols))){</span>
+<span id="cb78-80"><a href="#cb78-80" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check column names in the igem_obs sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-81"><a href="#cb78-81" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
+<span id="cb78-82"><a href="#cb78-82" aria-hidden="true" tabindex="-1"></a>        flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-83"><a href="#cb78-83" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb78-84"><a href="#cb78-84" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{</span>
+<span id="cb78-85"><a href="#cb78-85" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(i, ids[i], <span class="st">&quot; check the number of columns in the igem_obs sheet</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb78-86"><a href="#cb78-86" aria-hidden="true" tabindex="-1"></a>      <span class="fu">flush.console</span>()</span>
+<span id="cb78-87"><a href="#cb78-87" aria-hidden="true" tabindex="-1"></a>      flag <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb78-88"><a href="#cb78-88" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-89"><a href="#cb78-89" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb78-90"><a href="#cb78-90" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(flag){</span>
+<span id="cb78-91"><a href="#cb78-91" aria-hidden="true" tabindex="-1"></a>      <span class="fu">try</span>(<span class="fu">download.file</span>(url, destfile, <span class="at">quiet =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb78-92"><a href="#cb78-92" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb78-93"><a href="#cb78-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.remove</span>(tempfile)</span>
+<span id="cb78-94"><a href="#cb78-94" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb78-95"><a href="#cb78-95" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-96"><a href="#cb78-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-97"><a href="#cb78-97" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ===============================================</span></span>
 <span id="cb78-98"><a href="#cb78-98" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-99"><a href="#cb78-99" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ===============================================</span></span>
-<span id="cb78-100"><a href="#cb78-100" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-101"><a href="#cb78-101" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb78-102"><a href="#cb78-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);<span class="fu">flush.console</span>()</span>
-<span id="cb78-103"><a href="#cb78-103" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb78-99"><a href="#cb78-99" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb78-100"><a href="#cb78-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>);<span class="fu">flush.console</span>()</span>
+<span id="cb78-101"><a href="#cb78-101" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>테이블 통합</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>filenames <span class="ot">&lt;-</span> <span class="fu">dir</span>(<span class="at">path =</span> destdir, <span class="at">pattern =</span> <span class="st">&quot;*.xlsx&quot;</span>)</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
