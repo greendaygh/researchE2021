@@ -2627,7 +2627,7 @@ git commit -m &quot;update&quot;</code></pre>
 </div>
 <div id="테이블-통합-최종" class="section level2" number="24.5">
 <h2 number="24.5"><span class="header-section-number">24.5</span> 테이블 통합 (최종)</h2>
-<p>그런데 최종 데이터를 모두 합하면 동일한 ID 를 갖는 데이터가 다수 발생함. 따라서 최종 데이터 병합 전, 각 엑셒파일 이름을 (사용자 id 포함) 모든 데이터에 (row에) 추가하여 (<code>tmp %&gt;% mutate(filename=filenames[i])</code> 부분) 데이터를 병합 (생성된 파일 이름 정보는 다음 데이터 전처리 단계에서 사용하고 최종 데이터 생성 예정).</p>
+<p>그런데 최종 데이터를 모두 합하면 동일한 ID 를 갖는 데이터가 다수 발생함. 따라서 최종 데이터 병합 후에 테이블간의 연관성이 유지되지 않으므로 병합 전 각 엑셒파일 이름을 (사용자 id 포함) 모든 데이터에 (row에) 추가하여 (<code>tmp %&gt;% mutate(filename=filenames[i])</code> 부분) 데이터를 병합함 (생성된 파일 이름 정보는 다음 데이터 전처리 단계에서 사용/설명할 예정)</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 다운로드 받은 엑셀 파일들 </span></span>
