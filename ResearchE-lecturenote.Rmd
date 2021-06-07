@@ -2135,13 +2135,150 @@ igem_obs <- do.call(bind_rows, tmp4)
 ```
 
 
+# Data preprocessing and plot {#datapreprocessingandplot}
+
+-   [Remotemeeting 링크](){target="_blank_"}
+
+## 수업목표 (2021. 6. 7. 월) {.unnumbered}
+
+- 코드 그대로 실행해 보기 
+- 데이터 흐름 이해와 결과 해석 시도
+- 참고로 테이블 설계가 완벽하지 않아서 코드가 복잡해진 부분이 있습니다. 익숙하지 않은 분들은 코드가 좀 복잡할 수 있으니 모든 이해 보다는 코드 실행과 결과 해석에 좀 더 신경써주시면 좋겠습니다
+
+
 ## 데이터 분석을 위한 전처리 
 
-지금까지 우리는 데이터를 효율적으로 입력하고 저장하기 위해서 Table 을 여러개 만들고 적절한 변수들에 값을 넣은 것임. 그런데 분석을 위해서는 결국 필요한 정보가 들어 있는 테이블 1개가 필요함. 따라서 위 4개 테이블을 효율적으로 묶어서 하나의 테이블로 만들어야함. 앞서 테이블 구조에서 4개의 테이블이 모두 특정 관계 (ID)로 연결되어 있으므로 이 정보들을 이용해서 모든 테이블을 하나의 테이블로 만듦
+지금까지 우리는 데이터를 효율적으로 입력하고 저장하기 위해서 Table 을 여러개 만들고 적절한 변수들에 값을 넣은 것임. 그런데 분석을 위해서는 결국 필요한 정보가 들어 있는 테이블 1개가 필요함. 따라서 위 4개 테이블을 효율적으로 묶어서 전처리를 수행해야함. 앞서 테이블 구조에서 4개의 테이블이 모두 특정 관계 (ID)로 연결되어 있으므로 이 정보들을 이용해서 모든 테이블을 하나의 테이블로 만듦. 
+
+먼저 igem_part와 igem_team 테이블을 병합함. 두 테이블간 공통되는 정보를 이용해서 같은 샘플들을 같은 row에 배치해야함. 공통 정보는 igem_part에서 team_id, filename이 igem_team에서 id, filename과 각각 같은 샘플의 정보이므로 이 두 변수를 동시에 사용해서 다음 코드와 같이 하나의 테이블로 병합함. 참고로 위 변수 하나만을 사용할 경우 병합이 불가능함. 예를 들어 igem_part의 team_id값이 1인 경우도 여러개이고 igem_team의 id도 1인 값을 갖는 샘플 (row)이 여러개이므로 어느 순서로 어디에 붙여서 두 테이블을 병할 할지 모르게됨. 코드의 `drop_na`는 NA를 제거해주는 과정을 수행함.   
 
 
 
+```{r, eval=F}
+library(tidyverse)
 
+## new id 
+tmpdat <- igem_part %>% 
+  left_join(igem_team, by=c("team_id"="id", "filename"="filename"))
+
+tmpdat %>% str
+
+```
+
+필요한 변수만 선택하는 코드 추가.  필요한 변수는 분석 목적에 따라 다를 수 있음. 
+
+```{r, eval=F}
+
+tmpdat <- igem_part %>% 
+  full_join(igem_team, by=c("team_id"="id", "filename"="filename")) %>% 
+  select(id, BBid, type, backbone, device_id, user, filename, team_name, year) %>% 
+  drop_na()
+
+tmpdat %>% str
+
+```
+
+이제 우리가 관심있는 부품이 사용된 디바이스를 찾고 해당 디바이스가 어떻게 (정량적으로) 관측되었는지 데이터를 수집할 필요가 있음. 우선, igem_device와 igem_obs를 먼저 병합함. 여기서도 역시 id=device_id, filename=filename 관계를 활용함. 
+
+
+
+```{r, eval=F}
+
+tmpdat2 <- igem_obs %>% 
+  full_join(igem_device, by=c("device_id"="id", "filename"="filename")) %>% 
+  drop_na()
+
+
+tmpdat2 %>%  str
+
+
+```
+
+이제 관심있는 part 가 사용된 device와 그 관측값을 찾기 위한 데이터 처리를 수행함. 가장 간단한 케이스로 BBa_R0011 부품을 이용한 전처리를 생각해봄. 
+
+```{r, eval=F}
+tmpdat %>% 
+  filter(BBid=="BBa_R0011")
+```
+
+
+위 결과에서 BBa_R001은 aputron_partdb.xlsx 파일의 1, 4번 id, Lelp27_partdb.xlsx 파일의 1번 아이디를 가지고 있음. 해당 데이터를 tmpdat2에서 추출해서 병합함. 
+
+
+```{r, eval=F}
+
+finaldat <-tmpdat2 %>% 
+  mutate(partcomb = lapply(strsplit(tmpdat2$part_combination, split=","), as.numeric)) %>% 
+  filter(unlist(lapply(partcomb, function(x){1 %in% x})) & filename=="aputron_partdb.xlsx")
+
+finaldat %>% str
+
+```
+데이터가 없다는 것은 tmpdat2 에 해당 디바이스 정보가 수록되지 않은 것이고 이는 테이블 병합시 데이터가 서로 맞지 않아 NA 가 생성되고 drop_na로 지워진 결과임. 다른 part를 골라서 동일 작업 수행함. 
+
+
+```{r, eval=F}
+tmpdat %>% 
+  filter(BBid=="BBa_I0500")
+```
+
+위에서 1, 5 id를 갖는 part이며 모두 `gpemelianov_partdb.xlsx` 에 있던 정보임. 이 중 1번 id 에 대한 탐색을 수행함. 
+
+```{r, eval=F}
+
+tmpd <-tmpdat2 %>% 
+  mutate(partcomb = lapply(strsplit(tmpdat2$part_combination, split=","), as.numeric)) %>% 
+  filter(unlist(lapply(partcomb, function(x){1 %in% x})) & filename=="gpemelianov_partdb.xlsx")
+
+finaldat <- tmpd
+finaldat %>% str
+
+```
+
+위에서 3건의 결과가 찾아졌으며 이제 5번 id에 대한 탐색을 수행함. 
+
+
+```{r, eval=F}
+
+tmpd <-tmpdat2 %>% 
+  mutate(partcomb = lapply(strsplit(tmpdat2$part_combination, split=","), as.numeric)) %>% 
+  filter(unlist(lapply(partcomb, function(x){5 %in% x})) & filename=="gpemelianov_partdb.xlsx")
+
+finaldat <- bind_rows(finaldat, tmpd)
+finaldat %>% str
+
+```
+
+이 테이블이 "BBa_I0500" 부품이 사용된 디바이스들의 관측 정보이며 그래프를 그리는데 필요한 변수를 추출해서 정리함. 
+ 
+
+```{r, eval=F}
+
+plotdat <- finaldat %>% 
+  select(-c(id, link, filename, part_combination, partcomb)) %>% 
+  mutate(value = as.numeric(value))
+
+plotdat %>% str
+```
+
+위에 bar graph를 그리는 코드를 추가함. 균주, inducer, inducer 농도별로 평균을 계산하고 bar 그래프를 그립니다. 
+
+```{r, eval=F}
+
+datasummary <- plotdat %>% 
+  group_by(indc, conc) %>% 
+  summarise(mean=mean(value), n=n()) 
+
+ggplot(datasummary, aes(x=conc, y=mean)) +
+  geom_bar(stat="identity") +
+  theme_bw()
+
+
+```
+
+![](images/000022.png)
+
+이 결과는 여러사람이 모은 데이터가 아니고 반복 측정된 데이터가 없는 경우라 (모든 농도에 대해서 하나의 데이터만 있음) 최종 목적 결과는 아님. 그러나 다른 part 들에 대해서도 동일 분석을 수행할 수 있으며 여러사람이 참여해서 데이터가 충분히 많아질 경우 하나의 부품이 얼마나 많은 편차를 가지고 있는지에 대한 의미 있는 결과를 얻을 수도 있음. 
 
 
 # References
