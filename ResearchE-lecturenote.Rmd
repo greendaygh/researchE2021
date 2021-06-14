@@ -2291,7 +2291,7 @@ ggplot(datasummary, aes(x=conc, y=mean)) +
 
 ## 확장
 
-- 데이터분석 및 그래프 툴: [tidyverse](https://www.tidyverse.org/)
+- 데이터분석 및 그래프 툴: [tidyverse](https://www.tidyverse.org/) [r4ds](https://r4ds.had.co.nz/)
 - Rmarkdown 기능 확장: [bookdown](https://bookdown.org/)
 - 어플리케이션 [Shiny](https://shiny.rstudio.com/tutorial/)
 
