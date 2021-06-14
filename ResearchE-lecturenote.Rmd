@@ -2282,7 +2282,7 @@ ggplot(datasummary, aes(x=conc, y=mean)) +
 
 # Data analysis {#data_analysis}
 
--   [Remotemeeting 링크](){target="_blank_"}
+-   [Remotemeeting 링크](https://www.remotemeeting.com/reservation/share/2c90e4f7795bc916017a07df3727190d){target="_blank_"}
 
 ## 수업목표 (2021. 6. 14. 월) {.unnumbered}
 
