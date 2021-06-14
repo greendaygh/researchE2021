@@ -2280,5 +2280,22 @@ ggplot(datasummary, aes(x=conc, y=mean)) +
 
 이 결과는 여러사람이 모은 데이터가 아니고 반복 측정된 데이터가 없는 경우라 (모든 농도에 대해서 하나의 데이터만 있음) 최종 목적 결과는 아님. 그러나 다른 part 들에 대해서도 동일 분석을 수행할 수 있으며 여러사람이 참여해서 데이터가 충분히 많아질 경우 하나의 부품이 얼마나 많은 편차를 가지고 있는지에 대한 의미 있는 결과를 얻을 수도 있음. 
 
+# Data analysis {#data_analysis}
 
-# References
+-   [Remotemeeting 링크](){target="_blank_"}
+
+## 수업목표 (2021. 6. 14. 월) {.unnumbered}
+
+- 데이터분석 코드 실행 및 설명
+- 보고서 작성 
+
+## 확장
+
+- 데이터분석 및 그래프 툴: [tidyverse](https://www.tidyverse.org/)
+- Rmarkdown 기능 확장: [bookdown](https://bookdown.org/)
+- 어플리케이션 [Shiny](https://shiny.rstudio.com/tutorial/)
+
+
+![](images/data-science.png)
+
+
