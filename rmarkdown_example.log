@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.6.17)  12 JUL 2021 03:49
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.5.19)  17 JUN 2021 00:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ResearchE-lecturenote.tex
-(./ResearchE-lecturenote.tex
+**rmarkdown_example.tex
+(./rmarkdown_example.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -452,67 +452,6 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen161
 \FrameRule=\dimen162
 \FrameSep=\dimen163
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip54
-\LTright=\skip55
-\LTpre=\skip56
-\LTpost=\skip57
-\LTchunksize=\count292
-\LTcapwidth=\dimen164
-\LT@head=\box50
-\LT@firsthead=\box51
-\LT@foot=\box52
-\LT@lastfoot=\box53
-\LT@cols=\count293
-\LT@rows=\count294
-\c@LT@tables=\count295
-\c@LT@chunks=\count296
-\LT@p@ftn=\toks22
-) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen165
-\lightrulewidth=\dimen166
-\cmidrulewidth=\dimen167
-\belowrulesep=\dimen168
-\belowbottomsep=\dimen169
-\aboverulesep=\dimen170
-\abovetopsep=\dimen171
-\cmidrulesep=\dimen172
-\cmidrulekern=\dimen173
-\defaultaddspace=\dimen174
-\@cmidla=\count297
-\@cmidlb=\count298
-\@aboverulesep=\dimen175
-\@belowrulesep=\dimen176
-\@thisruleclass=\count299
-\@lastruleclass=\count300
-\@thisrulewidth=\dimen177
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen178
-\ar@mcellbox=\box54
-\extrarowheight=\dimen179
-\NC@list=\toks23
-\extratabsurround=\skip58
-\backup@length=\skip59
-\ar@cellbox=\box55
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count301
-\calc@Bcount=\count302
-\calc@Adimen=\dimen180
-\calc@Bdimen=\dimen181
-\calc@Askip=\skip60
-\calc@Bskip=\skip61
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count303
-\calc@Cskip=\skip62
-) (/usr/share/texlive/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
-Package: footnotehyper 2019/11/07 v1.1a hyperref aware footnote.sty (JFB)
-\FNH@notes=\box56
-\FNH@width=\dimen182
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -524,42 +463,91 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen183
-\Gin@req@width=\dimen184
-)
-\cslhangindent=\skip63
-\csllabelwidth=\skip64
-(./ResearchE-lecturenote.aux)
-\openout1 = `ResearchE-lecturenote.aux'.
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+) (/usr/share/texlive/texmf-dist/tex/latex/cjk-ko/kotex.sty
+Package: kotex 2015/04/19 v1.6 Korean TeX (ko.TeX)
+(/usr/share/texlive/texmf-dist/tex/latex/kotex-utf/kotex.cfg) (/usr/share/texli
+ve/texmf-dist/tex/xetex/xetexko/xetexko.sty
+Package: xetexko 2020/02/17 v2.23 Typesetting Korean with XeTeX
+(/usr/share/texlive/texmf-dist/tex/xetex/xetexko/xetexko-space.sty
+Package: xetexko-space 2020/02/17 v2.23 Spacings and fonts for XeTeX-ko
+\XeTeXcharclassID=\XeTeXcharclass1
+\XeTeXcharclassOP=\XeTeXcharclass2
+\XeTeXcharclassCL=\XeTeXcharclass3
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
+(/usr/share/texlive/texmf-dist/tex/generic/unicode-data/load-unicode-xetex-clas
+ses.tex 
+load-unicode-xetex-classes.tex v1.11 (2019-11-28)
+Reading Unicode east Asian character class data
+# LineBreak-12.1.0.txt 
+# Date: 2019-03-31, 22:04:15 GMT [KW, LI] 
+# EastAsianWidth-12.1.0.txt 
+# Date: 2019-03-31, 22:01:58 GMT [KW, LI] 
+)
+\XKsmallkana=\XeTeXcharclass4
+\XKcjkcolon=\XeTeXcharclass5
+\XKcjkfullstop=\XeTeXcharclass6
+\XKcjkliaison=\XeTeXcharclass7
+\XKcjkextrastop=\XeTeXcharclass8
+\XKcjksymbol=\XeTeXcharclass9
+\XKhangulsyllable=\XeTeXcharclass10
+\XKhanguljungjong=\XeTeXcharclass11
+\XKlatinopening=\XeTeXcharclass12
+\XKlatinclosing=\XeTeXcharclass13
+\XKopeningquote=\XeTeXcharclass14
+\XKclosingquote=\XeTeXcharclass15
+\XKlatinfullstop=\XeTeXcharclass16
+\XKlatinquestion=\XeTeXcharclass17
+\XKlatinexclamation=\XeTeXcharclass18
+\XKlatinhyphen=\XeTeXcharclass19
+\XKlatincomma=\XeTeXcharclass20
+\XKlatincolon=\XeTeXcharclass21
+\XKlatinnumber=\XeTeXcharclass22
+\XKhanjacombining=\XeTeXcharclass23
+\XK@toks@=\toks22
+\XKdotemphbox=\box50
+) (/usr/share/texlive/texmf-dist/tex/xetex/xetexko/xetexko-josa.sty
+Package: xetexko-josa 2020/02/17 v2.23 Auto-josa for XeTeX-ko
+\@josa=\count292
+) (/usr/share/texlive/texmf-dist/tex/xetex/xetexko/xetexko-font.sty
+Package: xetexko-font 2020/02/17 v2.23 LaTeX Font commands for XeTeX-ko
+) (/usr/share/texlive/texmf-dist/tex/xetex/xetexko/xetexko-vertical.sty
+Package: xetexko-vertical 2020/02/17 v2.23 Vertical environment for XeTeX-ko
+\verticalem=\dimen166
+) (/usr/share/texlive/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty
+Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
+))) (./rmarkdown_example.aux)
+\openout1 = `rmarkdown_example.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 148.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 119.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 148.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 119.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 148.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 119.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 148.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 119.
 
 Package fontspec Info: latinmodern-math scale = 1.160089357468819.
 
@@ -588,7 +576,7 @@ t=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.60095pt on input line 148.
+(Font)              scaled to size 11.60095pt on input line 119.
 
 Package fontspec Info: latinmodern-math scale = 1.160089357468819.
 
@@ -627,18 +615,18 @@ t=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.60095pt on input line 148.
+(Font)              scaled to size 11.60095pt on input line 119.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 148.
+(Font)              `operators' in the math version `normal' on input line 119.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 148.
+ line 119.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 148.
+(Font)              `operators' in the math version `bold' on input line 119.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 148.
+t line 119.
 
 Package fontspec Info: latinmodern-math scale = 1.160089357468819.
 
@@ -725,15 +713,15 @@ t=math;language=dflt;"
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 148.
+(Font)              `symbols' in the math version `normal' on input line 119.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 148.
+t line 119.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 148.
+(Font)              `symbols' in the math version `bold' on input line 119.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 148.
+t line 119.
 
 Package fontspec Info: latinmodern-math scale = 1.160089357468819.
 
@@ -803,17 +791,17 @@ t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-48.
+19.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 148.
+t line 119.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 148
+(Font)              `largesymbols' in the math version `bold' on input line 119
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 148.
-LaTeX Info: Redefining \microtypecontext on input line 148.
+t line 119.
+LaTeX Info: Redefining \microtypecontext on input line 119.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1231,8 +1219,8 @@ Package microtype Info: Character `\quotesinglbase ' is missing
 Package microtype Info: Character `\quotedblbase ' is missing
 (microtype)             in font `\TU/NanumGothic(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-\AtBeginShipoutBox=\box57
-Package hyperref Info: Link coloring OFF on input line 148.
+\AtBeginShipoutBox=\box51
+Package hyperref Info: Link coloring OFF on input line 119.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1240,11 +1228,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count304
+\c@section@level=\count293
 )
-LaTeX Info: Redefining \ref on input line 148.
-LaTeX Info: Redefining \pageref on input line 148.
-LaTeX Info: Redefining \nameref on input line 148.
+LaTeX Info: Redefining \ref on input line 119.
+LaTeX Info: Redefining \pageref on input line 119.
+LaTeX Info: Redefining \nameref on input line 119.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1269,7 +1257,7 @@ LaTeX Info: Redefining \nameref on input line 148.
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=12.5pt plus 5.55573pt minus 2.7771pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1279,10 +1267,45 @@ LaTeX Info: Redefining \nameref on input line 148.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package fontspec Info: UnDotum scale = 0.9842486573512273.
+
+
+Package fontspec Info: UnDotum scale = 0.9842486573512273.
+
+
+Package fontspec Info: UnDotumBold scale = 0.9842486573512273.
+
+
+Package fontspec Info: Font family 'UnDotum.ttf(0)' created for font
+(fontspec)             'UnDotum.ttf' with options
+(fontspec)             [Scale=MatchLowercase,Ligatures={TeX},BoldFont={UnDotumB
+old.ttf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9842486573512273]"[UnDotum.ttf]/OT:language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9842486573512273]"[UnDotumBold.ttf]/OT:language=
+dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+\symmathhangul=\mathgroup6
+(/usr/share/texlive/texmf-dist/tex/latex/cjk-ko/konames-utf.sty
+Package: konames-utf 2015/07/06 v1.7 UTF-8 Hangul captions
+)
 LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 150.
+(Font)              scaled to size 17.28pt on input line 121.
 LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 150.
+(Font)              scaled to size 12.0pt on input line 121.
 Package microtype Info: Character `\quotesinglbase ' is missing
 (microtype)             in font `\TU/NanumGothic(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1290,502 +1313,117 @@ Package microtype Info: Character `\quotedblbase ' is missing
 (microtype)             in font `\TU/NanumGothic(0)/m/n/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 13.92114pt on input line 150.
+(Font)              scaled to size 13.92114pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.28076pt on input line 150.
+(Font)              scaled to size 9.28076pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.96057pt on input line 150.
+(Font)              scaled to size 6.96057pt on input line 121.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-50.
+21.
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 13.92242pt on input line 150.
+(Font)              scaled to size 13.92242pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.28162pt on input line 150.
+(Font)              scaled to size 9.28162pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.96121pt on input line 150.
+(Font)              scaled to size 6.96121pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 13.91968pt on input line 150.
+(Font)              scaled to size 13.91968pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.27979pt on input line 150.
+(Font)              scaled to size 9.27979pt on input line 121.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.95984pt on input line 150.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 150
+(Font)              scaled to size 6.95984pt on input line 121.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 121
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 150
+LaTeX Font Info:    Trying to load font information for U+msb on input line 121
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 152.
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 152.
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 177.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.12067pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.80048pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 11.60202pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.12141pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.80101pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.59973pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.11981pt on input line 208.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.79987pt on input line 208.
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 208.
 
-Underfull \hbox (badness 1314) in paragraph at lines 207--211
-\TU/NanumGothic(0)/m/n/10 생물학에서 실험결과의 낮은 재현성은 생물학 연구의 발전을 저해하는 고질적인 문제임.$[]$ 이는
- 생명체의
- []
+LaTeX Font Warning: Font shape `TU/NanumGothic(0)/m/up' undefined
+(Font)              using `TU/NanumGothic(0)/m/n' instead on input line 121.
 
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/up' will be
+(Font)              scaled to size 8.0pt on input line 121.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/NanumGothic(0)/m/up/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/NanumGothic(0)/m/up/8'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/up' will be
+(Font)              scaled to size 6.0pt on input line 121.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 124.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 124.
+(./rmarkdown_example.toc
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.12067pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.80048pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 11.60202pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.12141pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.80101pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.59973pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.11981pt on input line 2.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.79987pt on input line 2.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/up' will be
+(Font)              scaled to size 10.0pt on input line 2.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/NanumGothic(0)/m/up/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/NanumGothic(0)/m/up/10'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/up' will be
+(Font)              scaled to size 7.0pt on input line 2.
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/up' will be
+(Font)              scaled to size 5.0pt on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `rmarkdown_example.toc'.
+
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 134.
 [1
 
 ]
-Missing character: There is no 선 in font [lmmono10-regular]:!
-Missing character: There is no 정 in font [lmmono10-regular]:!
-Missing character: There is no 박 in font [lmmono10-regular]:!
-Missing character: There is no 성 in font [lmmono10-regular]:!
-Missing character: There is no 군 in font [lmmono10-regular]:!
-Missing character: There is no 팀 in font [lmmono10-regular]:!
-Missing character: There is no 선 in font [lmmono10-regular]:!
-Missing character: There is no 정 in font [lmmono10-regular]:!
-Missing character: There is no 이 in font [lmmono10-regular]:!
-Missing character: There is no 진 in font [lmmono10-regular]:!
-Missing character: There is no 주 in font [lmmono10-regular]:!
-Missing character: There is no 현 in font [lmmono10-regular]:!
-Missing character: There is no 장 in font [lmmono10-regular]:!
-Missing character: There is no 연 in font [lmmono10-regular]:!
-Missing character: There is no 구 in font [lmmono10-regular]:!
-Missing character: There is no 김 in font [lmmono10-regular]:!
-Missing character: There is no 태 in font [lmmono10-regular]:!
-Missing character: There is no 현 in font [lmmono10-regular]:!
-Missing character: There is no 유 in font [lmmono10-regular]:!
-Missing character: There is no 병 in font [lmmono10-regular]:!
-Missing character: There is no 현 in font [lmmono10-regular]:!
-Missing character: There is no 오 in font [lmmono10-regular]:!
-Missing character: There is no 석 in font [lmmono10-regular]:!
-Missing character: There is no 진 in font [lmmono10-regular]:!
-Missing character: There is no 허 in font [lmmono10-regular]:!
-Missing character: There is no 성 in font [lmmono10-regular]:!
-Missing character: There is no 보 in font [lmmono10-regular]:!
-Missing character: There is no 현 in font [lmmono10-regular]:!
-Missing character: There is no 장 in font [lmmono10-regular]:!
-Missing character: There is no 연 in font [lmmono10-regular]:!
-Missing character: There is no 구 in font [lmmono10-regular]:!
-Missing character: There is no 수 in font [lmmono10-regular]:!
-Missing character: There is no 업 in font [lmmono10-regular]:!
-Missing character: There is no 김 in font [lmmono10-regular]:!
-Missing character: There is no 승 in font [lmmono10-regular]:!
-Missing character: There is no 화 in font [lmmono10-regular]:!
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
 [2]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 363.
-
-LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 363.
-
-[3]
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 456.
-
-Underfull \hbox (badness 1052) in paragraph at lines 458--462
-\TU/NanumGothic(0)/m/n/10 Rstudio를 사용한 Rmarkdown 만드는 법을 익힙니다. Rstudio는 R언어 외에도 
-다양한 언어를 이용한
- []
-
-[4] [5]
-Missing character: There is no 김 in font [lmmono10-regular]:!
-Missing character: There is no 승 in font [lmmono10-regular]:!
-Missing character: There is no 화 in font [lmmono10-regular]:!
-Missing character: There is no 이 in font [lmmono10-regular]:!
-Missing character: There is no 진 in font [lmmono10-regular]:!
-Missing character: There is no 주 in font [lmmono10-regular]:!
-Missing character: There is no 오 in font [lmmono10-regular]:!
-Missing character: There is no 석 in font [lmmono10-regular]:!
-Missing character: There is no 진 in font [lmmono10-regular]:!
-Missing character: There is no 허 in font [lmmono10-regular]:!
-Missing character: There is no 성 in font [lmmono10-regular]:!
-Missing character: There is no 보 in font [lmmono10-regular]:!
-Missing character: There is no 유 in font [lmmono10-regular]:!
-Missing character: There is no 병 in font [lmmono10-regular]:!
-Missing character: There is no 현 in font [lmmono10-regular]:!
-[6] [7] [8]
-Overfull \hbox (1.82193pt too wide) in paragraph at lines 975--975
-[]|\TU/NanumGothic(0)/m/n/10 part_type|  
- []
-
-
-Overfull \hbox (3.79884pt too wide) in paragraph at lines 975--976
- []|\TU/NanumGothic(0)/m/n/10 team_id|
- []
-
-
-Overfull \hbox (12.80457pt too wide) in paragraph at lines 978--978
-[]|\TU/NanumGothic(0)/m/n/10 BBa_K2259000|  
- []
-
-
-Overfull \hbox (12.80457pt too wide) in paragraph at lines 980--980
-[]|\TU/NanumGothic(0)/m/n/10 BBa_K2259010|  
- []
-
-
-Overfull \hbox (12.80457pt too wide) in paragraph at lines 982--982
-[]|\TU/NanumGothic(0)/m/n/10 BBa_K2259092|  
- []
-
-File: partname.JPG Graphic file (type bmp)
-<partname.JPG>
-[9] [10]
-File: partexp.JPG Graphic file (type bmp)
-<partexp.JPG>
-[11] [12]
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1214--1214
-[]\TU/lmtt/m/n/10 ##                                                           
-                            project[] 
- []
-
-
-Overfull \hbox (34.24498pt too wide) in paragraph at lines 1214--1214
-[]\TU/lmtt/m/n/10 ## 1 Engineered Salmonella Typhimurium for enhanced drug deli
-very and cancer stem cell targeting[] 
- []
-
-[13] [14]
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ##                                                           
-                             project[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 1  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 2  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 3  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-[15]
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 4  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 5  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 6  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 7  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 8  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 9  Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 10 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 11 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 12 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 13 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 14 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 15 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (39.49498pt too wide) in paragraph at lines 1448--1448
-[]\TU/lmtt/m/n/10 ## 16 Engineered Salmonella Typhimurium for enhanced drug del
-ivery and cancer stem cell targeting[] 
- []
-
-[16]
-File: ResearchE-lecturenote_files/figure-latex/unnamed-chunk-23-1.pdf Graphic f
-ile (type pdf)
-<use ResearchE-lecturenote_files/figure-latex/unnamed-chunk-23-1.pdf>
-[17]
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1523.
-File: images/968px-84151_119_GFP.png Graphic file (type bmp)
-<images/968px-84151_119_GFP.png>
-[18] [19] [20]
-Overfull \hbox (170.74498pt too wide) in paragraph at lines 1686--1686
-[]\TU/lmtt/m/n/10 ##                                                           
-                                                      project[] 
- []
-
-
-Overfull \hbox (170.74498pt too wide) in paragraph at lines 1686--1686
-[]\TU/lmtt/m/n/10 ## 1                           Engineered Salmonella Typhimur
-ium for enhanced drug delivery and cancer stem cell targeting[] 
- []
-
-
-Overfull \hbox (170.74498pt too wide) in paragraph at lines 1686--1686
-[]\TU/lmtt/m/n/10 ## 2 Engineer a phage which will infect C. difficile and expr
-ess genetic constructs designed to suppress toxin production.[] 
- []
-
-
-Underfull \vbox (badness 1931) detected at line 1735
- []
-
-[21] [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1859
-
- []
-
-File: images/excel_promoter.JPG Graphic file (type bmp)
-<images/excel_promoter.JPG>
-[24]
-Overfull \vbox (0.27248pt too high) detected at line 1991
- []
-
-[25] [26]
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 11.99997pt on input line 2077.
-[27] [28] [29] [30]
-File: images/Screenshot from 2021-04-22 12-43-04.png Graphic file (type bmp)
-<images/Screenshot from 2021-04-22 12-43-04.png>
-File: images/database1.png Graphic file (type bmp)
-<images/database1.png>
-[31]
-File: images/database2.png Graphic file (type bmp)
-<images/database2.png>
-File: images/gitpage.JPG Graphic file (type bmp)
-<images/gitpage.JPG>
-[32]
-
-Package hyperref Warning: Suppressing link with empty target on input line 2524
-.
-
-File: images/repo-create01.JPG Graphic file (type bmp)
-<images/repo-create01.JPG>
-[33]
-File: images/repo-create01-2.JPG Graphic file (type bmp)
-<images/repo-create01-2.JPG>
-[34]
-File: images/project-create04.JPG Graphic file (type bmp)
-<images/project-create04.JPG>
-[35]
-File: images/project-create03.JPG Graphic file (type bmp)
-<images/project-create03.JPG>
-[36] [37]
-File: images/repo-create02.JPG Graphic file (type bmp)
-<images/repo-create02.JPG>
-[38] [39]
-File: images/git-rproject.JPG Graphic file (type bmp)
-<images/git-rproject.JPG>
-File: images/commit.JPG Graphic file (type bmp)
-<images/commit.JPG>
-[40] [41]
-File: images/Screenshot from 2021-05-13 10-52-42.png Graphic file (type bmp)
-<images/Screenshot from 2021-05-13 10-52-42.png>
-
-Overfull \hbox (331.37914pt too wide) in paragraph at lines 2931--2934
-[]\TU/NanumGothic(0)/m/n/10 참고로 다운로드 업로드는 Rstudio의 file 탐색창의 Upload, More>expor
-t 이용 [] 
- []
-
-[42]
-File: images/dbtable2.JPG Graphic file (type bmp)
-<images/dbtable2.JPG>
-Missing character: There is no 코 in font [lmmono10-regular]:!
-Missing character: There is no 드 in font [lmmono10-regular]:!
-[43]
-Missing character: There is no 코 in font [lmmono10-regular]:!
-Missing character: There is no 드 in font [lmmono10-regular]:!
-[44]
-File: images/igem_device.png Graphic file (type bmp)
-<images/igem_device.png>
-[45]
-File: images/igem_team.PNG Graphic file (type bmp)
-<images/igem_team.PNG>
-File: images/igem_part.PNG Graphic file (type bmp)
-<images/igem_part.PNG>
-File: images/igem_device2.PNG Graphic file (type bmp)
-<images/igem_device2.PNG>
-File: images/igem_obs.PNG Graphic file (type bmp)
-<images/igem_obs.PNG>
-[46] [47]
-Underfull \vbox (badness 10000) detected at line 3348
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3348
- []
-
-[48]
-
-Package hyperref Warning: Suppressing link with empty target on input line 3387
-.
-
-[49] [50]
-Underfull \vbox (badness 10000) detected at line 3543
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3543
- []
-
-[51]
-Missing character: There is no 다 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 운 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 로 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 드 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 받 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 은 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 엑 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 셀 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 파 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 일 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 들 in font [lmmonolt10-boldoblique]:!
-
-Overfull \vbox (1.44998pt too high) detected at line 3600
- []
-
-[52]
-Missing character: There is no 다 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 운 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 로 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 드 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 받 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 은 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 엑 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 셀 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 파 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 일 in font [lmmonolt10-boldoblique]:!
-Missing character: There is no 들 in font [lmmonolt10-boldoblique]:!
-
-Package hyperref Warning: Suppressing link with empty target on input line 3661
-.
-
-[53] [54] [55]
-File: images/000022.png Graphic file (type bmp)
-<images/000022.png>
-File: images/data-science.png Graphic file (type bmp)
-<images/data-science.png>
-
-LaTeX Font Warning: Font shape `TU/NanumGothic(0)/m/it' undefined
-(Font)              using `TU/NanumGothic(0)/m/n' instead on input line 3904.
-
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 3904.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/NanumGothic(0)/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/NanumGothic(0)/m/it/10'.
-(microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (1.86667pt too wide) in paragraph at lines 3900--3905
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3900--3905
-
- []
-
-[56]
-Overfull \hbox (1.86667pt too wide) in paragraph at lines 3906--3912
-[][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3906--3912
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3915.
-[57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3915.
-(./ResearchE-lecturenote.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3915.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3915.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+(./rmarkdown_example.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 197.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 19605 strings out of 479819
- 347567 string characters out of 5895846
- 796386 words of memory out of 5000000
- 36423 multiletter control sequences out of 15000+600000
- 538861 words of font info for 86 fonts, out of 8000000 for 9000
+ 21895 strings out of 479819
+ 362067 string characters out of 5895846
+ 790747 words of memory out of 5000000
+ 38715 multiletter control sequences out of 15000+600000
+ 538893 words of font info for 90 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,6n,118p,820b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,6n,122p,816b,2559s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ResearchE-lecturenote.pdf (57 pages).
+Output written on rmarkdown_example.pdf (2 pages).
